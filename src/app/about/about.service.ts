@@ -62,7 +62,7 @@ export class AboutService {
     this.allEntries.push({
       ...this.runningEntries,
       duration: this.runningEntries.duration * (progress / 100),
-      calories: this.runningEntries.duration * (progress / 100),
+      calories: this.runningEntries.calories * (progress / 100),
       date: new Date(),
       state: "cancelled"
     });
@@ -72,5 +72,9 @@ export class AboutService {
 
   getRunningEntries() {
     return { ...this.runningEntries };
+  }
+
+  getCompletedOrCancelledAllEntries() {
+    return this.allEntries.slice();
   }
 }
