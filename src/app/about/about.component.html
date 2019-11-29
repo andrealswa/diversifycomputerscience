@@ -1,0 +1,9 @@
+<mat-tab-group *ngIf="!ongoingAbout">
+  <mat-tab label="Who We Are">
+    <app-new-about> </app-new-about>
+  </mat-tab>
+  <mat-tab label="What We Do">
+    <app-past-about></app-past-about>
+  </mat-tab>
+</mat-tab-group>
+<app-current-about *ngIf="ongoingAbout"> </app-current-about>

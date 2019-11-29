@@ -1,12 +1,11 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <h3>I'm in the Diversify Computer Science App!</h3>
-
-      <hr />
-      <!--<app-servers></app-servers>-->
-      <!--<div app-servers></div>-->
-      <div class="app-servers"></div>
-    </div>
-  </div>
-</div>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav role="navigation">
+    <app-sidenav-list (closeSidenav)="sidenav.close()"></app-sidenav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

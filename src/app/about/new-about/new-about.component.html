@@ -1,0 +1,22 @@
+<section class="new-about" fxLayout fxLayoutAlign="center">
+  <form (ngSubmit)="onStartAbout(f)" #f="ngForm">
+    <mat-card fxFlex.xs="100%" fxFlex="400px">
+      <mat-card-title>Welcome! Lets get started</mat-card-title>
+      <mat-card-content fxLayout fxLayoutAlign="center">
+        <mat-form-field>
+          <mat-select placeholder="Select Name" ngModel name="entries" required>
+            <mat-option
+              *ngFor="let entries of allEntries"
+              [value]="entries.name"
+            >
+              {{ entries.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions fxLayout fxLayoutAlign="center">
+        <button type="submit" mat-button [disabled]="f.invalid">Start</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</section>
