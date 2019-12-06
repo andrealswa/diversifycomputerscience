@@ -3,7 +3,6 @@ import { MatTableDataSource, MatSort, MatPaginator } from "@angular/material";
 
 import { Entries } from "../entries.model";
 import { AboutService } from "../about.service";
-import { MatPaginatedTabHeader } from "@angular/material/tabs/typings/paginated-tab-header";
 
 @Component({
   selector: "app-past-about",
