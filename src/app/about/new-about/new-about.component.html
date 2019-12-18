@@ -6,7 +6,7 @@
         <mat-form-field>
           <mat-select placeholder="Select Name" ngModel name="entries" required>
             <mat-option
-              *ngFor="let entries of allEntries"
+              *ngFor="let entries of allEntries | async"
               [value]="entries.name"
             >
               {{ entries.name }}

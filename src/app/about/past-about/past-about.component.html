@@ -48,8 +48,8 @@
   </ng-container>
 
   <ng-container matColumnDef="calories">
-    <mat-header-cell *matHeaderCellDef>
-      mat-sort-headerCalories</mat-header-cell
+    <mat-header-cell *matHeaderCellDef mat-sort-header
+      >Calories</mat-header-cell
     >
     <mat-cell *matCellDef="let element" data-label="calories">{{
       element.calories | number

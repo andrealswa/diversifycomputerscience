@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { NgForm } from "@angular/forms";
+import { AngularFirestore } from "angularfire2/firestore";
+import { Observable } from "rxjs";
 
 import { AboutService } from "../about.service";
 import { Entries } from "../entries.model";
@@ -10,12 +12,15 @@ import { Entries } from "../entries.model";
   styleUrls: ["./new-about.component.css"]
 })
 export class NewAboutComponent implements OnInit {
-  allEntries: Entries[] = [];
+  allEntries: Observable<any>;
 
-  constructor(private aboutService: AboutService) {}
+  constructor(
+    private aboutService: AboutService,
+    private db: AngularFirestore
+  ) {}
 
   ngOnInit() {
-    this.allEntries = this.aboutService.getAvailableEntries();
+    this.allEntries = this.db.collection("availableEntries").valueChanges();
   }
 
   onStartAbout(form: NgForm) {
