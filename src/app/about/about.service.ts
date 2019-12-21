@@ -1,80 +1,120 @@
-import { Subject } from "rxjs/Subject";
+import { Injectable } from "@angular/core";
+import { AngularFirestore } from "angularfire2/firestore";
+import { Subscription } from "rxjs";
+import { take } from "rxjs/operators";
+import { Store } from "@ngrx/store";
+import "rxjs/add/operator/map";
 
 import { Entries } from "./entries.model";
+import { UIService } from "../shared/ui.service";
+import * as UI from "../shared/ui.actions";
+import * as About from "./about.actions";
+import * as fromAbout from "./about.reducer";
 
+@Injectable()
 export class AboutService {
-  entriesChanged = new Subject<Entries>();
-  private availableEntries: Entries[] = [
-    {
-      name: "Jane Doe",
-      affiliatedInstitution: "University of Windsor",
-      email: "jdoe@uwindsor.ca",
-      country: "Canada",
-      socialMedia: "jane.doe",
-      selfID: "LGBTQ+",
-      gender: "F",
-      duration: 60,
-      calories: 2,
-      currentCareerStage: "Undergraduate",
-      branch: "Computer Science",
-      subfieldKeywords: "Web Development, AI, Machine Learning"
-    },
-    {
-      name: "John Smith",
-      affiliatedInstitution: "Wayne State University",
-      email: "jsmith@wsu.com",
-      country: "United States",
-      socialMedia: "john.smith",
-      selfID: "OR",
-      gender: "NB",
-      duration: 30,
-      calories: 60,
-      currentCareerStage: "Post-doctoral",
-      branch: "Computer Science",
-      subfieldKeywords: "Data Science, AI, Machine Learning"
-    }
-  ];
-  private runningEntries: Entries;
-  private allEntries: Entries[] = [];
+  private fbSubs: Subscription[] = [];
 
-  getAvailableEntries() {
-    return this.availableEntries.slice();
+  constructor(
+    private db: AngularFirestore,
+    private uiService: UIService,
+    private store: Store<fromAbout.State>
+  ) {}
+
+  fetchAvailableAllEntries() {
+    this.store.dispatch(new UI.StartLoading());
+    this.fbSubs.push(
+      this.db
+        .collection("availableAllEntries")
+        .snapshotChanges()
+        .map(docArray => {
+          // throw(new Error());
+          return docArray.map(doc => {
+            return {
+              name: doc.payload.doc.data()["name"],
+              affiliatedInstitution: doc.payload.doc.data()[
+                "affiliatedInstitution"
+              ],
+              email: doc.payload.doc.data()["email"],
+              country: doc.payload.doc.data()["country"],
+              socialMedia: doc.payload.doc.data()["socialMedia"],
+              selfID: doc.payload.doc.data()["selfID"],
+              gender: doc.payload.doc.data()["gender"],
+              duration: doc.payload.doc.data()["duration"],
+              calories: doc.payload.doc.data()["calories"],
+              currentCareerStage: doc.payload.doc.data()["currentCareerStage"],
+              branch: doc.payload.doc.data()["branch"],
+              subfieldKeywords: doc.payload.doc.data()["subfieldKeywords"]
+            };
+          });
+        })
+        .subscribe(
+          (allEntries: Entries[]) => {
+            this.store.dispatch(new UI.StopLoading());
+            this.store.dispatch(new About.SetAvailableAbouts(allEntries));
+          },
+          error => {
+            this.store.dispatch(new UI.StopLoading());
+            this.uiService.showSnackbar(
+              "Fetching Entries failed, please try again later",
+              null,
+              3000
+            );
+          }
+        )
+    );
   }
 
   startEntries(selectedId: string) {
-    this.runningEntries = this.availableEntries.find(
-      en => en.name === selectedId
-    );
-    this.entriesChanged.next({ ...this.runningEntries });
+    this.store.dispatch(new About.StartAbout(selectedId));
   }
 
   completeEntries() {
-    this.allEntries.push({
-      ...this.runningEntries,
-      date: new Date(),
-      state: "completed"
-    });
-    this.runningEntries = null;
-    this.entriesChanged.next(null);
+    this.store
+      .select(fromAbout.getActiveAbout)
+      .pipe(take(1))
+      .subscribe(en => {
+        this.addDataToDatabase({
+          ...en,
+          date: new Date(),
+          state: "completed"
+        });
+        this.store.dispatch(new About.StopAbout());
+      });
   }
 
   cancelEntries(progress: number) {
-    this.allEntries.push({
-      ...this.runningEntries,
-      duration: this.runningEntries.duration * (progress / 100),
-      calories: this.runningEntries.calories * (progress / 100),
-      date: new Date(),
-      state: "cancelled"
-    });
-    this.runningEntries = null;
-    this.entriesChanged.next(null);
+    this.store
+      .select(fromAbout.getActiveAbout)
+      .pipe(take(1))
+      .subscribe(en => {
+        this.addDataToDatabase({
+          ...en,
+          duration: en.duration * (progress / 100),
+          calories: en.calories * (progress / 100),
+          date: new Date(),
+          state: "completed"
+        });
+        this.store.dispatch(new About.StopAbout());
+      });
   }
 
-  getRunningEntries() {
-    return { ...this.runningEntries };
+  fetchCompletedOrCancelledAllEntries() {
+    this.fbSubs.push(
+      this.db
+        .collection("finishedAllEntries")
+        .valueChanges()
+        .subscribe((allEntries: Entries[]) => {
+          this.store.dispatch(new About.SetFinishedAbouts(allEntries));
+        })
+    );
   }
 
-  getCompletedOrCancelledAllEntries() {
-    return this.allEntries.slice();
+  cancelSubscriptions() {
+    this.fbSubs.forEach(sub => sub.unsubscribe());
+  }
+
+  private addDataToDatabase(entries: Entries) {
+    this.db.collection("finishedAllEntries").add(entries);
   }
 }

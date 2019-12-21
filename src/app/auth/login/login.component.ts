@@ -1,6 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { Observable } from "rxjs";
+import { Store } from "@ngrx/store";
+
 import { AuthService } from "../auth.service";
+import { UIService } from "../../shared/ui.service";
+import * as fromRoot from "../../app.reducer";
 
 @Component({
   selector: "app-login",
@@ -9,10 +14,17 @@ import { AuthService } from "../auth.service";
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  isLoading$: Observable<boolean>;
 
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    private uiService: UIService,
+    private store: Store<fromRoot.State>
+  ) {}
 
   ngOnInit() {
+    this.isLoading$ = this.store.select(fromRoot.getIsLoading);
+
     this.loginForm = new FormGroup({
       email: new FormControl("", {
         validators: [Validators.required, Validators.email]

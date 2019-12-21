@@ -1,7 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import { Subscription } from "rxjs/Subscription";
+import { Observable } from "rxjs";
+import { Store } from "@ngrx/store";
 
 import { AboutService } from "./about.service";
+import * as fromAbout from "./about.reducer";
 
 @Component({
   selector: "app-about",
@@ -9,20 +11,14 @@ import { AboutService } from "./about.service";
   styleUrls: ["./about.component.css"]
 })
 export class AboutComponent implements OnInit {
-  ongoingAbout = false;
-  entriesSubscription: Subscription;
+  ongoingAbout$: Observable<boolean>;
 
-  constructor(private aboutService: AboutService) {}
+  constructor(
+    private aboutService: AboutService,
+    private store: Store<fromAbout.State>
+  ) {}
 
   ngOnInit() {
-    this.entriesSubscription = this.aboutService.entriesChanged.subscribe(
-      entries => {
-        if (entries) {
-          this.ongoingAbout = true;
-        } else {
-          this.ongoingAbout = false;
-        }
-      }
-    );
+    this.ongoingAbout$ = this.store.select(fromAbout.getIsAbout);
   }
 }

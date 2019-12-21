@@ -1,16 +1,16 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
+
 import { WelcomeComponent } from "./welcome/welcome.component";
-import { SignupComponent } from "./auth/signup/signup.component";
-import { LoginComponent } from "./auth/login/login.component";
-import { AboutComponent } from "./about/about.component";
 import { AuthGuard } from "./auth/auth.guard";
 
 const routes: Routes = [
   { path: "", component: WelcomeComponent },
-  { path: "signup", component: SignupComponent },
-  { path: "login", component: LoginComponent },
-  { path: "about", component: AboutComponent, canActivate: [AuthGuard] }
+  {
+    path: "about",
+    loadChildren: "./about/about.module#AboutModule",
+    canLoad: [AuthGuard]
+  }
 ];
 
 @NgModule({

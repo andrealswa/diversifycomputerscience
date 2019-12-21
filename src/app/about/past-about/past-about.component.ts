@@ -1,8 +1,10 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from "@angular/core";
 import { MatTableDataSource, MatSort, MatPaginator } from "@angular/material";
+import { Store } from "@ngrx/store";
 
 import { Entries } from "../entries.model";
 import { AboutService } from "../about.service";
+import * as fromAbout from "../about.reducer";
 
 @Component({
   selector: "app-past-about",
@@ -22,13 +24,21 @@ export class PastAboutComponent implements OnInit, AfterViewInit {
   ];
   dataSource = new MatTableDataSource<Entries>();
 
-  @ViewChild(MatSort, { static: true }) sort: MatSort;
-  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+  @ViewChild(MatSort, { static: false }) sort: MatSort;
+  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
 
-  constructor(private aboutService: AboutService) {}
+  constructor(
+    private aboutService: AboutService,
+    private store: Store<fromAbout.State>
+  ) {}
 
   ngOnInit() {
-    this.dataSource.data = this.aboutService.getCompletedOrCancelledAllEntries();
+    this.store
+      .select(fromAbout.getFinishedAllEntries)
+      .subscribe((allEntries: Entries[]) => {
+        this.dataSource.data = allEntries;
+      });
+    this.aboutService.fetchCompletedOrCancelledAllEntries();
   }
 
   ngAfterViewInit() {
