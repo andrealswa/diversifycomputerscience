@@ -93,7 +93,7 @@ export class AboutService {
           duration: en.duration * (progress / 100),
           calories: en.calories * (progress / 100),
           date: new Date(),
-          state: "completed"
+          state: "cancelled"
         });
         this.store.dispatch(new About.StopAbout());
       });

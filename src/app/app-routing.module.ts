@@ -4,6 +4,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { WelcomeComponent } from "./welcome/welcome.component";
 import { AuthGuard } from "./auth/auth.guard";
 import { UserEntryFormComponent } from "./user-entry-form/user-entry-form.component";
+import { AboutComponent } from "./about/about.component";
 
 const routes: Routes = [
   { path: "", component: WelcomeComponent },

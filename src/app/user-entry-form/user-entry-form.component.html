@@ -1,16 +1,35 @@
-<p>user-entry-form works!</p>
+<div fxLayout="column" fxLayoutAlign="space-around center">
+  <mat-card style="width: 75%; margin-bottom: 100px;">
+    <mat-card-content>
+      <div fxLayout="column" fxLayoutAlign="space-around stretch">
+        <section>
+          <form [formGroup]="userEntryForm" (ngSubmit)="submit()">
+            <mat-form-field class="example-full-width" style="width: 100%">
+              <input
+                matInput
+                placeholder="First Name"
+                formControlName="firstName"
+              />
+            </mat-form-field>
+            <mat-form-field class="example-full-width" style="width: 100%">
+              <input
+                matInput
+                placeholder="Last Name"
+                formControlName="lastName"
+              />
+            </mat-form-field>
 
-<form [formGroup]="userEntryForm">
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="First Name" formControlName="firstName" />
-  </mat-form-field>
+            <br />
 
-  <br />
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Last Name" formControlName="lastName" />
-  </mat-form-field>
-
-  <br />
-
-  <button type="submit">Submit</button>
-</form>
+            <button type="submit" mat-raised-button color="primary">
+              Submit
+            </button>
+          </form>
+        </section>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <div *ngFor="let entry of entries | async">
+    {{ entry.firstName }} {{ entry.lastName }}
+  </div>
+</div>
