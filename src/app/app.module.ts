@@ -19,13 +19,15 @@ import { environment } from "../environments/environment";
 import { UIService } from "./shared/ui.service";
 import { AuthModule } from "./auth/auth.module";
 import { reducers } from "./app.reducer";
+import { UserEntryFormComponent } from "./user-entry-form/user-entry-form.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
     HeaderComponent,
-    SidenavListComponent
+    SidenavListComponent,
+    UserEntryFormComponent
   ],
   imports: [
     BrowserModule,
