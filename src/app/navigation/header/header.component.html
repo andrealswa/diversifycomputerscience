@@ -16,6 +16,9 @@
       <li *ngIf="isAuth$ | async">
         <a routerLink="/entryform">Entry Form</a>
       </li>
+      <li *ngIf="isAuth$ | async">
+        <a routerLink="/table">Table</a>
+      </li>
 
       <li *ngIf="isAuth$ | async">
         <a style="cursor: pointer" (click)="onLogout()">Logout</a>

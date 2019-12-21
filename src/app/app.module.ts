@@ -20,6 +20,7 @@ import { UIService } from "./shared/ui.service";
 import { AuthModule } from "./auth/auth.module";
 import { reducers } from "./app.reducer";
 import { UserEntryFormComponent } from "./user-entry-form/user-entry-form.component";
+import { TableComponent } from './table/table.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { UserEntryFormComponent } from "./user-entry-form/user-entry-form.compon
     WelcomeComponent,
     HeaderComponent,
     SidenavListComponent,
-    UserEntryFormComponent
+    UserEntryFormComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,

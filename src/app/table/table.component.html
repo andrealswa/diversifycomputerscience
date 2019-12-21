@@ -1,0 +1,65 @@
+<div fxLayoutAlign="center center">
+  <mat-form-field fxFlex="40%">
+    <input
+      matInput
+      type="text"
+      (keyup)="doFilter($event.target.value)"
+      placeholder="Filter"
+    />
+  </mat-form-field>
+</div>
+
+<mat-table [dataSource]="dataSource" matSort>
+  <ng-container matColumnDef="firstName">
+    <mat-header-cell *matHeaderCellDef mat-sort-header
+      >First Name</mat-header-cell
+    >
+    <mat-cell *matCellDef="let element" data-label="First Name">{{
+      element.firstName
+    }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="lastName">
+    <mat-header-cell *matHeaderCellDef mat-sort-header
+      >Last Name</mat-header-cell
+    >
+    <mat-cell *matCellDef="let element" data-label="Last Name">{{
+      element.lastName
+    }}</mat-cell>
+  </ng-container>
+  <!-- 
+  <ng-container matColumnDef="affiliatedInstitution">
+    <mat-header-cell *matHeaderCellDef mat-sort-header
+      >Affiliated Institution</mat-header-cell
+    >
+    <mat-cell *matCellDef="let element" data-label="affiliated institution">{{
+      element.affiliatedInstitution
+    }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
+    <mat-cell *matCellDef="let element" data-label="email">{{
+      element.email
+    }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="country">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Country</mat-header-cell>
+    <mat-cell *matCellDef="let element" data-label="country">{{
+      element.country
+    }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="state">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>State</mat-header-cell>
+    <mat-cell *matCellDef="let element" data-label="state">{{
+      element.state
+    }}</mat-cell>
+  </ng-container> -->
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>
+
+<mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]"> </mat-paginator>

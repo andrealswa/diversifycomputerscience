@@ -76,7 +76,6 @@ export class AboutService {
       .subscribe(en => {
         this.addDataToDatabase({
           ...en,
-          date: new Date(),
           state: "completed"
         });
         this.store.dispatch(new About.StopAbout());

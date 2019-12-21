@@ -26,7 +26,6 @@ export class UserEntryFormComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private db: AngularFirestore) {
     this.entriesCollection = db.collection<Entry>("entries");
-    //this.entryDoc = db.doc<any>("entries/1");
     this.entries = this.entriesCollection.valueChanges();
   }
 
