@@ -38,9 +38,10 @@ import { UserEntryFormComponent } from "./user-entry-form/user-entry-form.compon
     AngularFireModule.initializeApp(environment.firebase),
     AuthModule,
     AngularFirestoreModule,
-    StoreModule.forRoot(reducers)
+    StoreModule.forRoot(reducers),
+    ReactiveFormsModule
   ],
   providers: [AuthService, AboutService, UIService],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
