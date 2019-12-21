@@ -8,9 +8,6 @@
   <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
     <ul fxLayout fxLayoutGap="10px" class="navigation-items">
       <li *ngIf="!(isAuth$ | async)">
-        <a routerLink="/about">About</a>
-      </li>
-      <li *ngIf="!(isAuth$ | async)">
         <a routerLink="/signup">Signup</a>
       </li>
       <li *ngIf="!(isAuth$ | async)">

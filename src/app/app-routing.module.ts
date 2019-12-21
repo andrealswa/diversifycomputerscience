@@ -9,11 +9,6 @@ import { AboutComponent } from "./about/about.component";
 const routes: Routes = [
   { path: "", component: WelcomeComponent },
   {
-    path: "about",
-    loadChildren: "./about/about.module#AboutModule",
-    canLoad: [AuthGuard]
-  },
-  {
     path: "entryform",
     component: UserEntryFormComponent
   }

@@ -26,7 +26,7 @@ export class AuthService {
     this.afAuth.authState.subscribe(user => {
       if (user) {
         this.store.dispatch(new Auth.SetAuthenticated());
-        this.router.navigate(["/about"]);
+        this.router.navigate(["/entryform"]);
       } else {
         this.aboutService.cancelSubscriptions();
         this.store.dispatch(new Auth.SetUnauthenticated());
