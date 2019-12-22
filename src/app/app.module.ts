@@ -14,13 +14,12 @@ import { AppRoutingModule } from "./app-routing.module";
 import { HeaderComponent } from "./navigation/header/header.component";
 import { SidenavListComponent } from "./navigation/sidenav-list/sidenav-list.component";
 import { AuthService } from "./auth/auth.service";
-import { AboutService } from "./about/about.service";
 import { environment } from "../environments/environment";
 import { UIService } from "./shared/ui.service";
 import { AuthModule } from "./auth/auth.module";
 import { reducers } from "./app.reducer";
 import { UserEntryFormComponent } from "./user-entry-form/user-entry-form.component";
-import { TableComponent } from './table/table.component';
+import { TableComponent } from "./table/table.component";
 
 @NgModule({
   declarations: [
@@ -43,7 +42,7 @@ import { TableComponent } from './table/table.component';
     StoreModule.forRoot(reducers),
     ReactiveFormsModule
   ],
-  providers: [AuthService, AboutService, UIService],
+  providers: [AuthService, UIService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

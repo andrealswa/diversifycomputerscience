@@ -6,7 +6,6 @@ import { Store } from "@ngrx/store";
 
 import { User } from "./user.model";
 import { AuthData } from "./auth-data.model";
-import { AboutService } from "../about/about.service";
 import { UIService } from "../shared/ui.service";
 import * as fromRoot from "../app.reducer";
 import * as UI from "../shared/ui.actions";
@@ -17,7 +16,6 @@ export class AuthService {
   constructor(
     private router: Router,
     private afAuth: AngularFireAuth,
-    private aboutService: AboutService,
     private uiService: UIService,
     private store: Store<fromRoot.State>
   ) {}
@@ -28,7 +26,6 @@ export class AuthService {
         this.store.dispatch(new Auth.SetAuthenticated());
         this.router.navigate(["/entryform"]);
       } else {
-        this.aboutService.cancelSubscriptions();
         this.store.dispatch(new Auth.SetUnauthenticated());
         this.router.navigate(["/login"]);
       }
