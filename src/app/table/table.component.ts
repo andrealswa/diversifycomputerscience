@@ -70,35 +70,3 @@ export class TableComponent implements OnInit, AfterViewInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 }
-
-//-----------------------------------------------
-
-/*
-
-  @ViewChild(MatSort, { static: false }) sort: MatSort;
-  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
-
-  constructor(
-    private aboutService: AboutService,
-    private store: Store<fromAbout.State>
-  ) {}
-
-  ngOnInit() {
-    this.store
-      .select(fromAbout.getFinishedAllEntries)
-      .subscribe((allEntries: Entries[]) => {
-        this.dataSource.data = allEntries;
-      });
-    this.aboutService.fetchCompletedOrCancelledAllEntries();
-  }
-
-  ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
-  }
-
-  doFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
-}
-*/

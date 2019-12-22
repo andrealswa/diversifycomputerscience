@@ -18,8 +18,49 @@
                 formControlName="lastName"
               />
             </mat-form-field>
-
-            <br />
+            <mat-form-field class="example-full-width" style="width: 100%">
+              <input matInput placeholder="Email" formControlName="email" />
+            </mat-form-field>
+            <mat-form-field class="example-full-width" style="width: 100%">
+              <input
+                matInput
+                placeholder="Affiliated Institution"
+                formControlName="affiliatedInstitution"
+              />
+            </mat-form-field>
+            <mat-form-field class="example-full-width" style="width: 100%">
+              <input matInput placeholder="Country" formControlName="country" />
+            </mat-form-field>
+            <mat-form-field class="example-full-width" style="width: 100%">
+              <input
+                matInput
+                placeholder="Social Media"
+                formControlName="socialMedia"
+              />
+            </mat-form-field>
+            <mat-form-field class="example-full-width" style="width: 100%">
+              <input matInput placeholder="Self ID" formControlName="selfID" />
+            </mat-form-field>
+            <mat-form-field class="example-full-width" style="width: 100%">
+              <input matInput placeholder="Gender" formControlName="gender" />
+            </mat-form-field>
+            <mat-form-field class="example-full-width" style="width: 100%">
+              <input
+                matInput
+                placeholder="Current Career Stage"
+                formControlName="currentCareerStage"
+              />
+            </mat-form-field>
+            <mat-form-field class="example-full-width" style="width: 100%">
+              <input matInput placeholder="Branch" formControlName="branch" />
+            </mat-form-field>
+            <mat-form-field class="example-full-width" style="width: 100%">
+              <input
+                matInput
+                placeholder="Subfield Keywords"
+                formControlName="subfieldKeywords"
+              />
+            </mat-form-field>
 
             <button type="submit" mat-raised-button color="primary">
               Submit
@@ -29,7 +70,4 @@
       </div>
     </mat-card-content>
   </mat-card>
-  <div *ngFor="let entry of entries | async">
-    {{ entry.firstName }} {{ entry.lastName }}
-  </div>
 </div>
