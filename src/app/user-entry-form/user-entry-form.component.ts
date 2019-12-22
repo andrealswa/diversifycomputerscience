@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder, Validators } from "@angular/forms";
+import { FormBuilder, Validators, FormControl } from "@angular/forms";
 
 // new stuff
 import {
@@ -41,17 +41,17 @@ export class UserEntryFormComponent implements OnInit {
   ngOnInit() {}
 
   userEntryForm = this.fb.group({
-    firstName: [""],
-    lastName: [""],
+    firstName: ["", Validators.required],
+    lastName: ["", Validators.required],
     email: ["", [Validators.email, Validators.required]],
-    affiliatedInstitution: [""],
-    country: [""],
+    affiliatedInstitution: ["", Validators.required],
+    country: ["", Validators.required],
     socialMedia: [""],
-    selfID: [""],
-    gender: [""],
-    currentCareerStage: [""],
-    branch: [""],
-    subfieldKeywords: [""]
+    selfID: ["", Validators.required],
+    gender: ["", Validators.required],
+    currentCareerStage: ["", Validators.required],
+    branch: ["", Validators.required],
+    subfieldKeywords: ["", Validators.required]
   });
 
   submit() {
@@ -67,7 +67,7 @@ export class UserEntryFormComponent implements OnInit {
     let currentCareerStage = this.userEntryForm.get("currentCareerStage").value;
     let branch = this.userEntryForm.get("branch").value;
     let subfieldKeywords = this.userEntryForm.get("subfieldKeywords").value;
-    // console.log(firstName, lastName);
+    console.log(selfID);
     //this.db.collection("entries").add(item);
     this.addEntry(
       firstName,
@@ -114,4 +114,19 @@ export class UserEntryFormComponent implements OnInit {
     };
     this.entriesCollection.doc(id).set(entry);
   }
+
+  selfIDList: string[] = [
+    "Asian",
+    "Indigenous / Native",
+    "Lesbian, Gay, Bisexual, Transgender, Queer",
+    "Multi-Racial",
+    "Other Race",
+    "Person with a Disability",
+    "Black",
+    "Latina / Latino or Hispanic",
+    "Middle Eastern / North African",
+    "Not a Citizen of an Anglophone Country",
+    "Pacific Islander",
+    "Other Non-White Self-Identification"
+  ];
 }

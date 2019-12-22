@@ -4,32 +4,45 @@
       <div fxLayout="column" fxLayoutAlign="space-around stretch">
         <section>
           <form [formGroup]="userEntryForm" (ngSubmit)="submit()">
-            <mat-form-field class="example-full-width" style="width: 100%">
+            <mat-form-field class="example-full-width" style="width: 50%">
               <input
                 matInput
                 placeholder="First Name"
                 formControlName="firstName"
+                required
+              />
+            </mat-form-field>
+            <mat-form-field class="example-full-width" style="width: 50%">
+              <input
+                matInput
+                placeholder="Last Name"
+                formControlName="lastName"
+                required
               />
             </mat-form-field>
             <mat-form-field class="example-full-width" style="width: 100%">
               <input
                 matInput
-                placeholder="Last Name"
-                formControlName="lastName"
+                placeholder="Email"
+                formControlName="email"
+                required
               />
-            </mat-form-field>
-            <mat-form-field class="example-full-width" style="width: 100%">
-              <input matInput placeholder="Email" formControlName="email" />
             </mat-form-field>
             <mat-form-field class="example-full-width" style="width: 100%">
               <input
                 matInput
                 placeholder="Affiliated Institution"
                 formControlName="affiliatedInstitution"
+                required
               />
             </mat-form-field>
             <mat-form-field class="example-full-width" style="width: 100%">
-              <input matInput placeholder="Country" formControlName="country" />
+              <input
+                matInput
+                placeholder="Country"
+                formControlName="country"
+                required
+              />
             </mat-form-field>
             <mat-form-field class="example-full-width" style="width: 100%">
               <input
@@ -39,26 +52,50 @@
               />
             </mat-form-field>
             <mat-form-field class="example-full-width" style="width: 100%">
-              <input matInput placeholder="Self ID" formControlName="selfID" />
+              <!-- <input matInput placeholder="Self ID" formControlName="selfID" /> -->
+              <mat-select
+                placeholder="Self ID"
+                required
+                multiple
+                formControlName="selfID"
+              >
+                <mat-option
+                  *ngFor="let selfID of selfIDList"
+                  [value]="selfID"
+                  >{{ selfID }}</mat-option
+                >
+              </mat-select>
             </mat-form-field>
             <mat-form-field class="example-full-width" style="width: 100%">
-              <input matInput placeholder="Gender" formControlName="gender" />
+              <input
+                matInput
+                placeholder="Gender"
+                formControlName="gender"
+                required
+              />
             </mat-form-field>
             <mat-form-field class="example-full-width" style="width: 100%">
               <input
                 matInput
                 placeholder="Current Career Stage"
                 formControlName="currentCareerStage"
+                required
               />
             </mat-form-field>
             <mat-form-field class="example-full-width" style="width: 100%">
-              <input matInput placeholder="Branch" formControlName="branch" />
+              <input
+                matInput
+                placeholder="Branch"
+                formControlName="branch"
+                required
+              />
             </mat-form-field>
             <mat-form-field class="example-full-width" style="width: 100%">
               <input
                 matInput
                 placeholder="Subfield Keywords"
                 formControlName="subfieldKeywords"
+                required
               />
             </mat-form-field>
 
