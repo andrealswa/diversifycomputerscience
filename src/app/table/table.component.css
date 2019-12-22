@@ -26,6 +26,8 @@ body {
   .mat-table .mat-row {
     border-bottom: 5px solid #ddd;
     display: block;
+    padding-right: 30px;
+    padding-left: 30px;
   }
   /*
   .mat-table .mat-row:nth-child(even) {background: #CCC}
@@ -57,5 +59,15 @@ body {
   }
   .mat-table .mat-cell:first-child {
     margin-top: 4%;
+  }
+  .mat-cell:first-child,
+  .mat-footer-cell:first-child,
+  .mat-header-cell:first-child {
+    padding-left: 0;
+  }
+  .mat-cell:last-child,
+  .mat-footer-cell:last-child,
+  .mat-header-cell:last-child {
+    padding-right: 0;
   }
 }

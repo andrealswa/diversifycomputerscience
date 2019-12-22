@@ -10,15 +10,15 @@ export interface Entry {
   id: string;
   firstName: string;
   lastName: string;
-  // affiliatedInstitution: string;
-  // email: string;
-  // country: string;
-  // socialMedia: string;
-  // selfID: string;
-  // gender: string;
-  // currentCareerStage: string;
-  // branch: string;
-  // subfieldKeywords: string;
+  affiliatedInstitution: string;
+  email: string;
+  country: string;
+  socialMedia: string;
+  selfID: string;
+  gender: string;
+  currentCareerStage: string;
+  branch: string;
+  subfieldKeywords: string;
 }
 
 @Component({
@@ -29,16 +29,16 @@ export interface Entry {
 export class TableComponent implements OnInit, AfterViewInit {
   displayedColumns = [
     "firstName",
-    "lastName"
-    // "affiliatedInstitution",
-    // "email",
-    // "country",
-    // "socialMedia",
-    // "selfID",
-    // "gender",
-    // "currentCareerStage",
-    // "branch",
-    // "subfieldKeywords"
+    "lastName",
+    "affiliatedInstitution",
+    "email",
+    "country",
+    "socialMedia",
+    "selfID",
+    "gender",
+    "currentCareerStage",
+    "branch",
+    "subfieldKeywords"
   ];
   dataSource = new MatTableDataSource<Entry>();
 

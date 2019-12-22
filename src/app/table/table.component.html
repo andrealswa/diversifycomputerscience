@@ -28,6 +28,76 @@
     }}</mat-cell>
   </ng-container>
 
+  <ng-container matColumnDef="affiliatedInstitution">
+    <mat-header-cell *matHeaderCellDef mat-sort-header
+      >Affiliated Insitution</mat-header-cell
+    >
+    <mat-cell *matCellDef="let element" data-label="Affiliated Insitution">{{
+      element.affiliatedInstitution
+    }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
+    <mat-cell *matCellDef="let element" data-label="Email">{{
+      element.email
+    }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="country">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Country</mat-header-cell>
+    <mat-cell *matCellDef="let element" data-label="Country">{{
+      element.country
+    }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="socialMedia">
+    <mat-header-cell *matHeaderCellDef mat-sort-header
+      >Social Media</mat-header-cell
+    >
+    <mat-cell *matCellDef="let element" data-label="Social Media">{{
+      element.socialMedia
+    }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="selfID">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Self ID</mat-header-cell>
+    <mat-cell *matCellDef="let element" data-label="Self ID">{{
+      element.selfID
+    }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="gender">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Gender</mat-header-cell>
+    <mat-cell *matCellDef="let element" data-label="Gender">{{
+      element.gender
+    }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="currentCareerStage">
+    <mat-header-cell *matHeaderCellDef mat-sort-header
+      >Current Career Stage</mat-header-cell
+    >
+    <mat-cell *matCellDef="let element" data-label="Current Career Stage">{{
+      element.currentCareerStage
+    }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="branch">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Branch</mat-header-cell>
+    <mat-cell *matCellDef="let element" data-label="Branch">{{
+      element.branch
+    }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="subfieldKeywords">
+    <mat-header-cell *matHeaderCellDef mat-sort-header
+      >Subfield Keywords</mat-header-cell
+    >
+    <mat-cell *matCellDef="let element" data-label="Subfield Keywords">{{
+      element.subfieldKeywords
+    }}</mat-cell>
+  </ng-container>
+
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
 </mat-table>
