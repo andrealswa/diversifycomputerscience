@@ -41,4 +41,31 @@
   background-size: cover;
 }
 
-/* For centering and limiting the maximum width fo the website to 800px */
+/* For the upper part of the page for view entires */
+.view-entries-font {
+  font-weight: 600;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Bitter", serif;
+  font-size: 1.78571429em;
+  line-height: 1.5em;
+  color: #00274c;
+  font-variant-ligatures: common-ligatures;
+  -webkit-font-smoothing: antialiased;
+  text-align: left;
+}
+
+.view-entries-content {
+  font-weight: 400;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Bitter", serif;
+  font-size: 1em;
+  line-height: 1.5em;
+  color: #00274c;
+  font-variant-ligatures: common-ligatures;
+  -webkit-font-smoothing: antialiased;
+  text-align: left;
+}
