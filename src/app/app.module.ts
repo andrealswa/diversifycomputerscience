@@ -20,6 +20,7 @@ import { AuthModule } from "./auth/auth.module";
 import { reducers } from "./app.reducer";
 import { UserEntryFormComponent } from "./user-entry-form/user-entry-form.component";
 import { TableComponent } from "./table/table.component";
+import { HomeModule } from "./welcome/home/views/home.module";
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { TableComponent } from "./table/table.component";
     AuthModule,
     AngularFirestoreModule,
     StoreModule.forRoot(reducers),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HomeModule
   ],
   providers: [AuthService, UIService],
   bootstrap: [AppComponent]
