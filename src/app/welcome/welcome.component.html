@@ -1,37 +1,179 @@
-<div
-  class="welcome"
-  fxLayout="column"
-  fxLayout.gt-md="row"
-  fxLayoutGap.gt-md="20px"
-  fxLayoutAlign="center center"
->
-  <section>
-    <h1>Diversify Computer Science</h1>
-    <p>
-      Highlighting the diverse community of computer scientists around the
-      globe!
-    </p>
-  </section>
-  <section>
-    <h1>Entries</h1>
-    <p>
-      Explore our directory to help identify diverse chemists for hiring,
-      seminars, colloquia, and awards.
-    </p>
-  </section>
-  <section>
-    <h1>Submit an entry</h1>
-    <p>
-      Sign up for a Diversify Computer Science account or login to begin your
-      self-nomination.
-    </p>
-  </section>
+<div>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Diversify Computer Science</mat-card-title>
+      <mat-card-subtitle
+        >Highlighting the diverse community of computer scientists around the
+        globe!</mat-card-subtitle
+      >
+    </mat-card-header>
+  </mat-card>
 
-  <section>
+  <!-- Row 1, view the entires, submit an entry -->
+  <mat-grid-list
+    class="row-one"
+    [cols]="breakpoint"
+    rowHeight="2:2"
+    (window:resize)="onResize($event)"
+  >
+    <mat-grid-tile
+      ><section>
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title>Entries</mat-card-title>
+            <mat-card-subtitle
+              >Explore our directory to help identify diverse chemists for
+              hiring, seminars, colloquia, and awards.</mat-card-subtitle
+            >
+          </mat-card-header>
+        </mat-card>
+      </section>
+    </mat-grid-tile>
+    <mat-grid-tile
+      ><section>
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title>Submit an entry</mat-card-title>
+            <mat-card-subtitle
+              >Sign up for a Diversify Computer Science account or login to
+              begin your self-nomination.</mat-card-subtitle
+            >
+          </mat-card-header>
+        </mat-card>
+      </section></mat-grid-tile
+    >
+  </mat-grid-list>
+
+  <!-- Row 2, Computer science has... -->
+  <mat-grid-list
+    class="row-two"
+    [cols]="breakpoint"
+    rowHeight="2:2"
+    (window:resize)="onResize($event)"
+  >
+    <mat-grid-tile
+      ><section>
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title
+              >Computer science research has demonstrated that the human brain
+              is capable of coding far more than anyone has ever
+              imagined.</mat-card-title
+            >
+            <mat-card-subtitle>Woooooooooow!</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </section>
+    </mat-grid-tile>
+    <mat-grid-tile
+      ><section>
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title>Picture</mat-card-title>
+            <mat-card-subtitle>Picture</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </section></mat-grid-tile
+    >
+  </mat-grid-list>
+
+  <!-- Row 3, Other studies have shown that a more diverse -->
+  <mat-grid-list
+    class="row-three"
+    [cols]="breakpoint"
+    rowHeight="2:2"
+    (window:resize)="onResize($event)"
+  >
+    <mat-grid-tile
+      ><section>
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title>Picture</mat-card-title>
+            <mat-card-subtitle>Picture</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </section>
+    </mat-grid-tile>
+    <mat-grid-tile
+      ><section>
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title
+              >Other studies have shown that a more diverse group is generated
+              when candidates are identified from a list, rather than selecting
+              based purely on recall.</mat-card-title
+            >
+            <mat-card-subtitle
+              >Diversify Computer Science aims to help symposium organizers,
+              award committees, search committees, etc. identify computer
+              scientists who might diversify their pool.</mat-card-subtitle
+            >
+          </mat-card-header>
+        </mat-card>
+      </section></mat-grid-tile
+    >
+  </mat-grid-list>
+
+  <!-- Row 4, social proof with two testimonials -->
+  <mat-grid-list
+    class="row-four"
+    [cols]="breakpoint"
+    rowHeight="2:2"
+    (window:resize)="onResize($event)"
+  >
+    <mat-grid-tile
+      ><section>
+        <h1>Entries</h1>
+        <p>
+          Explore our directory to help identify diverse chemists for hiring,
+          seminars, colloquia, and awards.
+        </p>
+      </section></mat-grid-tile
+    >
+    <mat-grid-tile
+      ><section>
+        <h1>Submit an entry</h1>
+        <p>
+          Sign up for a Diversify Computer Science account or login to begin
+          your self-nomination.
+        </p>
+      </section></mat-grid-tile
+    >
+  </mat-grid-list>
+
+  <!-- Row 5, twitter feed -->
+  <mat-grid-list
+    class="row-four"
+    [cols]="breakpoint"
+    rowHeight="2:2"
+    (window:resize)="onResize($event)"
+  >
+    <mat-grid-tile
+      ><section>
+        <h1>Twitter Feed</h1>
+        <p>
+          Twitter Feed Twitter Feed Twitter Feed Twitter Feed Twitter Feed
+          Twitter Feed Twitter Feed Twitter Feed Twitter Feed Twitter Feed
+        </p>
+      </section></mat-grid-tile
+    >
+    <mat-grid-tile
+      ><section>
+        <h1>Twitter Feed</h1>
+        <p>
+          Twitter Feed Twitter Feed Twitter Feed Twitter Feed Twitter Feed
+          Twitter Feed Twitter Feed Twitter Feed Twitter Feed Twitter Feed
+        </p>
+      </section></mat-grid-tile
+    >
+  </mat-grid-list>
+
+  <!-- The footer -->
+  <div class="footer-text">
     <h1>Terms</h1>
     <h1>Cookies</h1>
     <h1>Privacy</h1>
     <h1>Contact</h1>
     <h1>© Diversify Computer Science</h1>
-  </section>
+  </div>
 </div>

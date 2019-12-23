@@ -1,3 +1,42 @@
+/* not using this .welcome currently */
 .welcome {
   text-align: center;
+}
+
+.hero-text {
+  background: lightcoral;
+}
+
+.footer-text {
+  background: lightgreen;
+}
+
+.row-one {
+  text-align: center;
+  background: lightblue;
+}
+
+.row-two {
+  text-align: center;
+  background: lightpink;
+}
+
+.row-three {
+  text-align: center;
+  background: lightsalmon;
+}
+
+.row-four {
+  text-align: center;
+  background: lightsalmon;
+}
+
+/* For the Shiba Inu */
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
 }
