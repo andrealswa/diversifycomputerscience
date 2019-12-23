@@ -1,5 +1,6 @@
 <header id="home-header" [ngClass]="{ 'header-fixed': isFixed }">
   <div class="container" fxLayout="row wrap" fxLayoutAlign="start center">
+    <!-- TODO: Implement routing for all links -->
     <div
       class="header-mobile-top"
       fxLayout="row"
@@ -19,60 +20,64 @@
       <button
         mat-button
         id="dashboard-topbtn"
-        class="hometop-btn"
+        class="hometop-btn icon-button"
         [routerLink]="'/'"
       >
-        <strong>View Entires</strong>
+        <mat-icon>search</mat-icon>
+        <strong> <a routerLink="/entryform">View Entries</a></strong>
       </button>
 
       <button
         mat-button
         id="dashboard-topbtn"
-        class="hometop-btn"
+        class="hometop-btn icon-button"
         scrollTo="portfolio-section"
       >
-        <strong>Write an Entry</strong>
+        <mat-icon>edit</mat-icon>
+        <strong><a routerLink="/table">Write an Entry</a></strong>
       </button>
 
       <button
         mat-button
         id="dashboard-topbtn"
-        class="hometop-btn"
-        scrollTo="service-section"
-      >
-        <strong>Login</strong>
-      </button>
-
-      <button
-        mat-button
-        id="dashboard-topbtn"
-        class="hometop-btn"
-        scrollTo="testimonials-section"
-      >
-        <strong>Logout</strong>
-      </button>
-
-      <button
-        mat-button
-        id="dashboard-topbtn"
-        class="hometop-btn"
-        scrollTo="pricings-section"
-      >
-        <strong>Signup</strong>
-      </button>
-
-      <button
-        mat-button
-        id="dashboard-topbtn"
-        class="hometop-btn"
+        class="hometop-btn icon-button"
         scrollTo="contact-section"
       >
-        <strong>Contact</strong>
+        <mat-icon>chat_bubble_outline</mat-icon>
+        <strong><a routerLink="/">Contact</a></strong>
       </button>
 
       <span fxFlex></span>
-      <button mat-button id="dashboard-topbtn" class="hometop-btn icon-button">
-        <mat-icon>person</mat-icon><strong> My Account</strong>
+
+      <button
+        mat-button
+        id="dashboard-topbtn"
+        class="hometop-btn icon-button"
+        scrollTo="service-section"
+      >
+        <mat-icon>person</mat-icon>
+        <strong><a routerLink="/login">Login</a></strong>
+      </button>
+
+      <button
+        mat-button
+        id="dashboard-topbtn"
+        class="hometop-btn icon-button"
+        scrollTo="testimonials-section"
+      >
+        <mat-icon>person_outline</mat-icon>
+        <strong><a routerLink="/">Logout</a></strong>
+      </button>
+      <!-- TODO: implement (click)="onLogout()" functionality -->
+
+      <button
+        mat-button
+        id="dashboard-topbtn"
+        class="hometop-btn icon-button"
+        scrollTo="pricings-section"
+      >
+        <mat-icon>person_add</mat-icon>
+        <strong><a routerLink="/signup">Signup</a></strong>
       </button>
     </div>
   </div>
