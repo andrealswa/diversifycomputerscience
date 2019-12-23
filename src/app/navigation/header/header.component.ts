@@ -6,7 +6,7 @@ import * as fromRoot from "../../app.reducer";
 import { AuthService } from "src/app/auth/auth.service";
 
 @Component({
-  selector: "app-header",
+  selector: "app-my-header",
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.css"]
 })

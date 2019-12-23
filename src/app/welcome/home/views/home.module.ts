@@ -74,6 +74,25 @@ import { SharedMaterialModule } from "../../shared/shared-material.module";
     DemoComponent,
     AllSectionsComponent
   ],
-  providers: [WINDOW_PROVIDERS]
+  providers: [WINDOW_PROVIDERS],
+  exports: [
+    HomeOneComponent,
+    HomeTwoComponent,
+    HeaderComponent,
+    IntroOneComponent,
+    IntroTwoComponent,
+    PortfolioComponent,
+    ServicesComponent,
+    CtaComponent,
+    PricingsComponent,
+    ContactComponent,
+    FooterComponent,
+    TestimonialsComponent,
+    PortfolioCarouselComponent,
+    TestimonialsCarouselComponent,
+    ServicesCarouselComponent,
+    DemoComponent,
+    AllSectionsComponent
+  ]
 })
 export class HomeModule {}
