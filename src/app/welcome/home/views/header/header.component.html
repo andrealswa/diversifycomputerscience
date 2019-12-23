@@ -8,7 +8,7 @@
       fxLayoutAlign="start center"
     >
       <div class="home-logo mr-1">
-        <a href="/"
+        <a routerLink="/"
           ><img src="assets/images/logo-full.png" alt="Egret logo"
         /></a>
       </div>
@@ -17,68 +17,77 @@
       </button>
     </div>
     <div fxFlex class="top-menu">
-      <button
-        mat-button
-        id="dashboard-topbtn"
-        class="hometop-btn icon-button"
-        [routerLink]="'/'"
+      <a routerLink="/table">
+        <button
+          mat-button
+          id="dashboard-topbtn"
+          class="hometop-btn icon-button"
+        >
+          <mat-icon>search</mat-icon>
+          <strong>View Entries</strong>
+        </button></a
       >
-        <mat-icon>search</mat-icon>
-        <strong> <a routerLink="/entryform">View Entries</a></strong>
-      </button>
 
-      <button
-        mat-button
-        id="dashboard-topbtn"
-        class="hometop-btn icon-button"
-        scrollTo="portfolio-section"
+      <a routerLink="/entryform">
+        <button
+          mat-button
+          id="dashboard-topbtn"
+          class="hometop-btn icon-button"
+          scrollTo="portfolio-section"
+        >
+          <mat-icon>edit</mat-icon>
+          <strong>Write an Entry</strong>
+        </button></a
       >
-        <mat-icon>edit</mat-icon>
-        <strong><a routerLink="/table">Write an Entry</a></strong>
-      </button>
-
-      <button
-        mat-button
-        id="dashboard-topbtn"
-        class="hometop-btn icon-button"
-        scrollTo="contact-section"
+      <a routerLink="/">
+        <button
+          mat-button
+          id="dashboard-topbtn"
+          class="hometop-btn icon-button"
+          scrollTo="contact-section"
+        >
+          <mat-icon>chat_bubble_outline</mat-icon>
+          <strong>Contact</strong>
+        </button></a
       >
-        <mat-icon>chat_bubble_outline</mat-icon>
-        <strong><a routerLink="/">Contact</a></strong>
-      </button>
 
       <span fxFlex></span>
 
-      <button
-        mat-button
-        id="dashboard-topbtn"
-        class="hometop-btn icon-button"
-        scrollTo="service-section"
+      <a routerLink="/login">
+        <button
+          mat-button
+          id="dashboard-topbtn"
+          class="hometop-btn icon-button"
+          scrollTo="service-section"
+        >
+          <mat-icon>person</mat-icon>
+          <strong>Login</strong>
+        </button></a
       >
-        <mat-icon>person</mat-icon>
-        <strong><a routerLink="/login">Login</a></strong>
-      </button>
 
-      <button
-        mat-button
-        id="dashboard-topbtn"
-        class="hometop-btn icon-button"
-        scrollTo="testimonials-section"
+      <a routerLink="/">
+        <button
+          mat-button
+          id="dashboard-topbtn"
+          class="hometop-btn icon-button"
+          scrollTo="testimonials-section"
+        >
+          <mat-icon>person_outline</mat-icon>
+          <strong>Logout</strong>
+        </button></a
       >
-        <mat-icon>person_outline</mat-icon>
-        <strong><a routerLink="/">Logout</a></strong>
-      </button>
       <!-- TODO: implement (click)="onLogout()" functionality -->
-
-      <button
-        mat-button
-        id="dashboard-topbtn"
-        class="hometop-btn icon-button"
-        scrollTo="pricings-section"
-      >
-        <mat-icon>person_add</mat-icon>
-        <strong><a routerLink="/signup">Signup</a></strong>
-      </button>
+      <a routerLink="/signup">
+        <button
+          mat-button
+          id="dashboard-topbtn"
+          class="hometop-btn icon-button"
+          scrollTo="pricings-section"
+        >
+          <mat-icon>person_add</mat-icon>
+          <strong>Signup</strong>
+        </button>
+      </a>
     </div>
   </div>
 </header>
