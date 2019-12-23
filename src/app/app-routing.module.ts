@@ -6,6 +6,7 @@ import { AuthGuard } from "./auth/auth.guard";
 import { UserEntryFormComponent } from "./user-entry-form/user-entry-form.component";
 import { TableComponent } from "./table/table.component";
 
+// The highest level routes for our program.
 const routes: Routes = [
   { path: "", component: WelcomeComponent },
   {
