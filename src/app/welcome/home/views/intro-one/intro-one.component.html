@@ -1,0 +1,34 @@
+<section id="intro-section" class="home-intro-section">
+  <div class="container" fxLayout="row" fxLayout.lt-md="column" fxLayoutWrap="nowrap" fxLayoutGap="30px">
+    <div fxFlex="50">
+      <h1 class="home-intro-title">Your complete Angular App Development kit</h1>
+      <div class="home-intro-desc">
+        Egret implements the official Angular Material Design components and built with Angular CLI. <br> No Bootstrap!,
+        No jQuery! and Only TypeScript!
+      </div>
+      <div class="intro-list" fxLayout="column" fxLayoutGap="30px">
+        <div fxFlex="100">
+          <mat-icon color="accent">check</mat-icon><span fxFlex="20px"></span> 100+ Custom Pipes, Directives And Components</div>
+        <div fxFlex="100">
+          <mat-icon color="accent">check</mat-icon><span fxFlex="20px"></span> 4 color Themes and multi language support</div>
+        <div fxFlex="100">
+          <mat-icon color="accent">check</mat-icon><span fxFlex="20px"></span> Super Flexible And Customizable</div>
+      </div>
+      <div fxLayout="row" fxLayout.lt-sm="column">
+        <button mat-raised-button mat-lg-button color="primary" (click)="buyEgret()"><mat-icon>add_shopping_cart</mat-icon> BUY EGRET</button>
+        <span fxFlex="20px"></span>
+        <button mat-raised-button mat-lg-button id="frontend-btn" (click)="getNGLanding()"><mat-icon>get_app</mat-icon> ANGULAR LANDING</button>
+      </div>
+    </div>
+    <span fxFlex.lt-md="30px" fxFlex="0"></span>
+    <div fxFlex="50">
+      <div class="intro-product">
+        <a matRipple class="intro-product-link" href="https://themeforest.net/item/egret-angular-4-material-design-admin-template/20161805?ref=mh_rafi" target="_blank">
+          <div class="price">$24</div>
+          <span class="price-text">Buy From ThemeForest</span>
+        </a>
+        <img mat-card-image src="assets/images/egret-screen.png" [style.margin]="'0 !important'">
+      </div>
+    </div>
+  </div>
+</section>
