@@ -1,5 +1,6 @@
 .home-intro-section {
-  background: url('../../../../assets/images/home-bg.jpg') no-repeat center center;
+  background: url("../../../../../assets/images/home-bg.jpg") no-repeat center
+    center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -27,7 +28,7 @@
 }
 .intro-cta {
   max-width: 180px;
-  margin:  0 auto;
+  margin: 0 auto;
 }
 .intro-product {
   position: relative;
