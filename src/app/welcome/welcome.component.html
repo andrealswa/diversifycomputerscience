@@ -121,24 +121,36 @@
     rowHeight="2:2"
     (window:resize)="onResize($event)"
   >
-    <mat-grid-tile
-      ><section>
-        <h1>Entries</h1>
-        <p>
-          Explore our directory to help identify diverse chemists for hiring,
-          seminars, colloquia, and awards.
-        </p>
-      </section></mat-grid-tile
-    >
-    <mat-grid-tile
-      ><section>
-        <h1>Submit an entry</h1>
-        <p>
-          Sign up for a Diversify Computer Science account or login to begin
-          your self-nomination.
-        </p>
-      </section></mat-grid-tile
-    >
+    <mat-grid-tile>
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title
+            >Professor MEGHAN DUFFY Department of Ecology & Evolutionary Biology
+            University of Michigan</mat-card-title
+          >
+          <mat-card-subtitle
+            >The key is being aware of the biases we have, recognizing when
+            outcomes indicate biases are at work, and working to counter
+            them.</mat-card-subtitle
+          >
+        </mat-card-header>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title
+            >Professor ANNE J. MCNEIL Department of Chemistry University of
+            Michigan</mat-card-title
+          >
+          <mat-card-subtitle
+            >I created this resource because I wanted to bring visibility to
+            those from underrepresented groups in the academic chemistry
+            community.</mat-card-subtitle
+          >
+        </mat-card-header>
+      </mat-card>
+    </mat-grid-tile>
   </mat-grid-list>
 
   <!-- Row 5, twitter feed -->
