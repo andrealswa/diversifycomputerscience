@@ -17,7 +17,7 @@
       </button>
     </div>
     <div fxFlex class="top-menu">
-      <a routerLink="/table">
+      <a routerLink="/table" (click)="toggleMenu()">
         <button
           mat-button
           id="dashboard-topbtn"
@@ -28,7 +28,7 @@
         </button></a
       >
 
-      <a routerLink="/entryform">
+      <a routerLink="/entryform" (click)="toggleMenu()">
         <button
           mat-button
           id="dashboard-topbtn"
@@ -39,7 +39,7 @@
           <strong>Write an Entry</strong>
         </button></a
       >
-      <a routerLink="/">
+      <a routerLink="/" (click)="toggleMenu()">
         <button
           mat-button
           id="dashboard-topbtn"
@@ -53,7 +53,7 @@
 
       <span fxFlex></span>
 
-      <a routerLink="/login">
+      <a routerLink="/login" (click)="toggleMenu()">
         <button
           mat-button
           id="dashboard-topbtn"
@@ -65,7 +65,7 @@
         </button></a
       >
 
-      <a routerLink="/">
+      <a routerLink="/" (click)="toggleMenu()">
         <button
           mat-button
           id="dashboard-topbtn"
@@ -77,7 +77,7 @@
         </button></a
       >
       <!-- TODO: implement (click)="onLogout()" functionality -->
-      <a routerLink="/signup">
+      <a routerLink="/signup" (click)="toggleMenu()">
         <button
           mat-button
           id="dashboard-topbtn"
