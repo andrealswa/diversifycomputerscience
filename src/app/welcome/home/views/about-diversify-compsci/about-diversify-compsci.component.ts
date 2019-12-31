@@ -39,7 +39,7 @@ import { Component, OnInit, Input } from "@angular/core";
           <mat-card class="inner-cards-about">
             <mat-card-title>Highlight Progress:</mat-card-title>
             <mat-card-content>
-              Showcase the increasing range of opportunities becomingavailable
+              Showcase the increasing range of opportunities becoming available
               in computer science.
             </mat-card-content>
           </mat-card>

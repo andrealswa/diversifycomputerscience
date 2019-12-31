@@ -69,3 +69,25 @@
   -webkit-font-smoothing: antialiased;
   text-align: left;
 }
+
+.bg-blue-purple {
+  padding-top: 100px;
+  background: url("../../assets/images/bg-blue-purple.png") no-repeat center
+    center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-bottom: 200px;
+  margin-bottom: -10px;
+}
+
+.bg-yellow-red {
+  background: url("../../assets/images/bg-yellow-red.png") no-repeat center
+    center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-bottom: 200px;
+}

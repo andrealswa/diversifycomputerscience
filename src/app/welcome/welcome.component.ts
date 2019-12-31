@@ -8,12 +8,18 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
   template: `
     <div>
       <app-intro></app-intro>
-      <about-diversify-compsci></about-diversify-compsci>
-      <team-bios></team-bios>
-      <disclaimer></disclaimer>
 
-      <!-- TODO: Questions -->
-      <questions></questions>
+      <!-- For the blue-purple background -->
+      <div class="bg-blue-purple">
+        <about-diversify-compsci></about-diversify-compsci>
+        <team-bios></team-bios>
+      </div>
+
+      <!-- For the yellow-red background -->
+      <div class="bg-yellow-red">
+        <disclaimer></disclaimer>
+        <questions></questions>
+      </div>
 
       <!-- Don't need thing, can change it up a lot -->
       <app-footer></app-footer>
