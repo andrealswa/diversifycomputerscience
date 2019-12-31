@@ -1,106 +1,133 @@
-<div style="height: 100px"></div>
-<div fxLayoutAlign="center center">
-  <mat-form-field fxFlex="40%">
-    <input
-      matInput
-      type="text"
-      (keyup)="doFilter($event.target.value)"
-      placeholder="Filter"
-    />
-  </mat-form-field>
+<div class="background">
+  <div style="height: 100px"></div>
+
+  <mat-table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="firstName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >First Name</mat-header-cell
+      >
+      <mat-cell *matCellDef="let element" data-label="First Name">{{
+        element.firstName
+      }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="lastName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >Last Name</mat-header-cell
+      >
+      <mat-cell *matCellDef="let element" data-label="Last Name">{{
+        element.lastName
+      }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="affiliatedInstitution">
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >Affiliated Insitution</mat-header-cell
+      >
+      <mat-cell *matCellDef="let element" data-label="Affiliated Insitution">{{
+        element.affiliatedInstitution
+      }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
+      <mat-cell *matCellDef="let element" data-label="Email">{{
+        element.email
+      }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="country">
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >Country</mat-header-cell
+      >
+      <mat-cell *matCellDef="let element" data-label="Country">{{
+        element.country
+      }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="socialMedia">
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >Social Media</mat-header-cell
+      >
+      <mat-cell *matCellDef="let element" data-label="Social Media">{{
+        element.socialMedia
+      }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="selfID">
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >Self ID</mat-header-cell
+      >
+      <mat-cell *matCellDef="let element" data-label="Self ID">{{
+        element.selfID
+      }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="gender">
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >Gender</mat-header-cell
+      >
+      <mat-cell *matCellDef="let element" data-label="Gender">{{
+        element.gender
+      }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="currentCareerStage">
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >Career Stage</mat-header-cell
+      >
+      <mat-cell *matCellDef="let element" data-label="Current Career Stage">{{
+        element.currentCareerStage
+      }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="branch">
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >Branch</mat-header-cell
+      >
+      <mat-cell *matCellDef="let element" data-label="Branch">{{
+        element.branch
+      }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="subfieldKeywords">
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >Subfield Keywords</mat-header-cell
+      >
+      <mat-cell *matCellDef="let element" data-label="Subfield Keywords">{{
+        element.subfieldKeywords
+      }}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+
+  <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]">
+  </mat-paginator>
+
+  <div fxLayoutAlign="center center">
+    <mat-card class="filter-card" fxLayoutAlign="center center">
+      <mat-form-field fxFlex="95%">
+        <input
+          matInput
+          type="text"
+          (keyup)="doFilter($event.target.value)"
+          placeholder="Filter"
+        />
+      </mat-form-field>
+    </mat-card>
+  </div>
+
+  <div fxLayoutAlign="center center">
+    <mat-card class="filter-card" fxLayoutAlign="center center">
+      <mat-card-header>
+        <mat-card-title>Useful Search Terms:</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content
+        >Male, Female, Indigenous / Native, Multi Racial, Black, Asian,
+        Latino/Latina or Hispanic, LGBTQ+</mat-card-content
+      >
+    </mat-card>
+  </div>
 </div>
-
-<mat-table [dataSource]="dataSource" matSort>
-  <ng-container matColumnDef="firstName">
-    <mat-header-cell *matHeaderCellDef mat-sort-header
-      >First Name</mat-header-cell
-    >
-    <mat-cell *matCellDef="let element" data-label="First Name">{{
-      element.firstName
-    }}</mat-cell>
-  </ng-container>
-
-  <ng-container matColumnDef="lastName">
-    <mat-header-cell *matHeaderCellDef mat-sort-header
-      >Last Name</mat-header-cell
-    >
-    <mat-cell *matCellDef="let element" data-label="Last Name">{{
-      element.lastName
-    }}</mat-cell>
-  </ng-container>
-
-  <ng-container matColumnDef="affiliatedInstitution">
-    <mat-header-cell *matHeaderCellDef mat-sort-header
-      >Affiliated Insitution</mat-header-cell
-    >
-    <mat-cell *matCellDef="let element" data-label="Affiliated Insitution">{{
-      element.affiliatedInstitution
-    }}</mat-cell>
-  </ng-container>
-
-  <ng-container matColumnDef="email">
-    <mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
-    <mat-cell *matCellDef="let element" data-label="Email">{{
-      element.email
-    }}</mat-cell>
-  </ng-container>
-
-  <ng-container matColumnDef="country">
-    <mat-header-cell *matHeaderCellDef mat-sort-header>Country</mat-header-cell>
-    <mat-cell *matCellDef="let element" data-label="Country">{{
-      element.country
-    }}</mat-cell>
-  </ng-container>
-
-  <ng-container matColumnDef="socialMedia">
-    <mat-header-cell *matHeaderCellDef mat-sort-header
-      >Social Media</mat-header-cell
-    >
-    <mat-cell *matCellDef="let element" data-label="Social Media">{{
-      element.socialMedia
-    }}</mat-cell>
-  </ng-container>
-
-  <ng-container matColumnDef="selfID">
-    <mat-header-cell *matHeaderCellDef mat-sort-header>Self ID</mat-header-cell>
-    <mat-cell *matCellDef="let element" data-label="Self ID">{{
-      element.selfID
-    }}</mat-cell>
-  </ng-container>
-
-  <ng-container matColumnDef="gender">
-    <mat-header-cell *matHeaderCellDef mat-sort-header>Gender</mat-header-cell>
-    <mat-cell *matCellDef="let element" data-label="Gender">{{
-      element.gender
-    }}</mat-cell>
-  </ng-container>
-
-  <ng-container matColumnDef="currentCareerStage">
-    <mat-header-cell *matHeaderCellDef mat-sort-header
-      >Career Stage</mat-header-cell
-    >
-    <mat-cell *matCellDef="let element" data-label="Current Career Stage">{{
-      element.currentCareerStage
-    }}</mat-cell>
-  </ng-container>
-
-  <ng-container matColumnDef="branch">
-    <mat-header-cell *matHeaderCellDef mat-sort-header>Branch</mat-header-cell>
-    <mat-cell *matCellDef="let element" data-label="Branch">{{
-      element.branch
-    }}</mat-cell>
-  </ng-container>
-  <ng-container matColumnDef="subfieldKeywords">
-    <mat-header-cell *matHeaderCellDef mat-sort-header
-      >Subfield Keywords</mat-header-cell
-    >
-    <mat-cell *matCellDef="let element" data-label="Subfield Keywords">{{
-      element.subfieldKeywords
-    }}</mat-cell>
-  </ng-container>
-
-  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
-</mat-table>
-
-<mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]"> </mat-paginator>

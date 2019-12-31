@@ -71,3 +71,18 @@ body {
     padding-right: 0;
   }
 }
+
+.background {
+  background: url("../../assets/images/home-bg.png") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+}
+
+.filter-card {
+  margin-top: 20px;
+  width: 95%;
+  max-width: 700px;
+}
