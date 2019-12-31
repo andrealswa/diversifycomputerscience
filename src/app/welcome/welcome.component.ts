@@ -10,8 +10,12 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
       <app-intro></app-intro>
       <about-diversify-compsci></about-diversify-compsci>
       <team-bios></team-bios>
-      <app-testimonials-carousel></app-testimonials-carousel>
-      <app-cta></app-cta>
+      <disclaimer></disclaimer>
+
+      <!-- TODO: Questions -->
+      <questions></questions>
+
+      <!-- Don't need thing, can change it up a lot -->
       <app-footer></app-footer>
     </div>
   `

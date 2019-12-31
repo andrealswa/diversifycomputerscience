@@ -8,8 +8,8 @@ import { Component, OnInit, OnDestroy } from "@angular/core";
       <app-intro></app-intro>
       <about-diversify-compsci></about-diversify-compsci>
       <team-bios></team-bios>
-      <app-testimonials-carousel></app-testimonials-carousel>
-      <app-cta></app-cta>
+      <disclaimer></disclaimer>
+      <questions></questions>
       <app-pricings></app-pricings>
       <app-contact [backgroundGray]="true"></app-contact>
       <app-footer></app-footer>

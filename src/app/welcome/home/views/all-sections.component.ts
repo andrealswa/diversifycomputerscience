@@ -14,8 +14,8 @@ import { scrollTo } from "../../shared/helpers/utils";
       <team-bios></team-bios>
       <app-services-carousel></app-services-carousel>
       <app-testimonials [backgroundGray]="true"></app-testimonials>
-      <app-testimonials-carousel></app-testimonials-carousel>
-      <app-cta></app-cta>
+      <disclaimer></disclaimer>
+      <questions></questions>
       <app-pricings></app-pricings>
       <app-contact [backgroundGray]="true"></app-contact>
       <app-footer></app-footer>
