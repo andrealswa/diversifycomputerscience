@@ -10,12 +10,15 @@
   -webkit-transition: padding 0.3s linear;
   z-index: 999;
 }
+
 #home-header > .container {
   height: auto;
 }
+
 .hometop-btn:hover ::ng-deep .mat-button-focus-overlay {
   display: none;
 }
+
 #home-header:not(.header-fixed) .hometop-btn ::ng-deep .mat-button-ripple {
   top: -22px;
   bottom: -22px;
@@ -31,12 +34,15 @@
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
   animation: 0.6s slideDown forwards;
 }
+
 .header-fixed .container {
   height: 60px !important;
 }
+
 .header-fixed .hometop-btn {
   line-height: 60px !important;
 }
+
 .home-logo {
   display: flex;
   align-items: center;
@@ -44,12 +50,14 @@
     display: inherit;
   }
 }
+
 #menu-toggle {
   display: none;
   position: absolute;
   right: 5px;
   top: 10px;
 }
+
 .icon-button {
   .mat-icon {
     font-size: 20px;
@@ -93,6 +101,7 @@
   }
 }
 
+// For all views, set the color of the text to white.
 .black-text {
   -webkit-font-smoothing: antialiased;
   color: rgb(255, 255, 255);
@@ -102,6 +111,7 @@
   font-size: 16px;
 }
 
+// For all views, set the maximum size of the image.
 .limit-image-size {
   max-width: 200px;
 }
