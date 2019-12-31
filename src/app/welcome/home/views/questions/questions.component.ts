@@ -12,15 +12,28 @@ import { Component, OnInit } from "@angular/core";
             <mat-card-header>
               <mat-card-title>Questions:</mat-card-title>
             </mat-card-header>
+
             <mat-card-content>
               If you have any comments, concerns, suggestions or questions about
-              Diversify Computer Science, please contact us {{ here }}.
+              Diversify Computer Science, please contact us.
             </mat-card-content>
+
             <mat-card-content>
               This resourced is maintained entirely by volunteers. While best
               efforts will bemade to attend to your message in a timely fashion,
               your patience is very much appreciated.
             </mat-card-content>
+
+            <div fxLayoutAlign="center center">
+              <button
+                mat-raised-button
+                mat-lg-button
+                color=""
+                class="contact-us-button"
+              >
+                <mat-icon>chat_bubble_outline</mat-icon> Contact Us
+              </button>
+            </div>
           </mat-card>
         </div>
       </mat-card>

@@ -4,21 +4,28 @@
 }
 
 .container {
-  margin-top: -30px;
+  margin-top: 10px;
   max-width: 650px;
-  height: 273px;
+  height: 375px;
 
-  background: url("../../../../../assets/images/home-bg.png") no-repeat center
-    center;
+  background: url("../../../../../assets/images/bg-questions.png") no-repeat
+    center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 
-  background-color: #f5d600;
+  // background-color: #f5d600;
   margin-bottom: 233px;
 }
 
 .inner-cards-team-bios {
   margin-top: 30px;
+}
+
+.contact-us-button {
+  color: rgb(20, 20, 20);
+  background-color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
