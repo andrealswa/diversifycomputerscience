@@ -73,7 +73,7 @@ body {
 }
 
 .background {
-  background: url("../../assets/images/home-bg.png") no-repeat center center;
+  background: url("../../assets/images/bg-table.png") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -85,4 +85,29 @@ body {
   margin-top: 20px;
   width: 95%;
   max-width: 700px;
+}
+
+.table-body {
+  width: 98%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-card {
+  margin-top: 20px;
+  width: 95%;
+  max-width: 700px;
+  height: 500px;
+
+  background: url("../../assets/images/bg-about.png") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  background-color: white;
+}
+
+.search-card-item {
+  margin-top: 5px;
 }
