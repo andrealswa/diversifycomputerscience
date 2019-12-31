@@ -26,14 +26,8 @@ import { IntroOneComponent } from "./intro-one/intro-one.component";
 import { PortfolioComponent } from "./about-diversify-compsci/about-diversify-compsci.component";
 import { ServicesComponent } from "./team-bios/team-bios.component";
 import { CtaComponent } from "./questions/questions.component";
-import { PricingsComponent } from "./pricings/pricings.component";
-import { ContactComponent } from "./contact/contact.component";
 import { FooterComponent } from "./footer/footer.component";
-import { TestimonialsComponent } from "./testimonials/testimonials.component";
-import { PortfolioCarouselComponent } from "./portfolio-carousel/portfolio-carousel.component";
 import { TestimonialsCarouselComponent } from "./disclaimer/disclaimer.component";
-import { ServicesCarouselComponent } from "./services-carousel/services-carousel.component";
-import { DemoComponent } from "./demo/demo.component";
 import { AllSectionsComponent } from "./all-sections.component";
 
 import { WINDOW_PROVIDERS } from "../../shared/helpers/window.helper";
@@ -62,14 +56,8 @@ import { SharedMaterialModule } from "../../shared/shared-material.module";
     PortfolioComponent,
     ServicesComponent,
     CtaComponent,
-    PricingsComponent,
-    ContactComponent,
     FooterComponent,
-    TestimonialsComponent,
-    PortfolioCarouselComponent,
     TestimonialsCarouselComponent,
-    ServicesCarouselComponent,
-    DemoComponent,
     AllSectionsComponent
   ],
   providers: [WINDOW_PROVIDERS],
@@ -81,14 +69,8 @@ import { SharedMaterialModule } from "../../shared/shared-material.module";
     PortfolioComponent,
     ServicesComponent,
     CtaComponent,
-    PricingsComponent,
-    ContactComponent,
     FooterComponent,
-    TestimonialsComponent,
-    PortfolioCarouselComponent,
     TestimonialsCarouselComponent,
-    ServicesCarouselComponent,
-    DemoComponent,
     AllSectionsComponent
   ]
 })

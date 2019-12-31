@@ -10,8 +10,6 @@ import { Component, OnInit, OnDestroy } from "@angular/core";
       <team-bios></team-bios>
       <disclaimer></disclaimer>
       <questions></questions>
-      <app-pricings></app-pricings>
-      <app-contact [backgroundGray]="true"></app-contact>
       <app-footer></app-footer>
     </div>
   `

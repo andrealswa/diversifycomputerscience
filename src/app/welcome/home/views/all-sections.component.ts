@@ -7,17 +7,10 @@ import { scrollTo } from "../../shared/helpers/utils";
     <div class="landing">
       <app-header></app-header>
       <div style="height: 80px; width: 100%"></div>
-      <about-diversify-compsci
-        [backgroundGray]="true"
-      ></about-diversify-compsci>
-      <app-portfolio-carousel></app-portfolio-carousel>
+      <about-diversify-compsci></about-diversify-compsci>
       <team-bios></team-bios>
-      <app-services-carousel></app-services-carousel>
-      <app-testimonials [backgroundGray]="true"></app-testimonials>
       <disclaimer></disclaimer>
       <questions></questions>
-      <app-pricings></app-pricings>
-      <app-contact [backgroundGray]="true"></app-contact>
       <app-footer></app-footer>
     </div>
   `
