@@ -3,6 +3,13 @@
   max-width: 800px;
   height: 615px;
 
+  background: url("../../../../../assets/images/home-bg.png") no-repeat center
+    center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
   background-color: #c058fe;
 }
 

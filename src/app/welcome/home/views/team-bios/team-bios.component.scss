@@ -7,8 +7,14 @@
   margin-top: -40px;
   max-width: 700px;
   height: 406px;
+  background: url("../../../../../assets/images/home-bg.png") no-repeat center
+    center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   background-color: #51c9ff;
-  margin-bottom: 300px;
+  margin-bottom: 200px;
 }
 
 .inner-cards-team-bios {
