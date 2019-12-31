@@ -5,54 +5,42 @@
     fxLayout.lt-md="column"
     fxLayoutWrap="nowrap"
     fxLayoutGap="30px"
+    fxLayoutAlign="center center"
   >
-    <div fxFlex="50">
-      <h1 class="home-intro-title">Diversify Computer Science</h1>
-      <div class="home-intro-desc">
-        Highlighting the Diverse Community of Computer Scientists.<br />
-      </div>
-      <div class="intro-list" fxLayout="column" fxLayoutGap="30px">
-        <div fxFlex="100">
-          <mat-icon color="">search</mat-icon
-          ><span fxFlex="20px"></span>Nominate yourself to be part of the list
+    <mat-card class="middle-container">
+      <div fxFlex="">
+        <h1 class="home-intro-title">Diversify Computer Science</h1>
+        <div class="home-intro-desc">
+          Highlighting the Diverse Community of Computer Scientists.<br />
         </div>
-        <div fxFlex="100">
-          <mat-icon color="">person_add</mat-icon><span fxFlex="20px"></span>
-          Browse the list to identify participants with diverse perspectives
+        <div class="intro-list" fxLayout="column" fxLayoutGap="30px">
+          <div fxFlex="100">
+            <mat-icon color="">search</mat-icon
+            ><span fxFlex="20px"></span>Nominate yourself to be part of the list
+          </div>
+          <div fxFlex="100">
+            <mat-icon color="">person_add</mat-icon><span fxFlex="20px"></span>
+            Browse the list to identify participants with diverse perspectives
+          </div>
+          <div fxFlex="100">
+            <mat-icon color="">public</mat-icon><span fxFlex="20px"></span>Learn
+            more about Diversify CompSci and our mission
+          </div>
         </div>
-        <div fxFlex="100">
-          <mat-icon color="">public</mat-icon><span fxFlex="20px"></span>Learn
-          more about Diversify CompSci and our mission
-        </div>
-      </div>
-      <div fxLayout="row" fxLayout.lt-sm="column">
-        <button mat-raised-button mat-lg-button color="primary">
-          <mat-icon>check_circle_outline</mat-icon> Create My Account
-        </button>
-        <span fxFlex="20px"></span>
-        <button mat-raised-button mat-lg-button id="frontend-btn">
-          <mat-icon>code</mat-icon>Login
-        </button>
-      </div>
-    </div>
-    <span fxFlex.lt-md="30px" fxFlex="0"></span>
-    <div fxFlex="50">
-      <div class="intro-product">
         <div
-          matRipple
-          class="intro-product-link"
-          href="https://themeforest.net/item/egret-angular-4-material-design-admin-template/20161805?ref=mh_rafi"
-          target="_blank"
+          fxLayout="row"
+          fxLayout.lt-sm="column"
+          fxLayoutAlign="center center"
         >
-          <div class="price"></div>
-          <span class="price-text"></span>
+          <button mat-raised-button mat-lg-button color="primary">
+            <mat-icon>check_circle_outline</mat-icon> Create My Account
+          </button>
+          <span fxFlex="20px"></span>
+          <button mat-raised-button mat-lg-button id="frontend-btn">
+            <mat-icon>code</mat-icon>Login
+          </button>
         </div>
-        <img
-          mat-card-image
-          src="assets/images/egret-screen.png"
-          [style.margin]="'0 !important'"
-        />
       </div>
-    </div>
+    </mat-card>
   </div>
 </section>

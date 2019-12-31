@@ -23,7 +23,6 @@ import { HomeOneComponent } from "./home-one.component";
 import { HomeTwoComponent } from "./home-two.component";
 import { HeaderComponent } from "./header/header.component";
 import { IntroOneComponent } from "./intro-one/intro-one.component";
-import { IntroTwoComponent } from "./intro-two/intro-two.component";
 import { PortfolioComponent } from "./about-diversify-compsci/about-diversify-compsci.component";
 import { ServicesComponent } from "./team-bios/team-bios.component";
 import { CtaComponent } from "./questions/questions.component";
@@ -60,7 +59,6 @@ import { SharedMaterialModule } from "../../shared/shared-material.module";
     HomeTwoComponent,
     HeaderComponent,
     IntroOneComponent,
-    IntroTwoComponent,
     PortfolioComponent,
     ServicesComponent,
     CtaComponent,
@@ -80,7 +78,6 @@ import { SharedMaterialModule } from "../../shared/shared-material.module";
     HomeTwoComponent,
     HeaderComponent,
     IntroOneComponent,
-    IntroTwoComponent,
     PortfolioComponent,
     ServicesComponent,
     CtaComponent,
