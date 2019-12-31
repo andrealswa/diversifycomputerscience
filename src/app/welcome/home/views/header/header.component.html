@@ -126,7 +126,7 @@
     </mat-nav-list>
   </mat-sidenav>
 
-  <mat-sidenav-content class="">
+  <mat-sidenav-content>
     <mat-toolbar color="primary" class="top-navigation-menu">
       <!-- Top navigation bar items -->
       <div class="home-logo mr-1">
@@ -143,8 +143,8 @@
 
       <!-- Magnifying glass, view entries -->
       <div class="top-navigation-link hide-when-mobile">
-        <a class="link-color" routerLink="/table">
-          <button mat-button class="remove-orange-border">
+        <a class="link-color " routerLink="/table">
+          <button mat-button class="remove-orange-border text-shadow">
             <mat-icon>search</mat-icon>
             <strong>View Entries</strong>
           </button>
@@ -154,7 +154,7 @@
       <!-- Pencil, write an entry -->
       <div class="top-navigation-link hide-when-mobile">
         <a class="link-color" routerLink="/entryform">
-          <button mat-button class="remove-orange-border">
+          <button mat-button class="remove-orange-border text-shadow">
             <mat-icon>edit</mat-icon>
             <strong>Write an Entry</strong>
           </button>
@@ -164,7 +164,7 @@
       <!-- Text bubble, contact -->
       <div class="top-navigation-link hide-when-mobile">
         <a class="link-color" routerLink="/">
-          <button mat-button class="remove-orange-border">
+          <button mat-button class="remove-orange-border text-shadow">
             <mat-icon>chat_bubble_outline</mat-icon>
             <strong>Contact</strong>
           </button></a
@@ -182,5 +182,8 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
     </mat-toolbar>
+
+    <!-- ng-content is where the rest of the website will go -->
+    <ng-content></ng-content>
   </mat-sidenav-content>
 </mat-sidenav-container>

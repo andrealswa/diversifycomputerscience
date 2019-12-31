@@ -1,0 +1,15 @@
+yellow:
+f5d600
+f5d600ff
+
+red:
+ed4b6c
+ed4b6cff
+
+blue:
+51c9ff
+51c9ffff
+
+purple:
+c058fe
+c058feff

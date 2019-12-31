@@ -6,17 +6,16 @@ import { AuthService } from "./auth/auth.service";
   selector: "app-root",
   styleUrls: ["./app.component.scss"],
   template: `
-    <mat-sidenav-container>
-      <mat-sidenav #sidenav role="navigation">
-        <app-sidenav-list (closeSidenav)="sidenav.close()"></app-sidenav-list>
-      </mat-sidenav>
-      <mat-sidenav-content>
-        <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
+    <div>
+      <!-- The app livings within hte ng-contnet of the navigation bar -->
+      <!-- This is so the modal darkening works properly -->
+      <app-header (sidenavToggle)="sidenav.toggle()">
         <main>
           <router-outlet></router-outlet>
         </main>
-      </mat-sidenav-content>
-    </mat-sidenav-container>
+      </app-header>
+      <div></div>
+    </div>
   `
 })
 export class AppComponent implements OnInit {
