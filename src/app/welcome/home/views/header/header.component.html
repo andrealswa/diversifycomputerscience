@@ -85,7 +85,7 @@
   </div>
 </header> -->
 
-<mat-sidenav-container class="sidenav-container">
+<mat-sidenav-container class="sidenav-container nav-container">
   <mat-sidenav
     #drawer
     class="sidenav"
@@ -95,25 +95,39 @@
     [opened]="(isHandset$ | async) === false"
   >
     <!-- Side navigation items -->
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar>Diversify CompSci</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+      <a
+        mat-list-item
+        class="link-color-side-nav top-navigation-link link-color-side-nav"
+        routerLink="/table"
+      >
+        <mat-icon>search</mat-icon>
+        <strong>View Entries</strong>
+      </a>
+
+      <a
+        mat-list-item
+        class="link-color-side-nav top-navigation-link link-color-side-nav"
+        routerLink="/entryform"
+      >
+        <mat-icon>edit</mat-icon>
+        <strong>Write an Entry</strong>
+      </a>
+
+      <a
+        mat-list-item
+        class="link-color-side-nav top-navigation-link link-color-side-nav"
+        routerLink="/"
+      >
+        <mat-icon>chat_bubble_outline</mat-icon>
+        <strong>Contact</strong>
+      </a>
     </mat-nav-list>
   </mat-sidenav>
 
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async"
-      >
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
+  <mat-sidenav-content class="">
+    <mat-toolbar color="primary" class="top-navigation-menu">
       <!-- Top navigation bar items -->
       <div class="home-logo mr-1">
         <a routerLink="/"
@@ -123,26 +137,50 @@
             class="limit-image-size"
         /></a>
       </div>
+
+      <!-- Push everything to the right -->
       <span class="spacer"></span>
-      <div class="top-navigation-link">
-        <button mat-button class="remove-orange-border">
-          <mat-icon>search</mat-icon>
-          <strong>View Entries</strong>
-        </button>
-        <a routerLink="/table">
-          <button
-            mat-button
-            id="dashboard-topbtn"
-            class="hometop-btn icon-button black-text"
-          >
+
+      <!-- Magnifying glass, view entries -->
+      <div class="top-navigation-link hide-when-mobile">
+        <a class="link-color" routerLink="/table">
+          <button mat-button class="remove-orange-border">
             <mat-icon>search</mat-icon>
             <strong>View Entries</strong>
           </button>
         </a>
       </div>
-      <a class="top-navigation-link" mat-list-item href="#">Link 2</a>
-      <a class="top-navigation-link" mat-list-item href="#">Link 3</a>
+
+      <!-- Pencil, write an entry -->
+      <div class="top-navigation-link hide-when-mobile">
+        <a class="link-color" routerLink="/entryform">
+          <button mat-button class="remove-orange-border">
+            <mat-icon>edit</mat-icon>
+            <strong>Write an Entry</strong>
+          </button>
+        </a>
+      </div>
+
+      <!-- Text bubble, contact -->
+      <div class="top-navigation-link hide-when-mobile">
+        <a class="link-color" routerLink="/">
+          <button mat-button class="remove-orange-border">
+            <mat-icon>chat_bubble_outline</mat-icon>
+            <strong>Contact</strong>
+          </button></a
+        >
+      </div>
+
+      <!-- Hamburger Menu -->
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
     </mat-toolbar>
-    <!-- Add Content Here -->
   </mat-sidenav-content>
 </mat-sidenav-container>

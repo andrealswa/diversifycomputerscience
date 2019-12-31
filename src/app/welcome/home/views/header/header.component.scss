@@ -159,3 +159,30 @@
   outline: none;
   border: 0;
 }
+
+// Need to make white against the yellow, purple, red background.
+.link-color {
+  color: white;
+}
+
+// Need to make black since the sidenav is white.
+.link-color-side-nav {
+  color: rgb(40, 40, 40);
+}
+
+// changes blue to transparent.
+.top-navigation-menu {
+  background-color: rgba(255, 0, 0, 0);
+}
+
+// bumps up the navbar, removes white
+.nav-container {
+  margin-bottom: -100px;
+  background-color: rgba(255, 0, 0, 0);
+}
+
+@media (max-width: 768px) {
+  .hide-when-mobile {
+    display: none;
+  }
+}
