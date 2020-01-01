@@ -21,7 +21,7 @@ import { Component, OnInit, Input } from "@angular/core";
 
         <div>
           <mat-card class="inner-cards-about">
-            <mat-card-title>Increase Visibility:</mat-card-title>
+            <mat-card-title>Increase Visibility</mat-card-title>
             <mat-card-content>
               Help to bridge the gap between the need for and the availability
               of diverse perspectives in the field.
@@ -30,7 +30,7 @@ import { Component, OnInit, Input } from "@angular/core";
         </div>
         <div>
           <mat-card class="inner-cards-about">
-            <mat-card-title>Build Communities:</mat-card-title>
+            <mat-card-title>Build Communities</mat-card-title>
             <mat-card-content>
               Offer more opportunities for professionals to connect with each
               other and develop strong networks.
@@ -39,7 +39,7 @@ import { Component, OnInit, Input } from "@angular/core";
         </div>
         <div>
           <mat-card class="inner-cards-about">
-            <mat-card-title>Highlight Progress:</mat-card-title>
+            <mat-card-title>Highlight Progress</mat-card-title>
             <mat-card-content>
               Showcase the increasing range of opportunities becoming available
               in computer science.

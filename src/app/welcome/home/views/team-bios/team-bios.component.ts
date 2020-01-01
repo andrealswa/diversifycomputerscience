@@ -5,13 +5,13 @@ import { Component, OnInit, Input } from "@angular/core";
   styleUrls: ["./team-bios.component.scss"],
   template: `
     <section>
-      <mat-card class="container">
+      <mat-card class="container container-outline">
         <div>
           <mat-card class="inner-cards-team-bios">
             <mat-card-header>
               <div mat-card-avatar class="example-header-image"></div>
-              <mat-card-title>Team Bios:</mat-card-title>
-              <mat-card-subtitle>Summary:</mat-card-subtitle>
+              <mat-card-title>Team Bios</mat-card-title>
+              <mat-card-subtitle>Summary</mat-card-subtitle>
             </mat-card-header>
             <mat-card-content>
               Our team consists entirely of undergraduate students from the
@@ -25,7 +25,7 @@ import { Component, OnInit, Input } from "@angular/core";
           <mat-card class="inner-cards-team-bios">
             <mat-card-header>
               <div mat-card-avatar class="example-header-image"></div>
-              <mat-card-title>Aislyn:</mat-card-title>
+              <mat-card-title>Aislyn</mat-card-title>
               <mat-card-subtitle></mat-card-subtitle>
             </mat-card-header>
             <mat-card-content>

@@ -6,11 +6,12 @@ import { Component, OnInit, Input } from "@angular/core";
   styleUrls: ["./disclaimer.component.scss"],
   template: `
     <section>
-      <mat-card class="container">
+      <div style="height: 100px"></div>
+      <mat-card class="container container-outline">
         <div>
           <mat-card class="inner-cards-team-bios">
             <mat-card-header>
-              <mat-card-title>Disclaimer:</mat-card-title>
+              <mat-card-title>Disclaimer</mat-card-title>
             </mat-card-header>
             <mat-card-content>
               Participants on this list are exclusively self-nominated. All

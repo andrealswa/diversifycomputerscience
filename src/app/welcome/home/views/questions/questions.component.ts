@@ -6,11 +6,11 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./questions.component.scss"],
   template: `
     <section>
-      <mat-card class="container">
+      <mat-card class="container container-outline">
         <div>
           <mat-card class="inner-cards-team-bios">
             <mat-card-header>
-              <mat-card-title>Questions:</mat-card-title>
+              <mat-card-title>Questions</mat-card-title>
             </mat-card-header>
 
             <mat-card-content>
