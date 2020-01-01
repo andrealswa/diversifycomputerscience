@@ -171,13 +171,42 @@
         >
       </div>
 
+      <!-- Person, Login -->
+
+      <div class="top-navigation-link hide-when-mobile">
+        <a class="link-color" routerLink="/">
+          <button mat-button class="remove-orange-border text-shadow">
+            <mat-icon>person</mat-icon>
+            <strong>Login</strong>
+          </button></a
+        >
+      </div>
+
+      <div class="top-navigation-link hide-when-mobile">
+        <a class="link-color" routerLink="/">
+          <button mat-button class="remove-orange-border text-shadow">
+            <mat-icon>person_outline</mat-icon>
+            <strong>Logout</strong>
+          </button></a
+        >
+      </div>
+
+      <div class="top-navigation-link hide-when-mobile">
+        <a class="link-color" routerLink="/">
+          <button mat-button class="remove-orange-border text-shadow">
+            <mat-icon>person_add</mat-icon>
+            <strong>Signup</strong>
+          </button></a
+        >
+      </div>
+
       <!-- Hamburger Menu -->
       <button
         type="button"
         aria-label="Toggle sidenav"
         mat-icon-button
         (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async"
+        class="hamburger-hide"
       >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>

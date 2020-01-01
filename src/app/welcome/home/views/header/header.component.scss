@@ -137,13 +137,6 @@
   z-index: 1;
 }
 
-// taken from max tutorial
-@media (min-width: 768px) {
-  .sidenav {
-    display: none;
-  }
-}
-
 .spacer {
   flex: 1 1 auto;
 }
@@ -191,8 +184,22 @@
   background-color: rgba(255, 255, 255, 0);
 }
 
-@media (max-width: 768px) {
+$break-point: 900px;
+@media (max-width: $break-point) {
   .hide-when-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: $break-point) {
+  .hamburger-hide {
+    display: none;
+  }
+}
+
+// taken from max tutorial
+@media (min-width: $break-point) {
+  .sidenav {
     display: none;
   }
 }
