@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
 .container {
   margin-top: 10px;
   max-width: 800px;
@@ -13,6 +16,34 @@
   // background-color: #c058fe;
 }
 
+//Outline effects to stand out properly.
+.container-outline {
+  border: 1px solid #eceff1;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
+    0 1px 3px 1px rgba(60, 64, 67, 0.15);
+  background-color: white;
+}
+
 .inner-cards-about {
   margin-top: 30px;
+}
+
+.about-top-card-center {
+  text-align: center;
+}
+
+.about-title-font {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 32px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.about-subtitle-font {
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  margin-top: 30px;
+  color: #555555;
 }
