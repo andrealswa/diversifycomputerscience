@@ -6,7 +6,7 @@ import { AngularFireAuth } from "@angular/fire/auth";
   selector: "app-email-login",
   styleUrls: ["./email-login.component.scss"],
   template: `
-    <mat-card>
+    <div>
       <div *ngIf="isSignup">
         <h3>Create Account</h3>
 
@@ -29,6 +29,7 @@ import { AngularFireAuth } from "@angular/fire/auth";
         </button>
       </div>
 
+      <!-- Email, Password, Confirm Password -->
       <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <mat-form-field [color]="email.valid && 'accent'">
           <input
@@ -43,6 +44,8 @@ import { AngularFireAuth } from "@angular/fire/auth";
             You must enter a valid email address
           </mat-error>
         </mat-form-field>
+
+        <br />
 
         <mat-form-field
           [color]="email.valid && 'accent'"
@@ -61,6 +64,8 @@ import { AngularFireAuth } from "@angular/fire/auth";
           </mat-error>
         </mat-form-field>
 
+        <br />
+
         <mat-form-field
           [color]="passwordDoesMatch ? 'accent' : 'warn'"
           *ngIf="isSignup"
@@ -69,7 +74,7 @@ import { AngularFireAuth } from "@angular/fire/auth";
             matInput
             formControlName="passwordConfirm"
             type="password"
-            placeholder="Confirm password"
+            placeholder="Confirm Password"
             autocomplete="off"
           />
 
@@ -107,7 +112,7 @@ import { AngularFireAuth } from "@angular/fire/auth";
       >
         Forgot password?
       </button>
-    </mat-card>
+    </div>
   `
 })
 export class EmailLoginComponent implements OnInit {
