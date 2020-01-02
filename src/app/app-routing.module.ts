@@ -7,13 +7,15 @@ import { TableComponent } from "./table/table.component";
 import { NotFoundComponent } from "./not-found/not-found.component";
 import { ContactComponent } from "./contact/contact.component";
 import { LoginComponent } from "./authentication/login/login.component";
+import { AuthGuard } from "./authentication/auth.guard";
 
 // The highest level routes for our program.
 const routes: Routes = [
   { path: "", component: WelcomeComponent },
   {
     path: "entryform",
-    component: UserEntryFormComponent
+    component: UserEntryFormComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "table",

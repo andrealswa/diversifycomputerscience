@@ -5,15 +5,13 @@ import { RouterModule } from "@angular/router";
 import { FlexLayoutModule } from "@angular/flex-layout";
 
 // SERVICES
-import { AuthGuard } from "./services/auth/auth.guard";
-import { AppLoaderService } from "./services/app-loader/app-loader.service";
 
 const classesToInclude = [];
 
 @NgModule({
   imports: [CommonModule, FormsModule, RouterModule, FlexLayoutModule],
   entryComponents: [],
-  providers: [AuthGuard, AppLoaderService],
+  providers: [],
   declarations: classesToInclude,
   exports: classesToInclude
 })

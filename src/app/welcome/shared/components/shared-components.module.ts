@@ -8,11 +8,10 @@ import { PerfectScrollbarModule } from "ngx-perfect-scrollbar";
 
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { SharedDirectivesModule } from "../directives/shared-directives.module";
-import { AppLoaderComponent } from "../services/app-loader/app-loader.component";
 
 import { BottomSheetShareComponent } from "./bottom-sheet-share/bottom-sheet-share.component";
 
-const components = [AppLoaderComponent, BottomSheetShareComponent];
+const components = [BottomSheetShareComponent];
 
 @NgModule({
   imports: [
@@ -26,7 +25,7 @@ const components = [AppLoaderComponent, BottomSheetShareComponent];
     SharedMaterialModule
   ],
   declarations: components,
-  entryComponents: [AppLoaderComponent, BottomSheetShareComponent],
+  entryComponents: [BottomSheetShareComponent],
   exports: components
 })
 export class SharedComponentsModule {}
