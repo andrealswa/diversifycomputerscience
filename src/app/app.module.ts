@@ -22,6 +22,10 @@ import { UserEntryFormComponent } from "./user-entry-form/user-entry-form.compon
 import { TableComponent } from "./table/table.component";
 import { HomeModule } from "./welcome/home/views/home.module";
 
+// 404 not found
+import { NotFoundComponent } from "./not-found/not-found.component";
+import { ContactComponent } from './contact/contact.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +33,9 @@ import { HomeModule } from "./welcome/home/views/home.module";
     HeaderComponent,
     SidenavListComponent,
     UserEntryFormComponent,
-    TableComponent
+    TableComponent,
+    NotFoundComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

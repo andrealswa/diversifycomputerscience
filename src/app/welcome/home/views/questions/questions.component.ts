@@ -25,14 +25,16 @@ import { Component, OnInit } from "@angular/core";
             </mat-card-content>
 
             <div fxLayoutAlign="center center">
-              <button
-                mat-raised-button
-                mat-lg-button
-                color=""
-                class="contact-us-button"
-              >
-                <mat-icon>chat_bubble_outline</mat-icon> Contact Us
-              </button>
+              <a routerLink="/contact">
+                <button
+                  mat-raised-button
+                  mat-lg-button
+                  color=""
+                  class="contact-us-button"
+                >
+                  <mat-icon>chat_bubble_outline</mat-icon> Contact Us
+                </button>
+              </a>
             </div>
           </mat-card>
         </div>
