@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { AngularFireAuth } from "@angular/fire/auth";
 
 @Component({
   selector: "app-welcome",
@@ -31,8 +32,12 @@ export class WelcomeComponent implements OnInit {
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
+  userLoggedIn: Promise<boolean>;
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(
+    private _formBuilder: FormBuilder,
+    private afAuth: AngularFireAuth
+  ) {}
 
   ngOnInit() {
     this.breakpoint = window.innerWidth <= 400 ? 1 : 2;

@@ -106,14 +106,16 @@
         <strong>View Entries</strong>
       </a>
 
-      <a
-        mat-list-item
-        class="link-color-side-nav top-navigation-link link-color-side-nav"
-        routerLink="/entryform"
-      >
-        <mat-icon>edit</mat-icon>
-        <strong>Write an Entry</strong>
-      </a>
+      <section *ngIf="afAuth.authState | async as user">
+        <a
+          mat-list-item
+          class="link-color-side-nav top-navigation-link link-color-side-nav"
+          routerLink="/entryform"
+        >
+          <mat-icon>edit</mat-icon>
+          <strong>Write an Entry</strong>
+        </a>
+      </section>
 
       <a
         mat-list-item
@@ -152,24 +154,28 @@
       </div>
 
       <!-- Pencil, write an entry -->
-      <div class="top-navigation-link hide-when-mobile">
-        <a class="link-color" routerLink="/entryform">
-          <button mat-button class="remove-orange-border text-shadow">
-            <mat-icon>assignment</mat-icon>
-            <strong>Write an Entry</strong>
-          </button>
-        </a>
-      </div>
+      <section *ngIf="afAuth.authState | async as user">
+        <div class="top-navigation-link hide-when-mobile">
+          <a class="link-color" routerLink="/entryform">
+            <button mat-button class="remove-orange-border text-shadow">
+              <mat-icon>assignment</mat-icon>
+              <strong>Write an Entry</strong>
+            </button>
+          </a>
+        </div>
+      </section>
 
       <!-- Pencil, write an entry -->
-      <div class="top-navigation-link hide-when-mobile">
-        <a class="link-color" routerLink="/entryform">
-          <button mat-button class="remove-orange-border text-shadow">
-            <mat-icon>edit</mat-icon>
-            <strong>Edit My Entry</strong>
-          </button>
-        </a>
-      </div>
+      <section *ngIf="afAuth.authState | async as user">
+        <div class="top-navigation-link hide-when-mobile">
+          <a class="link-color" routerLink="/entryform">
+            <button mat-button class="remove-orange-border text-shadow">
+              <mat-icon>edit</mat-icon>
+              <strong>Edit My Entry</strong>
+            </button>
+          </a>
+        </div>
+      </section>
 
       <!-- Text bubble, contact -->
       <div class="top-navigation-link hide-when-mobile">
@@ -187,38 +193,22 @@
         <a class="link-color" routerLink="/login">
           <button mat-button class="remove-orange-border text-shadow">
             <mat-icon>person</mat-icon>
-            <strong>Login</strong>
-          </button></a
-        >
-      </div>
-
-      <div class="top-navigation-link hide-when-mobile">
-        <a class="link-color" routerLink="/">
-          <button mat-button class="remove-orange-border text-shadow">
-            <mat-icon>person_outline</mat-icon>
-            <strong>Logout</strong>
-          </button></a
-        >
-      </div>
-
-      <div class="top-navigation-link hide-when-mobile">
-        <a class="link-color" routerLink="/">
-          <button mat-button class="remove-orange-border text-shadow">
-            <mat-icon>person_add</mat-icon>
-            <strong>Signup</strong>
+            <strong>My Account</strong>
           </button></a
         >
       </div>
 
       <!-- Dashboard, Admin -->
-      <div class="top-navigation-link hide-when-mobile">
-        <a class="link-color" routerLink="/table">
-          <button mat-button class="remove-orange-border text-shadow">
-            <mat-icon>dashboard</mat-icon>
-            <strong>Admin Dashboard</strong>
-          </button>
-        </a>
-      </div>
+      <section *ngIf="afAuth.authState | async as user">
+        <div class="top-navigation-link hide-when-mobile">
+          <a class="link-color" routerLink="/table">
+            <button mat-button class="remove-orange-border text-shadow">
+              <mat-icon>dashboard</mat-icon>
+              <strong>Admin Dashboard</strong>
+            </button>
+          </a>
+        </div>
+      </section>
 
       <!-- Hamburger Menu -->
       <button

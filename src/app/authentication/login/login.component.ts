@@ -34,9 +34,3 @@ import { AngularFireAuth } from "@angular/fire/auth";
 export class LoginComponent {
   constructor(public afAuth: AngularFireAuth) {}
 }
-
-/*
-I am pretty sure that a private keyword will be fine here
-for injecting the service into the template
-due to the use of an inline template.
-*/
