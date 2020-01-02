@@ -15,7 +15,6 @@ import { HeaderComponent } from "./navigation/header/header.component";
 import { SidenavListComponent } from "./navigation/sidenav-list/sidenav-list.component";
 import { environment } from "../environments/environment";
 import { UIService } from "./shared/ui.service";
-import { reducers } from "./app.reducer";
 import { UserEntryFormComponent } from "./user-entry-form/user-entry-form.component";
 import { TableComponent } from "./table/table.component";
 import { HomeModule } from "./welcome/home/views/home.module";
@@ -44,7 +43,6 @@ import { AuthenticationModule } from "./authentication/authentication.module";
     FlexLayoutModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    StoreModule.forRoot(reducers),
     ReactiveFormsModule,
     HomeModule,
     AuthenticationModule
