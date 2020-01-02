@@ -21,7 +21,11 @@ import { AngularFireAuth } from "@angular/fire/auth";
               <div *ngIf="!(afAuth.authState | async)">
                 <h1>Login</h1>
 
-                <button mat-raised-button appGoogleSignin>
+                <button
+                  mat-raised-button
+                  appGoogleSignin
+                  class="remove-orange-border"
+                >
                   <img src="/assets/images/google-logo.svg" />Login with Google
                 </button>
               </div>
