@@ -10,7 +10,7 @@ import { AngularFireAuth } from "@angular/fire/auth";
         <h1>Login</h1>
 
         <button mat-raised-button appGoogleSignin>
-          <img src="/assets/google-logo.svg" /> Login with Google
+          <img src="/assets/images/google-logo.svg" />Login with Google
         </button>
       </div>
 

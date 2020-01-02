@@ -1,13 +1,12 @@
 export const environment = {
   production: true,
   firebase: {
-    apiKey: "AIzaSyDkKtUg8VJeUmPWWtlGd3gdErpl4hKtBfo",
-    authDomain: "diversify-1229e.firebaseapp.com",
-    databaseURL: "https://diversify-1229e.firebaseio.com",
-    projectId: "diversify-1229e",
-    storageBucket: "diversify-1229e.appspot.com",
-    messagingSenderId: "266825013413",
-    appId: "1:266825013413:web:87823fd9956d37a6c9154c",
-    measurementId: "G-9W6XBMY55E"
+    apiKey: "AIzaSyD1a9TenEoSZyzXH4daDH4viPEYn0SQ5Ak",
+    authDomain: "diversify.firebaseapp.com",
+    databaseURL: "https://diversify.firebaseio.com",
+    projectId: "diversify",
+    storageBucket: "diversify.appspot.com",
+    messagingSenderId: "603654997651",
+    appId: "1:603654997651:web:2f3c34c35eae016054af66"
   }
 };

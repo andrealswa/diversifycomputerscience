@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "Diversify",
+      "public": "dist/Diversify",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}
