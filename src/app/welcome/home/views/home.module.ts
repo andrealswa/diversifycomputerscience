@@ -16,7 +16,6 @@ import {
 } from "@angular/material";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { NguCarouselModule } from "@ngu/carousel";
-import { SharedModule } from "../../shared/shared.module";
 import { HomeRoutes } from "./home.routing";
 
 import { HomeOneComponent } from "./home-one.component";
@@ -29,24 +28,17 @@ import { CtaComponent } from "./questions/questions.component";
 import { FooterComponent } from "./footer/footer.component";
 import { TestimonialsCarouselComponent } from "./disclaimer/disclaimer.component";
 import { AllSectionsComponent } from "./all-sections.component";
-
-import { WINDOW_PROVIDERS } from "../../shared/helpers/window.helper";
-import { SharedDirectivesModule } from "../../shared/directives/shared-directives.module";
-import { SharedComponentsModule } from "../../shared/components/shared-components.module";
-import { SharedMaterialModule } from "../../shared/shared-material.module";
+import { MaterialModule } from "src/app/material.module";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    SharedModule,
     ReactiveFormsModule,
-    SharedDirectivesModule,
-    SharedComponentsModule,
-    SharedMaterialModule,
     FlexLayoutModule,
     NguCarouselModule,
-    RouterModule.forChild(HomeRoutes)
+    RouterModule.forChild(HomeRoutes),
+    MaterialModule
   ],
   declarations: [
     HomeOneComponent,
@@ -60,7 +52,7 @@ import { SharedMaterialModule } from "../../shared/shared-material.module";
     TestimonialsCarouselComponent,
     AllSectionsComponent
   ],
-  providers: [WINDOW_PROVIDERS],
+  providers: [],
   exports: [
     HomeOneComponent,
     HomeTwoComponent,
