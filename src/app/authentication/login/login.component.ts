@@ -23,7 +23,11 @@ import { AngularFireAuth } from "@angular/fire/auth";
           Logout
         </button>
       </div>
-      copied!
+
+      <!-- Email login -->
+      <div *ngIf="!(afAuth.authState | async)">
+        <app-email-login></app-email-login>
+      </div>
     </div>
   `
 })
