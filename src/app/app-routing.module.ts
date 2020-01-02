@@ -24,7 +24,7 @@ const routes: Routes = [
     component: ContactComponent
   },
   {
-    path: "**", // double stars for not found pages
+    path: "**",
     component: NotFoundComponent
   }
 ];
