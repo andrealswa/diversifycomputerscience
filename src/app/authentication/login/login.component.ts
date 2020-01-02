@@ -1,17 +1,38 @@
-import { Component, OnInit } from "@angular/core";
-import { AngularFireAuth } from "angularfire2/auth";
+import { Component } from "@angular/core";
+import { AngularFireAuth } from "@angular/fire/auth";
 
 @Component({
   selector: "app-login",
   styleUrls: ["./login.component.scss"],
   template: `
     <div>
-      <button mat-raised-button appGoogleSignin></button>
+      <div *ngIf="!(afAuth.authState | async)">
+        <h1>Login</h1>
+
+        <button mat-raised-button appGoogleSignin>
+          <img src="/assets/google-logo.svg" /> Login with Google
+        </button>
+      </div>
+
+      <div *ngIf="afAuth.authState | async as user" class="logout">
+        <p>
+          Logged in as <strong>{{ user.email }}</strong>
+        </p>
+
+        <button mat-stroked-button (click)="afAuth.auth.signOut()">
+          Logout
+        </button>
+      </div>
+      copied!
     </div>
   `
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   constructor(public afAuth: AngularFireAuth) {}
-
-  ngOnInit() {}
 }
+
+/*
+I am pretty sure that a private keyword will be fine here
+for injecting the service into the template
+due to the use of an inline template.
+*/

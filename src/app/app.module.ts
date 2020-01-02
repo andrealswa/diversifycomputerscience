@@ -1,11 +1,13 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { AngularFireModule } from "angularfire2";
-import { AngularFirestoreModule } from "angularfire2/firestore";
-import { StoreModule } from "@ngrx/store";
+import {
+  AngularFirestoreModule,
+  AngularFirestore
+} from "angularfire2/firestore";
 
 import { AppComponent } from "./app.component";
 import { MaterialModule } from "./material.module";
@@ -43,7 +45,7 @@ import { AuthenticationModule } from "./authentication/authentication.module";
     HomeModule,
     AuthenticationModule
   ],
-  providers: [UIService],
+  providers: [UIService, AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

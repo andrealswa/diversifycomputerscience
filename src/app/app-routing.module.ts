@@ -6,6 +6,7 @@ import { UserEntryFormComponent } from "./user-entry-form/user-entry-form.compon
 import { TableComponent } from "./table/table.component";
 import { NotFoundComponent } from "./not-found/not-found.component";
 import { ContactComponent } from "./contact/contact.component";
+import { LoginComponent } from "./authentication/login/login.component";
 
 // The highest level routes for our program.
 const routes: Routes = [
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: "contact",
     component: ContactComponent
+  },
+  {
+    path: "login",
+    component: LoginComponent
   },
   {
     path: "**",
