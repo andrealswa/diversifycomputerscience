@@ -8,6 +8,8 @@ import { NotFoundComponent } from "./not-found/not-found.component";
 import { ContactComponent } from "./contact/contact.component";
 import { LoginComponent } from "./authentication/login/login.component";
 import { AuthGuard } from "./authentication/auth.guard";
+import { EditEntryComponent } from "./edit-entry/edit-entry.component";
+import { AdminDashboardComponent } from "./admin-dashboard/admin-dashboard.component";
 
 // The highest level routes for our program.
 const routes: Routes = [
@@ -28,6 +30,14 @@ const routes: Routes = [
   {
     path: "login",
     component: LoginComponent
+  },
+  {
+    path: "editentry",
+    component: EditEntryComponent
+  },
+  {
+    path: "admindashboard",
+    component: AdminDashboardComponent
   },
   {
     path: "**",

@@ -112,8 +112,19 @@
           class="link-color-side-nav top-navigation-link link-color-side-nav"
           routerLink="/entryform"
         >
-          <mat-icon>edit</mat-icon>
+          <mat-icon>assignment</mat-icon>
           <strong>Write an Entry</strong>
+        </a>
+      </section>
+
+      <section *ngIf="afAuth.authState | async as user">
+        <a
+          mat-list-item
+          class="link-color-side-nav top-navigation-link link-color-side-nav"
+          routerLink="/editentry"
+        >
+          <mat-icon>edit</mat-icon>
+          <strong>Edit My Entry</strong>
         </a>
       </section>
 
@@ -168,7 +179,7 @@
       <!-- Pencil, write an entry -->
       <section *ngIf="afAuth.authState | async as user">
         <div class="top-navigation-link hide-when-mobile">
-          <a class="link-color" routerLink="/entryform">
+          <a class="link-color" routerLink="/editentry">
             <button mat-button class="remove-orange-border text-shadow">
               <mat-icon>edit</mat-icon>
               <strong>Edit My Entry</strong>
@@ -201,7 +212,7 @@
       <!-- Dashboard, Admin -->
       <section *ngIf="afAuth.authState | async as user">
         <div class="top-navigation-link hide-when-mobile">
-          <a class="link-color" routerLink="/table">
+          <a class="link-color" routerLink="/admindashboard">
             <button mat-button class="remove-orange-border text-shadow">
               <mat-icon>dashboard</mat-icon>
               <strong>Admin Dashboard</strong>
