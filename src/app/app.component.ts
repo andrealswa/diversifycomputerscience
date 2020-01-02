@@ -9,7 +9,7 @@ import { AuthService } from "./auth/auth.service";
     <div>
       <!-- The app livings within hte ng-contnet of the navigation bar -->
       <!-- This is so the modal darkening works properly -->
-      <app-header (sidenavToggle)="sidenav.toggle()">
+      <app-header>
         <main>
           <router-outlet></router-outlet>
         </main>

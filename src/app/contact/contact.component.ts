@@ -19,10 +19,7 @@ import { Component, OnInit } from "@angular/core";
                 Contact Us
               </div>
             </h1>
-            <div class="home-intro-desc">
-              If you're having an problems, have any questions, or want to
-              provide feedback, send us an email.<br />
-            </div>
+            <div class="home-intro-desc">Please reach us by email.<br /></div>
             <div
               fxLayout="row"
               fxLayout.lt-sm="column"
