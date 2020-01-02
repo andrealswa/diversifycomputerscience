@@ -1,5 +1,4 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
-import { scrollTo } from "../../shared/helpers/utils";
 
 @Component({
   selector: "app-home-one",
@@ -18,8 +17,6 @@ import { scrollTo } from "../../shared/helpers/utils";
 export class AllSectionsComponent implements OnInit, OnDestroy {
   constructor() {}
 
-  ngOnInit() {
-    scrollTo("app-root");
-  }
+  ngOnInit() {}
   ngOnDestroy() {}
 }

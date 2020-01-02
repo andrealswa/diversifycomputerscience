@@ -1,16 +1,4 @@
-import {
-  Component,
-  OnInit,
-  HostListener,
-  HostBinding,
-  Inject,
-  Input
-} from "@angular/core";
-import { DOCUMENT } from "@angular/common";
-import {
-  WINDOW_PROVIDERS,
-  WINDOW
-} from "../../../shared/helpers/window.helper";
+import { Component } from "@angular/core";
 
 // From CLI generated navbar
 import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
