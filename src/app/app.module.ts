@@ -24,7 +24,8 @@ import { HomeModule } from "./welcome/home/views/home.module";
 
 // 404 not found
 import { NotFoundComponent } from "./not-found/not-found.component";
-import { ContactComponent } from './contact/contact.component';
+import { ContactComponent } from "./contact/contact.component";
+import { AuthenticationModule } from "./authentication/authentication.module";
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { ContactComponent } from './contact/contact.component';
     AngularFirestoreModule,
     StoreModule.forRoot(reducers),
     ReactiveFormsModule,
-    HomeModule
+    HomeModule,
+    AuthenticationModule
   ],
   providers: [AuthService, UIService],
   bootstrap: [AppComponent]
