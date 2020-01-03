@@ -11,11 +11,12 @@ import { AngularFireAuth } from "@angular/fire/auth";
       <app-intro></app-intro>
 
       <!-- For the blue-purple background -->
+      <div style="height: 100px; background-color: #212121;"></div>
       <div class="bg-blue-purple">
         <about-diversify-compsci></about-diversify-compsci>
         <team-bios></team-bios>
       </div>
-
+      <div style="height: 100px; background-color: #212121;"></div>
       <!-- For the yellow-red background -->
       <div class="bg-yellow-red">
         <disclaimer></disclaimer>
