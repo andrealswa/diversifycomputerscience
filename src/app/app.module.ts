@@ -27,8 +27,8 @@ import { environment } from "../environments/environment";
 import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { AngularFireAuthModule } from "@angular/fire/auth";
-import { EditEntryComponent } from './edit-entry/edit-entry.component';
-import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { EditEntryComponent } from "./edit-entry/edit-entry.component";
+import { AdminDashboardComponent } from "./admin-dashboard/admin-dashboard.component";
 
 @NgModule({
   declarations: [
