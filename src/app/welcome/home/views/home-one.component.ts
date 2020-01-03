@@ -6,12 +6,10 @@ import { Component, OnInit, OnDestroy } from "@angular/core";
     <div class="landing">
       <app-header></app-header>
       <app-intro></app-intro>
-      <app-portfolio></app-portfolio>
-      <app-services [backgroundGray]="true"></app-services>
-      <app-testimonials-carousel></app-testimonials-carousel>
-      <app-cta></app-cta>
-      <app-pricings></app-pricings>
-      <app-contact [backgroundGray]="true"></app-contact>
+      <about-diversify-compsci></about-diversify-compsci>
+      <team-bios></team-bios>
+      <disclaimer></disclaimer>
+      <questions></questions>
       <app-footer></app-footer>
     </div>
   `

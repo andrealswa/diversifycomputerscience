@@ -1,17 +1,11 @@
-<header id="home-header" [ngClass]="{ 'header-fixed': isFixed }">
+<!-- <header id="home-header" [ngClass]="{ 'header-fixed': isFixed }">
   <div class="container" fxLayout="row wrap" fxLayoutAlign="start center">
-    <!-- TODO: Implement routing for all links -->
     <div
       class="header-mobile-top"
       fxLayout="row"
       fxLayoutWrap="wrap"
       fxLayoutAlign="start center"
     >
-      <div class="home-logo mr-1">
-        <a routerLink="/"
-          ><img src="assets/images/logo-full.png" alt="Egret logo"
-        /></a>
-      </div>
       <button mat-icon-button id="menu-toggle" (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
       </button>
@@ -21,18 +15,18 @@
         <button
           mat-button
           id="dashboard-topbtn"
-          class="hometop-btn icon-button"
+          class="hometop-btn icon-button black-text"
         >
           <mat-icon>search</mat-icon>
           <strong>View Entries</strong>
-        </button></a
-      >
+        </button>
+      </a>
 
       <a routerLink="/entryform" (click)="toggleMenu()">
         <button
           mat-button
           id="dashboard-topbtn"
-          class="hometop-btn icon-button"
+          class="hometop-btn icon-button black-text"
           scrollTo="portfolio-section"
         >
           <mat-icon>edit</mat-icon>
@@ -43,7 +37,7 @@
         <button
           mat-button
           id="dashboard-topbtn"
-          class="hometop-btn icon-button"
+          class="hometop-btn icon-button black-text"
           scrollTo="contact-section"
         >
           <mat-icon>chat_bubble_outline</mat-icon>
@@ -57,7 +51,7 @@
         <button
           mat-button
           id="dashboard-topbtn"
-          class="hometop-btn icon-button"
+          class="hometop-btn icon-button black-text"
           scrollTo="service-section"
         >
           <mat-icon>person</mat-icon>
@@ -69,19 +63,18 @@
         <button
           mat-button
           id="dashboard-topbtn"
-          class="hometop-btn icon-button"
+          class="hometop-btn icon-button black-text"
           scrollTo="testimonials-section"
         >
           <mat-icon>person_outline</mat-icon>
           <strong>Logout</strong>
         </button></a
       >
-      <!-- TODO: implement (click)="onLogout()" functionality -->
       <a routerLink="/signup" (click)="toggleMenu()">
         <button
           mat-button
           id="dashboard-topbtn"
-          class="hometop-btn icon-button"
+          class="hometop-btn icon-button black-text"
           scrollTo="pricings-section"
         >
           <mat-icon>person_add</mat-icon>
@@ -90,4 +83,157 @@
       </a>
     </div>
   </div>
-</header>
+</header> -->
+
+<mat-sidenav-container class="sidenav-container nav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
+    <!-- Side navigation items -->
+    <mat-toolbar>Diversify CompSci</mat-toolbar>
+    <mat-nav-list>
+      <a
+        mat-list-item
+        class="link-color-side-nav top-navigation-link link-color-side-nav"
+        routerLink="/table"
+      >
+        <mat-icon>search</mat-icon>
+        <strong>View Entries</strong>
+      </a>
+
+      <section *ngIf="afAuth.authState | async as user">
+        <a
+          mat-list-item
+          class="link-color-side-nav top-navigation-link link-color-side-nav"
+          routerLink="/entryform"
+        >
+          <mat-icon>assignment</mat-icon>
+          <strong>Write an Entry</strong>
+        </a>
+      </section>
+
+      <section *ngIf="afAuth.authState | async as user">
+        <a
+          mat-list-item
+          class="link-color-side-nav top-navigation-link link-color-side-nav"
+          routerLink="/editentry"
+        >
+          <mat-icon>edit</mat-icon>
+          <strong>Edit My Entry</strong>
+        </a>
+      </section>
+
+      <a
+        mat-list-item
+        class="link-color-side-nav top-navigation-link link-color-side-nav"
+        routerLink="/contact"
+      >
+        <mat-icon>chat_bubble_outline</mat-icon>
+        <strong>Contact</strong>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="top-navigation-menu">
+      <!-- Top navigation bar items -->
+      <div class="home-logo mr-1">
+        <a routerLink="/"
+          ><img
+            src="assets/images/logo.svg"
+            alt="Diversify Computer Science Logo"
+            class="limit-image-size"
+        /></a>
+      </div>
+
+      <!-- Push everything to the right -->
+      <span class="spacer"></span>
+
+      <!-- Magnifying glass, view entries -->
+      <div class="top-navigation-link hide-when-mobile">
+        <a class="link-color " routerLink="/table">
+          <button mat-button class="remove-orange-border text-shadow">
+            <mat-icon>search</mat-icon>
+            <strong>View Entries</strong>
+          </button>
+        </a>
+      </div>
+
+      <!-- Pencil, write an entry -->
+      <section *ngIf="afAuth.authState | async as user">
+        <div class="top-navigation-link hide-when-mobile">
+          <a class="link-color" routerLink="/entryform">
+            <button mat-button class="remove-orange-border text-shadow">
+              <mat-icon>assignment</mat-icon>
+              <strong>Write an Entry</strong>
+            </button>
+          </a>
+        </div>
+      </section>
+
+      <!-- Pencil, write an entry -->
+      <section *ngIf="afAuth.authState | async as user">
+        <div class="top-navigation-link hide-when-mobile">
+          <a class="link-color" routerLink="/editentry">
+            <button mat-button class="remove-orange-border text-shadow">
+              <mat-icon>edit</mat-icon>
+              <strong>Edit My Entry</strong>
+            </button>
+          </a>
+        </div>
+      </section>
+
+      <!-- Text bubble, contact -->
+      <div class="top-navigation-link hide-when-mobile">
+        <a class="link-color" routerLink="/contact">
+          <button mat-button class="remove-orange-border text-shadow">
+            <mat-icon>chat_bubble_outline</mat-icon>
+            <strong>Contact</strong>
+          </button></a
+        >
+      </div>
+
+      <!-- Person, Login -->
+
+      <div class="top-navigation-link hide-when-mobile">
+        <a class="link-color" routerLink="/login">
+          <button mat-button class="remove-orange-border text-shadow">
+            <mat-icon>person</mat-icon>
+            <strong>My Account</strong>
+          </button></a
+        >
+      </div>
+
+      <!-- Dashboard, Admin -->
+      <section *ngIf="afAuth.authState | async as user">
+        <div class="top-navigation-link hide-when-mobile">
+          <a class="link-color" routerLink="/admindashboard">
+            <button mat-button class="remove-orange-border text-shadow">
+              <mat-icon>dashboard</mat-icon>
+              <strong>Admin Dashboard</strong>
+            </button>
+          </a>
+        </div>
+      </section>
+
+      <!-- Hamburger Menu -->
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        class="hamburger-hide"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <!-- ng-content is where the rest of the website will go -->
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

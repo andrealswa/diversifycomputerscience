@@ -10,3 +10,7 @@ import { MaterialModule } from "../material.module";
   exports: [CommonModule, FormsModule, MaterialModule, FlexLayoutModule]
 })
 export class SharedModule {}
+
+/*
+This module very likely can just be removed.
+*/

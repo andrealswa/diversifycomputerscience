@@ -1,0 +1,30 @@
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+}
+
+.container {
+  margin-top: 10px;
+  max-width: 758px;
+  height: 406px;
+
+  background: url("../../../../../assets/images/bg-disclaimer.png") no-repeat
+    center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  // background-color: #ed4b6c;
+}
+
+.inner-cards-team-bios {
+  margin-top: 30px;
+}
+
+.container-outline {
+  border: 1px solid #eceff1;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
+    0 1px 3px 1px rgba(60, 64, 67, 0.15);
+  background-color: white;
+}

@@ -1,31 +1,53 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { AngularFireAuth } from "@angular/fire/auth";
 
 @Component({
   selector: "app-welcome",
-  templateUrl: "./welcome.component.html",
-  styleUrls: ["./welcome.component.css"]
+
+  styleUrls: ["./welcome.component.scss"],
+  template: `
+    <div>
+      <app-intro></app-intro>
+
+      <!-- For the blue-purple background -->
+      <div class="bg-blue-purple">
+        <about-diversify-compsci></about-diversify-compsci>
+        <team-bios></team-bios>
+      </div>
+
+      <!-- For the yellow-red background -->
+      <div class="bg-yellow-red">
+        <disclaimer></disclaimer>
+        <questions></questions>
+      </div>
+
+      <!-- Don't need thing, can change it up a lot -->
+      <app-footer></app-footer>
+    </div>
+  `
 })
 export class WelcomeComponent implements OnInit {
   breakpoint: number;
-  isLinear = false; // Linear stepper
-  firstFormGroup: FormGroup; // Linear stepper
-  secondFormGroup: FormGroup; // Linear stepper
+  isLinear = false;
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+  userLoggedIn: Promise<boolean>;
 
-  // The private _formBuilder: Formbuilder is for the linear stepper.
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(
+    private _formBuilder: FormBuilder,
+    private afAuth: AngularFireAuth
+  ) {}
 
   ngOnInit() {
     this.breakpoint = window.innerWidth <= 400 ? 1 : 2;
 
-    // Linear stepper code start
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ["", Validators.required]
     });
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ["", Validators.required]
     });
-    // Linear stepper code end
   }
 
   onResize(event) {

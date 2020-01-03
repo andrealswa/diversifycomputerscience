@@ -1,0 +1,93 @@
+/* not using this .welcome currently */
+.welcome {
+  text-align: center;
+}
+
+.hero-text {
+  background: lightcoral;
+}
+
+.footer-text {
+  background: lightgreen;
+}
+
+.row-one {
+  text-align: center;
+  background: lightblue;
+}
+
+.row-two {
+  text-align: center;
+  background: lightpink;
+}
+
+.row-three {
+  text-align: center;
+  background: lightsalmon;
+}
+
+.row-four {
+  text-align: center;
+  background: lightsalmon;
+}
+
+/* For the Shiba Inu */
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+}
+
+/* For the upper part of the page for view entires */
+.view-entries-font {
+  font-weight: 600;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Bitter", serif;
+  font-size: 1.78571429em;
+  line-height: 1.5em;
+  color: #00274c;
+  font-variant-ligatures: common-ligatures;
+  -webkit-font-smoothing: antialiased;
+  text-align: left;
+}
+
+.view-entries-content {
+  font-weight: 400;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Bitter", serif;
+  font-size: 1em;
+  line-height: 1.5em;
+  color: #00274c;
+  font-variant-ligatures: common-ligatures;
+  -webkit-font-smoothing: antialiased;
+  text-align: left;
+}
+
+.bg-blue-purple {
+  padding-top: 100px;
+  background: url("../../assets/images/bg-blue-purple.svg") no-repeat center
+    center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-bottom: 200px;
+  margin-bottom: -10px;
+}
+
+.bg-yellow-red {
+  background: url("../../assets/images/bg-yellow-red.svg") no-repeat center
+    center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-bottom: 200px;
+}

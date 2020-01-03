@@ -1,35 +1,45 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FlexLayoutModule } from "@angular/flex-layout";
-import { AngularFireModule } from "angularfire2";
-import { AngularFirestoreModule } from "angularfire2/firestore";
-import { StoreModule } from "@ngrx/store";
 
 import { AppComponent } from "./app.component";
 import { MaterialModule } from "./material.module";
 import { WelcomeComponent } from "./welcome/welcome.component";
 import { AppRoutingModule } from "./app-routing.module";
-import { HeaderComponent } from "./navigation/header/header.component";
-import { SidenavListComponent } from "./navigation/sidenav-list/sidenav-list.component";
-import { AuthService } from "./auth/auth.service";
-import { environment } from "../environments/environment";
+
 import { UIService } from "./shared/ui.service";
-import { AuthModule } from "./auth/auth.module";
-import { reducers } from "./app.reducer";
 import { UserEntryFormComponent } from "./user-entry-form/user-entry-form.component";
 import { TableComponent } from "./table/table.component";
 import { HomeModule } from "./welcome/home/views/home.module";
+
+// 404 not found
+import { NotFoundComponent } from "./not-found/not-found.component";
+import { ContactComponent } from "./contact/contact.component";
+import { AuthenticationModule } from "./authentication/authentication.module";
+
+// Firebase Old, try to remove this
+import { AngularFirestore } from "angularfire2/firestore";
+
+// Modern Firebase
+import { environment } from "../environments/environment";
+import { AngularFireModule } from "@angular/fire";
+import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { EditEntryComponent } from './edit-entry/edit-entry.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
-    HeaderComponent,
-    SidenavListComponent,
     UserEntryFormComponent,
-    TableComponent
+    TableComponent,
+    NotFoundComponent,
+    ContactComponent,
+    EditEntryComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -38,13 +48,13 @@ import { HomeModule } from "./welcome/home/views/home.module";
     AppRoutingModule,
     FlexLayoutModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AuthModule,
     AngularFirestoreModule,
-    StoreModule.forRoot(reducers),
+    AngularFireAuthModule,
     ReactiveFormsModule,
-    HomeModule
+    HomeModule,
+    AuthenticationModule
   ],
-  providers: [AuthService, UIService],
+  providers: [UIService, AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

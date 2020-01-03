@@ -16,82 +16,53 @@ import {
 } from "@angular/material";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { NguCarouselModule } from "@ngu/carousel";
-import { SharedModule } from "../../shared/shared.module";
 import { HomeRoutes } from "./home.routing";
 
 import { HomeOneComponent } from "./home-one.component";
 import { HomeTwoComponent } from "./home-two.component";
 import { HeaderComponent } from "./header/header.component";
 import { IntroOneComponent } from "./intro-one/intro-one.component";
-import { IntroTwoComponent } from "./intro-two/intro-two.component";
-import { PortfolioComponent } from "./portfolio/portfolio.component";
-import { ServicesComponent } from "./services/services.component";
-import { CtaComponent } from "./cta/cta.component";
-import { PricingsComponent } from "./pricings/pricings.component";
-import { ContactComponent } from "./contact/contact.component";
+import { PortfolioComponent } from "./about-diversify-compsci/about-diversify-compsci.component";
+import { ServicesComponent } from "./team-bios/team-bios.component";
+import { CtaComponent } from "./questions/questions.component";
 import { FooterComponent } from "./footer/footer.component";
-import { TestimonialsComponent } from "./testimonials/testimonials.component";
-import { PortfolioCarouselComponent } from "./portfolio-carousel/portfolio-carousel.component";
-import { TestimonialsCarouselComponent } from "./testimonials-carousel/testimonials-carousel.component";
-import { ServicesCarouselComponent } from "./services-carousel/services-carousel.component";
-import { DemoComponent } from "./demo/demo.component";
+import { TestimonialsCarouselComponent } from "./disclaimer/disclaimer.component";
 import { AllSectionsComponent } from "./all-sections.component";
-
-import { WINDOW_PROVIDERS } from "../../shared/helpers/window.helper";
-import { SharedDirectivesModule } from "../../shared/directives/shared-directives.module";
-import { SharedComponentsModule } from "../../shared/components/shared-components.module";
-import { SharedMaterialModule } from "../../shared/shared-material.module";
+import { MaterialModule } from "src/app/material.module";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    SharedModule,
     ReactiveFormsModule,
-    SharedDirectivesModule,
-    SharedComponentsModule,
-    SharedMaterialModule,
     FlexLayoutModule,
     NguCarouselModule,
-    RouterModule.forChild(HomeRoutes)
+    RouterModule.forChild(HomeRoutes),
+    MaterialModule
   ],
   declarations: [
     HomeOneComponent,
     HomeTwoComponent,
     HeaderComponent,
     IntroOneComponent,
-    IntroTwoComponent,
     PortfolioComponent,
     ServicesComponent,
     CtaComponent,
-    PricingsComponent,
-    ContactComponent,
     FooterComponent,
-    TestimonialsComponent,
-    PortfolioCarouselComponent,
     TestimonialsCarouselComponent,
-    ServicesCarouselComponent,
-    DemoComponent,
     AllSectionsComponent
   ],
-  providers: [WINDOW_PROVIDERS],
+  providers: [],
   exports: [
     HomeOneComponent,
     HomeTwoComponent,
     HeaderComponent,
     IntroOneComponent,
-    IntroTwoComponent,
     PortfolioComponent,
     ServicesComponent,
     CtaComponent,
-    PricingsComponent,
-    ContactComponent,
     FooterComponent,
-    TestimonialsComponent,
-    PortfolioCarouselComponent,
     TestimonialsCarouselComponent,
-    ServicesCarouselComponent,
-    DemoComponent,
     AllSectionsComponent
   ]
 })

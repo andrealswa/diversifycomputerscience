@@ -27,7 +27,7 @@ export interface Entry {
 @Component({
   selector: "app-user-entry-form",
   templateUrl: "./user-entry-form.component.html",
-  styleUrls: ["./user-entry-form.component.css"]
+  styleUrls: ["./user-entry-form.component.scss"]
 })
 export class UserEntryFormComponent implements OnInit {
   private entriesCollection: AngularFirestoreCollection<Entry>;

@@ -1,111 +1,125 @@
-<div style="height: 100px;"></div>
-<div fxLayout="column" fxLayoutAlign="space-around center">
-  <mat-card style="width: 75%; margin-bottom: 100px;">
-    <mat-card-content>
-      <div fxLayout="column" fxLayoutAlign="space-around stretch">
-        <section>
-          <form [formGroup]="userEntryForm" (ngSubmit)="submit()">
-            <mat-form-field class="example-full-width" style="width: 50%">
-              <input
-                matInput
-                placeholder="First Name"
-                formControlName="firstName"
-                required
-              />
-            </mat-form-field>
-            <mat-form-field class="example-full-width" style="width: 50%">
-              <input
-                matInput
-                placeholder="Last Name"
-                formControlName="lastName"
-                required
-              />
-            </mat-form-field>
-            <mat-form-field class="example-full-width" style="width: 100%">
-              <input
-                matInput
-                placeholder="Email"
-                formControlName="email"
-                required
-              />
-            </mat-form-field>
-            <mat-form-field class="example-full-width" style="width: 100%">
-              <input
-                matInput
-                placeholder="Affiliated Institution"
-                formControlName="affiliatedInstitution"
-                required
-              />
-            </mat-form-field>
-            <mat-form-field class="example-full-width" style="width: 100%">
-              <input
-                matInput
-                placeholder="Country"
-                formControlName="country"
-                required
-              />
-            </mat-form-field>
-            <mat-form-field class="example-full-width" style="width: 100%">
-              <input
-                matInput
-                placeholder="Social Media"
-                formControlName="socialMedia"
-              />
-            </mat-form-field>
-            <mat-form-field class="example-full-width" style="width: 100%">
-              <!-- <input matInput placeholder="Self ID" formControlName="selfID" /> -->
-              <mat-select
-                placeholder="Self ID"
-                required
-                multiple
-                formControlName="selfID"
-              >
-                <mat-option
-                  *ngFor="let selfID of selfIDList"
-                  [value]="selfID"
-                  >{{ selfID }}</mat-option
+<div class="background" fxLayoutAlign="center center">
+  <div
+    fxLayout="column"
+    fxLayoutAlign="space-around center"
+    class="form-container"
+  >
+    <mat-card style="width: 95%; margin-bottom: 100px;" class="form-body">
+      <mat-card-content>
+        My Diversify Computer Science Self Nomination:
+      </mat-card-content>
+      <mat-card-content>
+        <div fxLayout="column" fxLayoutAlign="space-around stretch">
+          <section>
+            <form [formGroup]="userEntryForm" (ngSubmit)="submit()">
+              <mat-form-field class="example-full-width" style="width: 50%">
+                <input
+                  matInput
+                  placeholder="First Name"
+                  formControlName="firstName"
+                  required
+                />
+              </mat-form-field>
+              <mat-form-field class="example-full-width" style="width: 50%">
+                <input
+                  matInput
+                  placeholder="Last Name"
+                  formControlName="lastName"
+                  required
+                />
+              </mat-form-field>
+              <mat-form-field class="example-full-width" style="width: 100%">
+                <input
+                  matInput
+                  placeholder="Email"
+                  formControlName="email"
+                  required
+                />
+              </mat-form-field>
+              <mat-form-field class="example-full-width" style="width: 100%">
+                <input
+                  matInput
+                  placeholder="Affiliated Institution"
+                  formControlName="affiliatedInstitution"
+                  required
+                />
+              </mat-form-field>
+              <mat-form-field class="example-full-width" style="width: 100%">
+                <input
+                  matInput
+                  placeholder="Country"
+                  formControlName="country"
+                  required
+                />
+              </mat-form-field>
+              <mat-form-field class="example-full-width" style="width: 100%">
+                <input
+                  matInput
+                  placeholder="Social Media"
+                  formControlName="socialMedia"
+                />
+              </mat-form-field>
+              <mat-form-field class="example-full-width" style="width: 100%">
+                <!-- <input matInput placeholder="Self ID" formControlName="selfID" /> -->
+                <mat-select
+                  placeholder="Self ID"
+                  required
+                  multiple
+                  formControlName="selfID"
                 >
-              </mat-select>
-            </mat-form-field>
-            <mat-form-field class="example-full-width" style="width: 100%">
-              <input
-                matInput
-                placeholder="Gender"
-                formControlName="gender"
-                required
-              />
-            </mat-form-field>
-            <mat-form-field class="example-full-width" style="width: 100%">
-              <input
-                matInput
-                placeholder="Current Career Stage"
-                formControlName="currentCareerStage"
-                required
-              />
-            </mat-form-field>
-            <mat-form-field class="example-full-width" style="width: 100%">
-              <input
-                matInput
-                placeholder="Branch"
-                formControlName="branch"
-                required
-              />
-            </mat-form-field>
-            <mat-form-field class="example-full-width" style="width: 100%">
-              <input
-                matInput
-                placeholder="Subfield Keywords"
-                formControlName="subfieldKeywords"
-                required
-              />
-            </mat-form-field>
+                  <mat-option
+                    *ngFor="let selfID of selfIDList"
+                    [value]="selfID"
+                    >{{ selfID }}</mat-option
+                  >
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field class="example-full-width" style="width: 100%">
+                <input
+                  matInput
+                  placeholder="Gender"
+                  formControlName="gender"
+                  required
+                />
+              </mat-form-field>
+              <mat-form-field class="example-full-width" style="width: 100%">
+                <input
+                  matInput
+                  placeholder="Current Career Stage"
+                  formControlName="currentCareerStage"
+                  required
+                />
+              </mat-form-field>
+              <mat-form-field class="example-full-width" style="width: 100%">
+                <input
+                  matInput
+                  placeholder="Branch"
+                  formControlName="branch"
+                  required
+                />
+              </mat-form-field>
+              <mat-form-field class="example-full-width" style="width: 100%">
+                <input
+                  matInput
+                  placeholder="Subfield Keywords"
+                  formControlName="subfieldKeywords"
+                  required
+                />
+              </mat-form-field>
 
-            <button type="submit" mat-raised-button color="primary">
-              Submit
-            </button>
-          </form>
-        </section>
-      </div>
-    </mat-card-content>
-  </mat-card>
+              <button
+                type="submit"
+                class="submit-button"
+                mat-raised-button
+                color="primary"
+              >
+                <mat-icon>check_circle_outline</mat-icon>
+                Submit
+              </button>
+            </form>
+          </section>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>
