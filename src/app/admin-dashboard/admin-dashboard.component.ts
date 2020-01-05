@@ -79,7 +79,7 @@ export class AdminDashboardComponent implements OnInit, AfterViewInit {
       // set from false to true
       entry.approved = "true";
       // update only the approved property
-      this.entriesCollection.doc(entry.id).update(entry);
+      this.entriesCollection.doc(entry.uid).update(entry);
     }
   }
 
@@ -88,7 +88,7 @@ export class AdminDashboardComponent implements OnInit, AfterViewInit {
     // if statement for some extra safety
     if (entry.approved === "true") {
       entry.approved = "false";
-      this.entriesCollection.doc(entry.id).set(entry);
+      this.entriesCollection.doc(entry.uid).set(entry);
     }
   }
 

@@ -113,7 +113,7 @@
           routerLink="/entryform"
         >
           <mat-icon>assignment</mat-icon>
-          <strong>Write an Entry</strong>
+          <strong>Write Entry</strong>
         </a>
       </section>
 
@@ -169,20 +169,8 @@
         <div class="top-navigation-link hide-when-mobile">
           <a class="link-color" routerLink="/entryform">
             <button mat-button class="remove-orange-border text-shadow">
-              <mat-icon>assignment</mat-icon>
-              <strong>Write an Entry</strong>
-            </button>
-          </a>
-        </div>
-      </section>
-
-      <!-- Pencil, write an entry -->
-      <section *ngIf="afAuth.authState | async as user">
-        <div class="top-navigation-link hide-when-mobile">
-          <a class="link-color" routerLink="/editentry">
-            <button mat-button class="remove-orange-border text-shadow">
               <mat-icon>edit</mat-icon>
-              <strong>Edit My Entry</strong>
+              <strong>Write & Edit Entry</strong>
             </button>
           </a>
         </div>

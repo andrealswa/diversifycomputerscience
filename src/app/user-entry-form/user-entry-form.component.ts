@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, Validators, FormControl } from "@angular/forms";
+import { AngularFireAuth } from "@angular/fire/auth";
 
 // new stuff
 import {
@@ -10,7 +11,7 @@ import {
 import { Observable } from "rxjs";
 
 export interface Entry {
-  id: string;
+  uid: string;
   firstName: string;
   lastName: string;
   email: string;
@@ -34,7 +35,11 @@ export class UserEntryFormComponent implements OnInit {
   private entriesCollection: AngularFirestoreCollection<Entry>;
   entries: Observable<Entry[]>;
 
-  constructor(private fb: FormBuilder, private db: AngularFirestore) {
+  constructor(
+    private fb: FormBuilder,
+    private db: AngularFirestore,
+    public afAuth: AngularFireAuth
+  ) {
     this.entriesCollection = db.collection<Entry>("entries");
     this.entries = this.entriesCollection.valueChanges();
   }
@@ -73,8 +78,6 @@ export class UserEntryFormComponent implements OnInit {
     let subfieldKeywords: string = this.userEntryForm.get("subfieldKeywords")
       .value;
 
-    console.log(selfID);
-
     //this.db.collection("entries").add(item);
     this.addEntry(
       firstName,
@@ -105,9 +108,13 @@ export class UserEntryFormComponent implements OnInit {
     subfieldKeywords: string
   ) {
     let approved: string = "false";
+
+    let user: firebase.User = this.afAuth.auth.currentUser;
+    let uid: string = user.uid;
+
     const id = this.db.createId();
     const entry: Entry = {
-      id,
+      uid,
       firstName,
       lastName,
       email,
@@ -121,7 +128,8 @@ export class UserEntryFormComponent implements OnInit {
       subfieldKeywords,
       approved
     };
-    this.entriesCollection.doc(id).set(entry);
+    // Need the id to be the user's id.
+    this.entriesCollection.doc(uid).set(entry);
   }
 
   selfIDList: string[] = [
