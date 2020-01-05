@@ -19,6 +19,7 @@ export interface Entry {
   currentCareerStage: string;
   branch: string;
   subfieldKeywords: string;
+  approved: string;
 }
 
 @Component({

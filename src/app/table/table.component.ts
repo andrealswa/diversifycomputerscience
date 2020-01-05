@@ -19,6 +19,7 @@ export interface Entry {
   currentCareerStage: string;
   branch: string;
   subfieldKeywords: string;
+  approved: string;
 }
 
 @Component({
@@ -56,7 +57,10 @@ export class TableComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     console.log(
       this.entries.subscribe((entries: Entry[]) => {
-        this.dataSource.data = entries;
+        this.dataSource.data = entries.filter(entry => {
+          // show only those entires that have been approved.
+          return entry.approved === "true";
+        });
       })
     );
   }

@@ -22,6 +22,7 @@ export interface Entry {
   currentCareerStage: string;
   branch: string;
   subfieldKeywords: string;
+  approved: string;
 }
 
 @Component({
@@ -55,19 +56,25 @@ export class UserEntryFormComponent implements OnInit {
   });
 
   submit() {
-    let firstName = this.userEntryForm.get("firstName").value;
-    let lastName = this.userEntryForm.get("lastName").value;
-    let email = this.userEntryForm.get("email").value;
-    let affiliatedInstitution = this.userEntryForm.get("affiliatedInstitution")
+    let firstName: string = this.userEntryForm.get("firstName").value;
+    let lastName: string = this.userEntryForm.get("lastName").value;
+    let email: string = this.userEntryForm.get("email").value;
+    let affiliatedInstitution: string = this.userEntryForm.get(
+      "affiliatedInstitution"
+    ).value;
+    let country: string = this.userEntryForm.get("country").value;
+    let socialMedia: string = this.userEntryForm.get("socialMedia").value;
+    let selfID: string = this.userEntryForm.get("selfID").value;
+    let gender: string = this.userEntryForm.get("gender").value;
+    let currentCareerStage: string = this.userEntryForm.get(
+      "currentCareerStage"
+    ).value;
+    let branch: string = this.userEntryForm.get("branch").value;
+    let subfieldKeywords: string = this.userEntryForm.get("subfieldKeywords")
       .value;
-    let country = this.userEntryForm.get("country").value;
-    let socialMedia = this.userEntryForm.get("socialMedia").value;
-    let selfID = this.userEntryForm.get("selfID").value;
-    let gender = this.userEntryForm.get("gender").value;
-    let currentCareerStage = this.userEntryForm.get("currentCareerStage").value;
-    let branch = this.userEntryForm.get("branch").value;
-    let subfieldKeywords = this.userEntryForm.get("subfieldKeywords").value;
+
     console.log(selfID);
+
     //this.db.collection("entries").add(item);
     this.addEntry(
       firstName,
@@ -97,6 +104,7 @@ export class UserEntryFormComponent implements OnInit {
     branch: string,
     subfieldKeywords: string
   ) {
+    let approved: string = "false";
     const id = this.db.createId();
     const entry: Entry = {
       id,
@@ -110,7 +118,8 @@ export class UserEntryFormComponent implements OnInit {
       gender,
       currentCareerStage,
       branch,
-      subfieldKeywords
+      subfieldKeywords,
+      approved
     };
     this.entriesCollection.doc(id).set(entry);
   }
@@ -118,7 +127,7 @@ export class UserEntryFormComponent implements OnInit {
   selfIDList: string[] = [
     "Asian",
     "Indigenous / Native",
-    "Lesbian, Gay, Bisexual, Transgender, Queer",
+    "Lesbian, Gay, Bisexual, Transgender, Queer, LGBTQ+",
     "Multi-Racial",
     "Other Race",
     "Person with a Disability",
