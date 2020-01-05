@@ -73,4 +73,27 @@ export class TableComponent implements OnInit, AfterViewInit {
   doFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+
+  selfIDList: string[] = [
+    "Asian",
+    "Indigenous / Native",
+    "Lesbian, Gay, Bisexual, Transgender, Queer, LGBTQ+",
+    "Multi-Racial",
+    "Other Race",
+    "Person with a Disability",
+    "Black",
+    "Latina / Latino or Hispanic",
+    "Middle Eastern / North African",
+    "Not a Citizen of an Anglophone Country",
+    "Pacific Islander",
+    "Other Non-White Self-Identification"
+  ];
+
+  genderList: string[] = [
+    "Male",
+    "Female",
+    "Non-binary",
+    "Self Describe",
+    "Prefer Not To Disclose"
+  ];
 }

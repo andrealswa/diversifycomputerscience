@@ -1,6 +1,18 @@
 <div class="background">
   <div class="table-body">
     <mat-card>
+      <div fxLayoutAlign="center center">
+        <mat-form-field fxFlex="50%" style="text-align: center">
+          <input
+            matInput
+            autocomplete="off"
+            style="text-align: center"
+            type="text"
+            (keyup)="doFilter($event.target.value)"
+            placeholder="Search"
+          />
+        </mat-form-field>
+      </div>
       <mat-table [dataSource]="dataSource" matSort>
         <ng-container matColumnDef="firstName">
           <mat-header-cell *matHeaderCellDef mat-sort-header
@@ -114,41 +126,38 @@
   </div>
   <!-- endoftable here -->
 
-  <div fxLayoutAlign="center center">
-    <mat-card class="filter-card" fxLayoutAlign="center center">
-      <mat-form-field fxFlex="95%">
-        <input
-          matInput
-          type="text"
-          (keyup)="doFilter($event.target.value)"
-          placeholder="Search"
-        />
-      </mat-form-field>
-    </mat-card>
-  </div>
-
-  <div fxLayoutAlign="center center">
+  <div fxLayoutAlign="center center" style="margin-top: 50px;">
     <mat-card class="search-card">
       <mat-card-header>
-        <mat-card-title>Useful Search Terms:</mat-card-title>
+        <mat-card-title>Useful Search Terms</mat-card-title>
       </mat-card-header>
       <mat-card-content>
         <mat-card class="search-card-item">
-          <mat-card-subtitle>Gender:</mat-card-subtitle>
-          <p>
-            Male, Female, Other
-          </p>
+          <mat-card-subtitle>Gender</mat-card-subtitle>
+          <mat-list>
+            <ul>
+              <mat-list-item
+                style="padding: 10px;"
+                *ngFor="let gender of genderList"
+              >
+                {{ gender }}
+              </mat-list-item>
+            </ul>
+          </mat-list>
         </mat-card>
 
         <mat-card class="search-card-item">
-          <mat-card-subtitle>Self ID:</mat-card-subtitle>
-          <p>
-            Black, Asian, Latino/Latino or Hispanic, LGBTQ+, Indigenous /
-            Native, Multi-Racial
-          </p>
+          <mat-card-subtitle>Self ID</mat-card-subtitle>
+          <mat-list>
+            <ul>
+              <mat-list-item *ngFor="let selfID of selfIDList">
+                {{ selfID }}
+              </mat-list-item>
+            </ul>
+          </mat-list>
         </mat-card>
         <mat-card class="search-card-item">
-          <mat-card-subtitle>Career Stage:</mat-card-subtitle>
+          <mat-card-subtitle>Career Stage</mat-card-subtitle>
           <p>
             Masters Student, PhD Student, Postdocorate, Industry, Tenure-Track,
             Tenured
@@ -158,3 +167,16 @@
     </mat-card>
   </div>
 </div>
+
+<!-- "Asian",
+    "Indigenous / Native",
+    "Lesbian, Gay, Bisexual, Transgender, Queer, LGBTQ+",
+    "Multi-Racial",
+    "Other Race",
+    "Person with a Disability",
+    "Black",
+    "Latina / Latino or Hispanic",
+    "Middle Eastern / North African",
+    "Not a Citizen of an Anglophone Country",
+    "Pacific Islander",
+    "Other Non-White Self-Identification" -->

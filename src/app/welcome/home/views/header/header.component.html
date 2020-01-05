@@ -128,6 +128,26 @@
         <mat-icon>chat_bubble_outline</mat-icon>
         <strong>Contact</strong>
       </a>
+
+      <a
+        mat-list-item
+        class="link-color-side-nav top-navigation-link link-color-side-nav"
+        routerLink="/login"
+        (click)="drawer.toggle()"
+      >
+        <mat-icon>person</mat-icon>
+        <strong>My Account</strong>
+      </a>
+
+      <a
+        mat-list-item
+        class="link-color-side-nav top-navigation-link link-color-side-nav"
+        routerLink="/admindashboard"
+        (click)="drawer.toggle()"
+      >
+        <mat-icon>dashboard</mat-icon>
+        <strong>Admin Dashboard</strong></a
+      >
     </mat-nav-list>
   </mat-sidenav>
 
