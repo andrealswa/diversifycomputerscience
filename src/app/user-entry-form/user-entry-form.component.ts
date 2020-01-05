@@ -93,7 +93,7 @@ export class UserEntryFormComponent implements OnInit {
         this.lastNameData = data.lastName;
         this.emailData = data.email;
         this.affiliatedInstitutionData = data.affiliatedInstitution;
-        this.countryData = data.countryData;
+        this.countryData = data.country;
         this.socialMediaData = data.socialMedia;
         this.selfIDData = data.selfID;
         this.genderData = data.gender;
@@ -203,4 +203,5 @@ export class UserEntryFormComponent implements OnInit {
     "Pacific Islander",
     "Other Non-White Self-Identification"
   ];
+  genderList: string[] = ["Male", "Female", "Non-binary", "Self Describe"];
 }
