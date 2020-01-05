@@ -89,5 +89,20 @@ export class TableComponent implements OnInit, AfterViewInit {
     "Other Non-White Self-Identification"
   ];
 
-  genderList: string[] = ["Male", "Female", "Non-binary", "Self Describe"];
+  genderList: string[] = [
+    "Female",
+    "Male",
+    "Non-binary",
+    "Other",
+    "Prefer Not To Disclose",
+    "Self Describe"
+  ];
+  stageList: string[] = [
+    "Masters Student",
+    "PhD Student",
+    "Postdocorate",
+    "Industry",
+    "Tenure-Track",
+    "Tenured"
+  ];
 }

@@ -1,4 +1,4 @@
-<div class="background">
+<div class="background" style="height: 130vh">
   <div class="table-body">
     <mat-card>
       <div fxLayoutAlign="center center">
@@ -133,6 +133,17 @@
       </mat-card-header>
       <mat-card-content>
         <mat-card class="search-card-item">
+          <mat-card-subtitle>Self ID</mat-card-subtitle>
+          <mat-list>
+            <ul>
+              <mat-list-item *ngFor="let selfID of selfIDList">
+                {{ selfID }}
+              </mat-list-item>
+            </ul>
+          </mat-list>
+        </mat-card>
+
+        <mat-card class="search-card-item">
           <mat-card-subtitle>Gender</mat-card-subtitle>
           <mat-list>
             <ul>
@@ -146,28 +157,38 @@
           </mat-list>
         </mat-card>
 
-        <mat-card class="search-card-item">
-          <mat-card-subtitle>Self ID</mat-card-subtitle>
+        <!-- <mat-card class="search-card-item">
+          <mat-card-subtitle>Career Stage</mat-card-subtitle>
           <mat-list>
             <ul>
-              <mat-list-item *ngFor="let selfID of selfIDList">
-                {{ selfID }}
+              <mat-list-item
+                style="padding: 10px;"
+                *ngFor="let stage of stageList"
+              >
+                {{ stage }}
               </mat-list-item>
             </ul>
           </mat-list>
         </mat-card>
+
         <mat-card class="search-card-item">
-          <mat-card-subtitle>Career Stage</mat-card-subtitle>
-          <p>
-            Masters Student, PhD Student, Postdocorate, Industry, Tenure-Track,
-            Tenured
-          </p>
-        </mat-card>
+          <mat-card-subtitle>Branch</mat-card-subtitle>
+          <mat-list>
+            <ul>
+              <mat-list-item
+                style="padding: 10px;"
+                *ngFor="let branch of branchList"
+              >
+                {{ branch }}
+              </mat-list-item>
+            </ul>
+          </mat-list>
+        </mat-card> -->
       </mat-card-content>
     </mat-card>
   </div>
 </div>
-
+<div style="height: 100px; background-color: #212121;"></div>
 <!-- "Asian",
     "Indigenous / Native",
     "Lesbian, Gay, Bisexual, Transgender, Queer, LGBTQ+",

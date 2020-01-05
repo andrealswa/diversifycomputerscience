@@ -214,6 +214,8 @@ export class UserEntryFormComponent implements OnInit {
     "Male",
     "Female",
     "Non-binary",
+    "Other",
+    "Self Describe",
     "Prefer Not To Disclose"
   ];
 
