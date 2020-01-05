@@ -88,7 +88,7 @@ export class AdminDashboardComponent implements OnInit, AfterViewInit {
     // if statement for some extra safety
     if (entry.approved === "true") {
       entry.approved = "false";
-      this.entriesCollection.doc(entry.id).update(entry);
+      this.entriesCollection.doc(entry.id).set(entry);
     }
   }
 }
