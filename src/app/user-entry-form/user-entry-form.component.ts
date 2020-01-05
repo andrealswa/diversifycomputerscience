@@ -60,6 +60,23 @@ export class UserEntryFormComponent implements OnInit {
     this.entries = this.entriesCollection.valueChanges();
   }
 
+  userEntryForm = this.fb.group({
+    firstName: [this.entryPresent ? "" : "", Validators.required],
+    lastName: [this.firstNameData, Validators.required],
+    email: [this.emailData, [Validators.email, Validators.required]],
+    affiliatedInstitution: [
+      this.affiliatedInstitutionData,
+      Validators.required
+    ],
+    country: [this.countryData, Validators.required],
+    socialMedia: [this.socialMediaData],
+    selfID: [this.selfIDData, Validators.required],
+    gender: [this.genderData, Validators.required],
+    currentCareerStage: [this.currentCareerStageData, Validators.required],
+    branch: [this.branchData, Validators.required],
+    subfieldKeywords: [this.subfieldKeywordsData, Validators.required]
+  });
+
   ngOnInit() {
     // Attempt to populate with initial data if user already entered a submission.
     let user: firebase.User = this.afAuth.auth.currentUser;
@@ -84,26 +101,22 @@ export class UserEntryFormComponent implements OnInit {
         this.branchData = data.branch;
         this.subfieldKeywordsData = data.subfieldKeywords;
 
-        console.log(this.emailData);
+        // Need patchValue to correct strange bug with validation not recognizing preloaded values
+        this.userEntryForm.patchValue({
+          firstName: data.firstName,
+          lastName: data.lastName,
+          email: data.email,
+          affiliatedInstitution: data.affiliatedInstitution,
+          country: data.country,
+          socialMedia: data.socialMedia,
+          selfID: data.selfID,
+          gender: data.gender,
+          currentCareerStage: data.currentCareerStage,
+          branch: data.branch,
+          subfieldKeywords: data.subfieldKeywords
+        });
       });
   }
-
-  userEntryForm = this.fb.group({
-    firstName: [this.entryPresent ? "" : "", Validators.required],
-    lastName: [this.firstNameData, Validators.required],
-    email: [this.emailData, [Validators.email, Validators.required]],
-    affiliatedInstitution: [
-      this.affiliatedInstitutionData,
-      Validators.required
-    ],
-    country: [this.countryData, Validators.required],
-    socialMedia: [this.socialMediaData],
-    selfID: [this.selfIDData, Validators.required],
-    gender: [this.genderData, Validators.required],
-    currentCareerStage: [this.currentCareerStageData, Validators.required],
-    branch: [this.branchData, Validators.required],
-    subfieldKeywords: [this.subfieldKeywordsData, Validators.required]
-  });
 
   submit() {
     let firstName: string = this.userEntryForm.get("firstName").value;
