@@ -1,42 +1,73 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild, AfterViewInit } from "@angular/core";
+import { MatTableDataSource, MatSort, MatPaginator } from "@angular/material";
+import {
+  AngularFirestore,
+  AngularFirestoreCollection
+} from "@angular/fire/firestore";
+import { Observable } from "rxjs";
+
+export interface Entry {
+  id: string;
+  firstName: string;
+  lastName: string;
+  affiliatedInstitution: string;
+  email: string;
+  country: string;
+  socialMedia: string;
+  selfID: string;
+  gender: string;
+  currentCareerStage: string;
+  branch: string;
+  subfieldKeywords: string;
+}
 
 @Component({
   selector: "app-admin-dashboard",
-  template: `
-    <section id="intro-section" class="home-intro-section">
-      <div
-        class="container"
-        fxLayout="row"
-        fxLayout.lt-md="column"
-        fxLayoutWrap="nowrap"
-        fxLayoutGap="30px"
-        fxLayoutAlign="center center"
-      >
-        <mat-card class="middle-container">
-          <div fxFlex="">
-            <h1 class="home-intro-title ">
-              <div class="shadow-effect">
-                Admin Dashboard - Under Construction
-              </div>
-            </h1>
-            <div class="home-intro-desc">
-              We are still developing this feature, it will get done as soon as
-              possible!<br />
-            </div>
-            <div
-              fxLayout="row"
-              fxLayout.lt-sm="column"
-              fxLayoutAlign="center center"
-            ></div>
-          </div>
-        </mat-card>
-      </div>
-    </section>
-  `,
+  templateUrl: "./admin-dashboard.component.html",
   styleUrls: ["./admin-dashboard.component.scss"]
 })
-export class AdminDashboardComponent implements OnInit {
-  constructor() {}
+export class AdminDashboardComponent implements OnInit, AfterViewInit {
+  displayedColumns = [
+    "firstName",
+    "lastName",
+    "affiliatedInstitution",
+    "email",
+    "country",
+    "socialMedia",
+    "selfID",
+    "gender",
+    "currentCareerStage",
+    "branch",
+    "subfieldKeywords"
+  ];
+  dataSource = new MatTableDataSource<Entry>();
 
-  ngOnInit() {}
+  @ViewChild(MatSort, { static: false }) sort: MatSort;
+  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
+
+  private entriesCollection: AngularFirestoreCollection<Entry>;
+  entries: Observable<Entry[]>;
+
+  constructor(private db: AngularFirestore) {
+    this.entriesCollection = db.collection<Entry>("entries");
+    this.entries = this.entriesCollection.valueChanges();
+  }
+
+  ngOnInit() {
+    // display the data in the console.
+    console.log(
+      this.entries.subscribe((entries: Entry[]) => {
+        this.dataSource.data = entries;
+      })
+    );
+  }
+
+  ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+  }
+
+  doFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 }

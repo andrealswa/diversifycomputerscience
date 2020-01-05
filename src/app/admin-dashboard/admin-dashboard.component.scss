@@ -75,3 +75,126 @@
   outline: none;
   border: 0;
 }
+
+body {
+  font-family: "Covered By Your Grace", cursive;
+  line-height: 1.25;
+}
+
+@media screen and (max-width: 960px) {
+  .mat-table {
+    border: 0;
+    vertical-align: middle;
+  }
+
+  .mat-table caption {
+    font-size: 1em;
+  }
+
+  .mat-table .mat-header-cell {
+    border: 10px solid;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  .mat-table .mat-row {
+    border-bottom: 5px solid #ddd;
+    display: block;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+  /*
+  .mat-table .mat-row:nth-child(even) {background: #CCC}
+  .mat-table .mat-row:nth-child(odd) {background: #FFF}
+  */
+  .mat-table .mat-cell {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 1em;
+    text-align: right;
+    font-weight: bold;
+    height: 30px;
+    margin-bottom: 4%;
+  }
+  .mat-table .mat-cell:before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    text-transform: uppercase;
+    font-weight: normal;
+
+    font-size: 0.85em;
+  }
+  .mat-table .mat-cell:last-child {
+    border-bottom: 0;
+  }
+  .mat-table .mat-cell:first-child {
+    margin-top: 4%;
+  }
+  .mat-cell:first-child,
+  .mat-footer-cell:first-child,
+  .mat-header-cell:first-child {
+    padding-left: 0;
+  }
+  .mat-cell:last-child,
+  .mat-footer-cell:last-child,
+  .mat-header-cell:last-child {
+    padding-right: 0;
+  }
+}
+
+.background {
+  background: url("../../assets/images/bg-table.svg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+}
+
+.filter-card {
+  margin-top: 20px;
+  width: 95%;
+  max-width: 700px;
+}
+
+.table-body {
+  padding-top: 100px;
+  width: 98%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-card {
+  width: 95%;
+  max-width: 700px;
+
+  background: url("../../assets/images/bg-about.png") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  background-color: white;
+}
+
+.search-card-item {
+  margin-top: 5px;
+}
+
+.red-button {
+  color: white;
+  background-color: #ed4b6b;
+}
+
+.blue-button {
+  color: white;
+  background-color: #51c9ff;
+}
