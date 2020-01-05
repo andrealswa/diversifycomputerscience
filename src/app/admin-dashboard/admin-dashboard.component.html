@@ -105,24 +105,25 @@
 
             <mat-list>
               <mat-list-item>
-                <button class="blue-button" mat-raised-button>Approve</button>
+                <button
+                  class="blue-button"
+                  mat-raised-button
+                  (click)="approvedEntry(element)"
+                >
+                  Approve
+                </button>
               </mat-list-item>
               <mat-list-item>
-                <button class="red-button" mat-raised-button>Remove</button>
+                <button
+                  class="red-button"
+                  mat-raised-button
+                  (click)="removeEntry(element)"
+                >
+                  Remove
+                </button>
               </mat-list-item>
             </mat-list></mat-cell
           >
-        </ng-container>
-
-        <!-- Need an approval field -->
-        <ng-container matColumnDef="approve">
-          <button>Approve</button>
-          <mat-header-cell *matHeaderCellDef mat-sort-header
-            >Approve</mat-header-cell
-          >
-          <mat-cell *matCellDef="let element" data-label="Approve">
-            <button>Approve</button>
-          </mat-cell>
         </ng-container>
 
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

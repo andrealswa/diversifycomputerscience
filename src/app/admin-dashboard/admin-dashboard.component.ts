@@ -71,4 +71,24 @@ export class AdminDashboardComponent implements OnInit, AfterViewInit {
   doFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+
+  approvedEntry(entry: any): void {
+    console.log("Approve clicked");
+    // if statement for some extra safety
+    if (entry.approved === "false") {
+      // set from false to true
+      entry.approved = "true";
+      // update only the approved property
+      this.entriesCollection.doc(entry.id).update(entry);
+    }
+  }
+
+  removeEntry(entry: any): void {
+    console.log("Remove clicked");
+    // if statement for some extra safety
+    if (entry.approved === "true") {
+      entry.approved = "false";
+      this.entriesCollection.doc(entry.id).update(entry);
+    }
+  }
 }
