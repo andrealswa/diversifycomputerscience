@@ -101,6 +101,7 @@
         mat-list-item
         class="link-color-side-nav top-navigation-link link-color-side-nav"
         routerLink="/table"
+        (click)="drawer.toggle()"
       >
         <mat-icon>search</mat-icon>
         <strong>View Entries</strong>
@@ -111,20 +112,10 @@
           mat-list-item
           class="link-color-side-nav top-navigation-link link-color-side-nav"
           routerLink="/entryform"
+          (click)="drawer.toggle()"
         >
           <mat-icon>assignment</mat-icon>
-          <strong>Write Entry</strong>
-        </a>
-      </section>
-
-      <section *ngIf="afAuth.authState | async as user">
-        <a
-          mat-list-item
-          class="link-color-side-nav top-navigation-link link-color-side-nav"
-          routerLink="/editentry"
-        >
-          <mat-icon>edit</mat-icon>
-          <strong>Edit My Entry</strong>
+          <strong>Create / Edit Entry</strong>
         </a>
       </section>
 
@@ -132,13 +123,35 @@
         mat-list-item
         class="link-color-side-nav top-navigation-link link-color-side-nav"
         routerLink="/contact"
+        (click)="drawer.toggle()"
       >
         <mat-icon>chat_bubble_outline</mat-icon>
         <strong>Contact</strong>
       </a>
+
+      <a
+        mat-list-item
+        class="link-color-side-nav top-navigation-link link-color-side-nav"
+        routerLink="/login"
+        (click)="drawer.toggle()"
+      >
+        <mat-icon>person</mat-icon>
+        <strong>My Account</strong>
+      </a>
+
+      <a
+        mat-list-item
+        class="link-color-side-nav top-navigation-link link-color-side-nav"
+        routerLink="/admindashboard"
+        (click)="drawer.toggle()"
+      >
+        <mat-icon>dashboard</mat-icon>
+        <strong>Admin Dashboard</strong></a
+      >
     </mat-nav-list>
   </mat-sidenav>
 
+  <!-- Starting Desktop view -->
   <mat-sidenav-content>
     <mat-toolbar color="primary" class="top-navigation-menu">
       <!-- Top navigation bar items -->
@@ -170,7 +183,7 @@
           <a class="link-color" routerLink="/entryform">
             <button mat-button class="remove-orange-border text-shadow">
               <mat-icon>edit</mat-icon>
-              <strong>Write & Edit Entry</strong>
+              <strong>Create / Edit Entry</strong>
             </button>
           </a>
         </div>

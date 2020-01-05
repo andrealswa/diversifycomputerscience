@@ -6,12 +6,16 @@
   >
     <mat-card style="width: 95%; margin-bottom: 100px;" class="form-body">
       <mat-card-content>
-        My Diversify Computer Science Self Nomination:
+        My Diversify Computer Science Self Nomination
       </mat-card-content>
       <mat-card-content>
         <div fxLayout="column" fxLayoutAlign="space-around stretch">
           <section>
-            <form [formGroup]="userEntryForm" (ngSubmit)="submit()">
+            <form
+              style="font-size: large;"
+              [formGroup]="userEntryForm"
+              (ngSubmit)="submit()"
+            >
               <mat-form-field class="example-full-width" style="width: 50%">
                 <input
                   matInput
@@ -39,18 +43,28 @@
                   [value]="emailData"
                 />
               </mat-form-field>
+
               <mat-form-field class="example-full-width" style="width: 100%">
                 <input
                   matInput
+                  matGoogleMapsAutocomplete
+                  (onAutocompleteSelected)="onAutocompleteSelected($event)"
+                  (onLocationSelected)="onLocationSelected($event)"
+                  type="establishment"
                   placeholder="Affiliated Institution"
                   formControlName="affiliatedInstitution"
                   required
                   [value]="affiliatedInstitutionData"
                 />
               </mat-form-field>
+
               <mat-form-field class="example-full-width" style="width: 100%">
                 <input
                   matInput
+                  matGoogleMapsAutocomplete
+                  (onAutocompleteSelected)="onAutocompleteSelected($event)"
+                  (onLocationSelected)="onLocationSelected($event)"
+                  type="regions"
                   placeholder="Country"
                   formControlName="country"
                   required
@@ -82,13 +96,19 @@
                 </mat-select>
               </mat-form-field>
               <mat-form-field class="example-full-width" style="width: 100%">
-                <input
+                <mat-select
                   matInput
                   placeholder="Gender"
                   formControlName="gender"
                   required
                   [value]="genderData"
-                />
+                >
+                  <mat-option
+                    *ngFor="let gender of genderList"
+                    [value]="gender"
+                    >{{ gender }}</mat-option
+                  >
+                </mat-select>
               </mat-form-field>
               <mat-form-field class="example-full-width" style="width: 100%">
                 <input
@@ -99,6 +119,7 @@
                   [value]="currentCareerStageData"
                 />
               </mat-form-field>
+
               <mat-form-field class="example-full-width" style="width: 100%">
                 <input
                   matInput
@@ -117,16 +138,19 @@
                   [value]="subfieldKeywordsData"
                 />
               </mat-form-field>
+              <!-- google places test -->
 
-              <button
-                type="submit"
-                class="submit-button"
-                mat-raised-button
-                color="primary"
-              >
-                <mat-icon>check_circle_outline</mat-icon>
-                Submit
-              </button>
+              <div style="text-align: center;">
+                <button
+                  type="submit"
+                  class="submit-button"
+                  mat-raised-button
+                  color="primary"
+                >
+                  <mat-icon>check_circle_outline</mat-icon>
+                  Submit
+                </button>
+              </div>
             </form>
           </section>
         </div>
@@ -134,3 +158,4 @@
     </mat-card>
   </div>
 </div>
+<div style="height: 100px; background-color: #212121;"></div>

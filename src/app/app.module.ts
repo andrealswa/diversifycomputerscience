@@ -3,6 +3,8 @@ import { NgModule } from "@angular/core";
 import { ReactiveFormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { AgmCoreModule } from "@agm/core";
+import { MatGoogleMapsAutocompleteModule } from "@angular-material-extensions/google-maps-autocomplete";
 
 import { AppComponent } from "./app.component";
 import { MaterialModule } from "./material.module";
@@ -50,7 +52,12 @@ import { AdminDashboardComponent } from "./admin-dashboard/admin-dashboard.compo
     AngularFireAuthModule,
     ReactiveFormsModule,
     HomeModule,
-    AuthenticationModule
+    AuthenticationModule,
+    AgmCoreModule.forRoot({
+      apiKey: "AIzaSyBFy2mXmLl0DPUidcUIpnq3k5wLanFMi3M",
+      libraries: ["places"]
+    }),
+    MatGoogleMapsAutocompleteModule
   ],
   providers: [UIService, AngularFirestore],
   bootstrap: [AppComponent]

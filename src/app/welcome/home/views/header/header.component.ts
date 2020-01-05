@@ -15,6 +15,7 @@ import { AngularFireAuth } from "@angular/fire/auth";
 })
 export class HeaderComponent {
   // Angular Generated Navbar
+
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)
     .pipe(
