@@ -18,6 +18,7 @@
                   placeholder="First Name"
                   formControlName="firstName"
                   required
+                  [value]="firstNameData"
                 />
               </mat-form-field>
               <mat-form-field class="example-full-width" style="width: 50%">
@@ -26,6 +27,7 @@
                   placeholder="Last Name"
                   formControlName="lastName"
                   required
+                  [value]="lastNameData"
                 />
               </mat-form-field>
               <mat-form-field class="example-full-width" style="width: 100%">
@@ -34,6 +36,7 @@
                   placeholder="Email"
                   formControlName="email"
                   required
+                  [value]="emailData"
                 />
               </mat-form-field>
               <mat-form-field class="example-full-width" style="width: 100%">
@@ -42,6 +45,7 @@
                   placeholder="Affiliated Institution"
                   formControlName="affiliatedInstitution"
                   required
+                  [value]="affiliatedInstitutionData"
                 />
               </mat-form-field>
               <mat-form-field class="example-full-width" style="width: 100%">
@@ -50,6 +54,7 @@
                   placeholder="Country"
                   formControlName="country"
                   required
+                  [value]="countryData"
                 />
               </mat-form-field>
               <mat-form-field class="example-full-width" style="width: 100%">
@@ -57,6 +62,7 @@
                   matInput
                   placeholder="Social Media"
                   formControlName="socialMedia"
+                  [value]="socialMediaData"
                 />
               </mat-form-field>
               <mat-form-field class="example-full-width" style="width: 100%">
@@ -66,6 +72,7 @@
                   required
                   multiple
                   formControlName="selfID"
+                  [value]="selfIDData"
                 >
                   <mat-option
                     *ngFor="let selfID of selfIDList"
@@ -80,6 +87,7 @@
                   placeholder="Gender"
                   formControlName="gender"
                   required
+                  [value]="genderData"
                 />
               </mat-form-field>
               <mat-form-field class="example-full-width" style="width: 100%">
@@ -88,6 +96,7 @@
                   placeholder="Current Career Stage"
                   formControlName="currentCareerStage"
                   required
+                  [value]="currentCareerStageData"
                 />
               </mat-form-field>
               <mat-form-field class="example-full-width" style="width: 100%">
@@ -96,6 +105,7 @@
                   placeholder="Branch"
                   formControlName="branch"
                   required
+                  [value]="branchData"
                 />
               </mat-form-field>
               <mat-form-field class="example-full-width" style="width: 100%">
@@ -104,6 +114,7 @@
                   placeholder="Subfield Keywords"
                   formControlName="subfieldKeywords"
                   required
+                  [value]="subfieldKeywordsData"
                 />
               </mat-form-field>
 
