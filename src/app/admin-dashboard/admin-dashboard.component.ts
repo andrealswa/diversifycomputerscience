@@ -83,12 +83,16 @@ export class AdminDashboardComponent implements OnInit, AfterViewInit {
     }
   }
 
-  removeEntry(entry: any): void {
+  hideEntry(entry: any): void {
     console.log("Remove clicked");
     // if statement for some extra safety
     if (entry.approved === "true") {
       entry.approved = "false";
       this.entriesCollection.doc(entry.id).set(entry);
     }
+  }
+
+  alreadyApproved(element): string {
+    return "false";
   }
 }

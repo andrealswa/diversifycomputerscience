@@ -1,6 +1,7 @@
 <div class="background">
   <div class="table-body">
     <mat-card>
+      <h3 class="align-header-text-center">Admin Dashboard</h3>
       <mat-table [dataSource]="dataSource" matSort>
         <ng-container matColumnDef="firstName">
           <mat-header-cell *matHeaderCellDef mat-sort-header
@@ -109,17 +110,19 @@
                   class="blue-button"
                   mat-raised-button
                   (click)="approvedEntry(element)"
+                  [disabled]="element.approved"
                 >
-                  Approve
+                  {{ element.approved === "true" ? "Approved" : "Approve" }}
                 </button>
               </mat-list-item>
               <mat-list-item>
                 <button
                   class="red-button"
                   mat-raised-button
-                  (click)="removeEntry(element)"
+                  (click)="hideEntry(element)"
+                  [disabled]="element.approved === 'false'"
                 >
-                  Remove
+                  {{ element.approved === "true" ? "Hide" : "Hidden" }}
                 </button>
               </mat-list-item>
             </mat-list></mat-cell
