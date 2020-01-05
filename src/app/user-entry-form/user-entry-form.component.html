@@ -43,18 +43,28 @@
                   [value]="emailData"
                 />
               </mat-form-field>
+
               <mat-form-field class="example-full-width" style="width: 100%">
                 <input
                   matInput
+                  matGoogleMapsAutocomplete
+                  (onAutocompleteSelected)="onAutocompleteSelected($event)"
+                  (onLocationSelected)="onLocationSelected($event)"
+                  type="establishment"
                   placeholder="Affiliated Institution"
                   formControlName="affiliatedInstitution"
                   required
                   [value]="affiliatedInstitutionData"
                 />
               </mat-form-field>
+
               <mat-form-field class="example-full-width" style="width: 100%">
                 <input
                   matInput
+                  matGoogleMapsAutocomplete
+                  (onAutocompleteSelected)="onAutocompleteSelected($event)"
+                  (onLocationSelected)="onLocationSelected($event)"
+                  type="regions"
                   placeholder="Country"
                   formControlName="country"
                   required
@@ -109,6 +119,7 @@
                   [value]="currentCareerStageData"
                 />
               </mat-form-field>
+
               <mat-form-field class="example-full-width" style="width: 100%">
                 <input
                   matInput
@@ -127,6 +138,7 @@
                   [value]="subfieldKeywordsData"
                 />
               </mat-form-field>
+              <!-- google places test -->
 
               <div style="text-align: center;">
                 <button

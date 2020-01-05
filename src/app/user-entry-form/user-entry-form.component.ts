@@ -192,7 +192,7 @@ export class UserEntryFormComponent implements OnInit {
   selfIDList: string[] = [
     "Asian",
     "Indigenous / Native",
-    "Lesbian, Gay, Bisexual, Transgender, Queer, LGBTQ+",
+    "Lesbian, Gay, Bisexual, Transgender, Queer (LGBTQ+)",
     "Multi-Racial",
     "Other Race",
     "Person with a Disability",
@@ -203,5 +203,20 @@ export class UserEntryFormComponent implements OnInit {
     "Pacific Islander",
     "Other Non-White Self-Identification"
   ];
-  genderList: string[] = ["Male", "Female", "Non-binary", "Self Describe"];
+  genderList: string[] = [
+    "Male",
+    "Female",
+    "Non-binary",
+    "Prefer Not To Disclose"
+  ];
+
+  branchList: string[] = [
+    "Artificial Intelligence",
+    "Cyber Security",
+    "Application Development",
+    "Graphics",
+    "Games",
+    "Systems Programming",
+    "Data Science"
+  ];
 }
