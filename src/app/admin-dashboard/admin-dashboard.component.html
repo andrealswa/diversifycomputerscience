@@ -1,6 +1,7 @@
 <div class="background">
   <div class="table-body">
     <mat-card>
+      <h3 class="align-header-text-center">Admin Dashboard</h3>
       <mat-table [dataSource]="dataSource" matSort>
         <ng-container matColumnDef="firstName">
           <mat-header-cell *matHeaderCellDef mat-sort-header
@@ -95,20 +96,44 @@
             element.branch
           }}</mat-cell>
         </ng-container>
+
         <ng-container matColumnDef="subfieldKeywords">
           <mat-header-cell *matHeaderCellDef mat-sort-header
             >Subfield Keywords</mat-header-cell
           >
-          <mat-cell *matCellDef="let element" data-label="Subfield Keywords">{{
-            element.subfieldKeywords
-          }}</mat-cell>
+          <mat-cell *matCellDef="let element" data-label="Subfield Keywords"
+            >{{ element.subfieldKeywords }}
+
+            <mat-list>
+              <mat-list-item>
+                <button
+                  class="blue-button"
+                  mat-raised-button
+                  (click)="approvedEntry(element)"
+                  [disabled]="element.approved"
+                >
+                  {{ element.approved === "true" ? "Approved" : "Approve" }}
+                </button>
+              </mat-list-item>
+              <mat-list-item>
+                <button
+                  class="red-button"
+                  mat-raised-button
+                  (click)="hideEntry(element)"
+                  [disabled]="element.approved === 'false'"
+                >
+                  {{ element.approved === "true" ? "Hide" : "Hidden" }}
+                </button>
+              </mat-list-item>
+            </mat-list></mat-cell
+          >
         </ng-container>
 
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
         <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
       </mat-table>
 
-      <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20, 100]">
+      <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20, 100, 500]">
       </mat-paginator>
     </mat-card>
   </div>
@@ -124,37 +149,6 @@
           placeholder="Search"
         />
       </mat-form-field>
-    </mat-card>
-  </div>
-
-  <div fxLayoutAlign="center center">
-    <mat-card class="search-card">
-      <mat-card-header>
-        <mat-card-title>Useful Search Terms:</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <mat-card class="search-card-item">
-          <mat-card-subtitle>Gender:</mat-card-subtitle>
-          <p>
-            Male, Female, Other
-          </p>
-        </mat-card>
-
-        <mat-card class="search-card-item">
-          <mat-card-subtitle>Self ID:</mat-card-subtitle>
-          <p>
-            Black, Asian, Latino/Latino or Hispanic, LGBTQ+, Indigenous /
-            Native, Multi-Racial
-          </p>
-        </mat-card>
-        <mat-card class="search-card-item">
-          <mat-card-subtitle>Career Stage:</mat-card-subtitle>
-          <p>
-            Masters Student, PhD Student, Postdocorate, Industry, Tenure-Track,
-            Tenured
-          </p>
-        </mat-card>
-      </mat-card-content>
     </mat-card>
   </div>
 </div>

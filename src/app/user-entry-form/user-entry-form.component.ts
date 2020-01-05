@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, Validators, FormControl } from "@angular/forms";
+import { AngularFireAuth } from "@angular/fire/auth";
 
 // new stuff
 import {
@@ -10,7 +11,7 @@ import {
 import { Observable } from "rxjs";
 
 export interface Entry {
-  id: string;
+  uid: string;
   firstName: string;
   lastName: string;
   email: string;
@@ -22,6 +23,7 @@ export interface Entry {
   currentCareerStage: string;
   branch: string;
   subfieldKeywords: string;
+  approved: string;
 }
 
 @Component({
@@ -33,41 +35,107 @@ export class UserEntryFormComponent implements OnInit {
   private entriesCollection: AngularFirestoreCollection<Entry>;
   entries: Observable<Entry[]>;
 
-  constructor(private fb: FormBuilder, private db: AngularFirestore) {
+  // If an entry is already present:
+  entryPresent: boolean = false;
+
+  // Place to hold data in case it is already present:
+  firstNameData: string = "";
+  lastNameData: string = "";
+  emailData: string = "";
+  affiliatedInstitutionData: string = "";
+  countryData: string = "";
+  socialMediaData: string = "";
+  selfIDData: string = "";
+  genderData: string = "";
+  currentCareerStageData: string = "";
+  branchData: string = "";
+  subfieldKeywordsData: string = "";
+
+  constructor(
+    private fb: FormBuilder,
+    private db: AngularFirestore,
+    public afAuth: AngularFireAuth
+  ) {
     this.entriesCollection = db.collection<Entry>("entries");
     this.entries = this.entriesCollection.valueChanges();
   }
 
-  ngOnInit() {}
-
   userEntryForm = this.fb.group({
-    firstName: ["", Validators.required],
-    lastName: ["", Validators.required],
-    email: ["", [Validators.email, Validators.required]],
-    affiliatedInstitution: ["", Validators.required],
-    country: ["", Validators.required],
-    socialMedia: [""],
-    selfID: ["", Validators.required],
-    gender: ["", Validators.required],
-    currentCareerStage: ["", Validators.required],
-    branch: ["", Validators.required],
-    subfieldKeywords: ["", Validators.required]
+    firstName: [this.entryPresent ? "" : "", Validators.required],
+    lastName: [this.firstNameData, Validators.required],
+    email: [this.emailData, [Validators.email, Validators.required]],
+    affiliatedInstitution: [
+      this.affiliatedInstitutionData,
+      Validators.required
+    ],
+    country: [this.countryData, Validators.required],
+    socialMedia: [this.socialMediaData],
+    selfID: [this.selfIDData, Validators.required],
+    gender: [this.genderData, Validators.required],
+    currentCareerStage: [this.currentCareerStageData, Validators.required],
+    branch: [this.branchData, Validators.required],
+    subfieldKeywords: [this.subfieldKeywordsData, Validators.required]
   });
 
+  ngOnInit() {
+    // Attempt to populate with initial data if user already entered a submission.
+    let user: firebase.User = this.afAuth.auth.currentUser;
+    let uid: string = user.uid;
+
+    this.entriesCollection
+      .doc(uid)
+      .get()
+      .subscribe(entry => {
+        this.entryPresent = true;
+        let data = entry.data();
+
+        this.firstNameData = data.firstName;
+        this.lastNameData = data.lastName;
+        this.emailData = data.email;
+        this.affiliatedInstitutionData = data.affiliatedInstitution;
+        this.countryData = data.countryData;
+        this.socialMediaData = data.socialMedia;
+        this.selfIDData = data.selfID;
+        this.genderData = data.gender;
+        this.currentCareerStageData = data.currentCareerStage;
+        this.branchData = data.branch;
+        this.subfieldKeywordsData = data.subfieldKeywords;
+
+        // Need patchValue to correct strange bug with validation not recognizing preloaded values
+        this.userEntryForm.patchValue({
+          firstName: data.firstName,
+          lastName: data.lastName,
+          email: data.email,
+          affiliatedInstitution: data.affiliatedInstitution,
+          country: data.country,
+          socialMedia: data.socialMedia,
+          selfID: data.selfID,
+          gender: data.gender,
+          currentCareerStage: data.currentCareerStage,
+          branch: data.branch,
+          subfieldKeywords: data.subfieldKeywords
+        });
+      });
+  }
+
   submit() {
-    let firstName = this.userEntryForm.get("firstName").value;
-    let lastName = this.userEntryForm.get("lastName").value;
-    let email = this.userEntryForm.get("email").value;
-    let affiliatedInstitution = this.userEntryForm.get("affiliatedInstitution")
+    let firstName: string = this.userEntryForm.get("firstName").value;
+    let lastName: string = this.userEntryForm.get("lastName").value;
+    let email: string = this.userEntryForm.get("email").value;
+    let affiliatedInstitution: string = this.userEntryForm.get(
+      "affiliatedInstitution"
+    ).value;
+    let country: string = this.userEntryForm.get("country").value;
+    let socialMedia: string = this.userEntryForm.get("socialMedia").value;
+    let selfID: string = this.userEntryForm.get("selfID").value;
+    let gender: string = this.userEntryForm.get("gender").value;
+    let currentCareerStage: string = this.userEntryForm.get(
+      "currentCareerStage"
+    ).value;
+    let branch: string = this.userEntryForm.get("branch").value;
+    let subfieldKeywords: string = this.userEntryForm.get("subfieldKeywords")
       .value;
-    let country = this.userEntryForm.get("country").value;
-    let socialMedia = this.userEntryForm.get("socialMedia").value;
-    let selfID = this.userEntryForm.get("selfID").value;
-    let gender = this.userEntryForm.get("gender").value;
-    let currentCareerStage = this.userEntryForm.get("currentCareerStage").value;
-    let branch = this.userEntryForm.get("branch").value;
-    let subfieldKeywords = this.userEntryForm.get("subfieldKeywords").value;
-    console.log(selfID);
+
     //this.db.collection("entries").add(item);
     this.addEntry(
       firstName,
@@ -97,9 +165,13 @@ export class UserEntryFormComponent implements OnInit {
     branch: string,
     subfieldKeywords: string
   ) {
-    const id = this.db.createId();
+    let approved: string = "false";
+
+    let user: firebase.User = this.afAuth.auth.currentUser;
+    let uid: string = user.uid;
+
     const entry: Entry = {
-      id,
+      uid,
       firstName,
       lastName,
       email,
@@ -110,15 +182,17 @@ export class UserEntryFormComponent implements OnInit {
       gender,
       currentCareerStage,
       branch,
-      subfieldKeywords
+      subfieldKeywords,
+      approved
     };
-    this.entriesCollection.doc(id).set(entry);
+    // Need the id to be the user's id.
+    this.entriesCollection.doc(uid).set(entry);
   }
 
   selfIDList: string[] = [
     "Asian",
     "Indigenous / Native",
-    "Lesbian, Gay, Bisexual, Transgender, Queer",
+    "Lesbian, Gay, Bisexual, Transgender, Queer, LGBTQ+",
     "Multi-Racial",
     "Other Race",
     "Person with a Disability",
