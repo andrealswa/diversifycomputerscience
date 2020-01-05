@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, Validators, FormControl } from "@angular/forms";
 import { AngularFireAuth } from "@angular/fire/auth";
+import Swal from "sweetalert2";
 
 // new stuff
 import {
@@ -149,6 +150,12 @@ export class UserEntryFormComponent implements OnInit {
       currentCareerStage,
       branch,
       subfieldKeywords
+    );
+
+    Swal.fire(
+      "Entry Submission Successful!",
+      "Our team of volunteers will review your entry",
+      "success"
     );
   }
 

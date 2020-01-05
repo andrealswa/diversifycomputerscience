@@ -61,6 +61,7 @@
     "quill": "^1.3.7",
     "rxjs": "~6.4.0",
     "rxjs-compat": "^6.5.3",
+    "sweetalert2": "^9.5.4",
     "tslib": "^1.10.0",
     "web-animations-js": "github:angular/web-animations-js#release_pr208",
     "zone.js": "~0.9.1"
