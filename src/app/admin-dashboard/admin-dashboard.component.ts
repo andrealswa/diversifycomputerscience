@@ -39,7 +39,8 @@ export class AdminDashboardComponent implements OnInit, AfterViewInit {
     "gender",
     "currentCareerStage",
     "branch",
-    "subfieldKeywords"
+    "subfieldKeywords",
+    "approved"
   ];
   dataSource = new MatTableDataSource<Entry>();
 

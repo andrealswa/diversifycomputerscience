@@ -2,6 +2,18 @@
   <div class="table-body">
     <mat-card>
       <h3 class="align-header-text-center">Admin Dashboard</h3>
+      <div fxLayoutAlign="center center">
+        <mat-form-field fxFlex="50%" style="text-align: center">
+          <input
+            matInput
+            autocomplete="off"
+            style="text-align: center"
+            type="text"
+            (keyup)="doFilter($event.target.value)"
+            placeholder="Search"
+          />
+        </mat-form-field>
+      </div>
       <mat-table [dataSource]="dataSource" matSort>
         <ng-container matColumnDef="firstName">
           <mat-header-cell *matHeaderCellDef mat-sort-header
@@ -103,7 +115,15 @@
           >
           <mat-cell *matCellDef="let element" data-label="Subfield Keywords"
             >{{ element.subfieldKeywords }}
+          </mat-cell>
+        </ng-container>
 
+        <!-- approved column -->
+        <ng-container matColumnDef="approved">
+          <mat-header-cell *matHeaderCellDef mat-sort-header
+            >Approve / Hide</mat-header-cell
+          >
+          <mat-cell *matCellDef="let element" data-label="Approve / Hide">
             <mat-list>
               <mat-list-item>
                 <button
@@ -138,17 +158,5 @@
     </mat-card>
   </div>
   <!-- endoftable here -->
-
-  <div fxLayoutAlign="center center">
-    <mat-card class="filter-card" fxLayoutAlign="center center">
-      <mat-form-field fxFlex="95%">
-        <input
-          matInput
-          type="text"
-          (keyup)="doFilter($event.target.value)"
-          placeholder="Search"
-        />
-      </mat-form-field>
-    </mat-card>
-  </div>
 </div>
+<div style="height: 100px; background-color: #212121;"></div>
