@@ -7,6 +7,26 @@ import { map, shareReplay } from "rxjs/operators";
 
 // AngularFire
 import { AngularFireAuth } from "@angular/fire/auth";
+import { async } from "@angular/core/testing";
+import { userInfo } from "os";
+import { AngularFirestore } from "angularfire2/firestore";
+
+interface Entry {
+  id: string;
+  firstName: string;
+  lastName: string;
+  affiliatedInstitution: string;
+  email: string;
+  country: string;
+  socialMedia: string;
+  selfID: string;
+  gender: string;
+  currentCareerStage: string;
+  branch: string;
+  subfieldKeywords: string;
+  approved: string;
+  isAdmin: string;
+}
 
 @Component({
   selector: "app-header",
@@ -15,6 +35,8 @@ import { AngularFireAuth } from "@angular/fire/auth";
 })
 export class HeaderComponent {
   // Angular Generated Navbar
+
+  isAdmin: string = "false";
 
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)
@@ -25,6 +47,18 @@ export class HeaderComponent {
 
   constructor(
     private breakpointObserver: BreakpointObserver,
-    public afAuth: AngularFireAuth
+    public afAuth: AngularFireAuth,
+    public firestore: AngularFirestore
   ) {}
+
+  ngOnInit() {
+    setTimeout(() => this.afterngOnInit(), 1000);
+  }
+
+  afterngOnInit() {
+    let user: firebase.User = this.afAuth.auth.currentUser;
+    let uid: any = user.uid;
+    console.log(uid);
+    this.firestore.collection("entries").get(uid);
+  }
 }
