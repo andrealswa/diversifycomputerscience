@@ -8,7 +8,7 @@ import { map, shareReplay } from "rxjs/operators";
 // AngularFire
 import { AngularFireAuth } from "@angular/fire/auth";
 import { async } from "@angular/core/testing";
-import { userInfo } from "os";
+//import { userInfo } from "os";
 import { AngularFirestore } from "angularfire2/firestore";
 
 interface Entry {

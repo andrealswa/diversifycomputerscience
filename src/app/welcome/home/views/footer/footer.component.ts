@@ -19,8 +19,8 @@ import { Component, OnInit } from "@angular/core";
                 <mat-list-item>
                   <mat-icon mat-list-icon color="accent">location_on</mat-icon>
                   <h5 matLine><b>Address</b></h5>
-                  <p matLine>Topoban, Akhalia</p>
-                  <p matLine>Sylhet 3114, BD</p>
+                  <p matLine>Windsor, Canada</p>
+                  <p matLine>Sunset 401, ON</p>
                 </mat-list-item>
               </mat-list>
 
@@ -32,7 +32,7 @@ import { Component, OnInit } from "@angular/core";
                 </ul>
               </div>
             </div>
-            <div fxFlex="50" class="footer-box">
+            <div fxFlex="10" class="footer-box">
               <div class="socials pt-1">
                 <ul>
                   <li><a href="" class="social-icon linkedin"></a></li>
