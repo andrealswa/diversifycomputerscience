@@ -1,3 +1,7 @@
+
+https://master.d7tkqjok0135x.amplifyapp.com/
+
+
 # Diversify
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
