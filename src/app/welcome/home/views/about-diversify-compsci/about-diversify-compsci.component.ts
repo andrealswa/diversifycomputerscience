@@ -23,7 +23,9 @@ import { Component, OnInit, Input } from "@angular/core";
             ><div>
               <mat-card class="inner-cards-about">
                 <div class="icons-container">
-                  <mat-icon class="icons">visibility</mat-icon>
+                  <mat-icon class="icons" aria-hidden="true"
+                    >visibility</mat-icon
+                  >
                 </div>
                 <mat-card-title style="text-align: center"
                   >Increase Visibility</mat-card-title
@@ -39,7 +41,7 @@ import { Component, OnInit, Input } from "@angular/core";
             ><div>
               <mat-card class="inner-cards-about">
                 <div class="icons-container">
-                  <mat-icon class="icons">group</mat-icon>
+                  <mat-icon class="icons" aria-hidden="true">group</mat-icon>
                 </div>
                 <mat-card-title style="text-align: center"
                   >Build Communities</mat-card-title
@@ -55,7 +57,9 @@ import { Component, OnInit, Input } from "@angular/core";
             ><div>
               <mat-card class="inner-cards-about">
                 <div class="icons-container">
-                  <mat-icon class="icons">brightness_5</mat-icon>
+                  <mat-icon class="icons" aria-hidden="true"
+                    >brightness_5</mat-icon
+                  >
                 </div>
                 <mat-card-title style="text-align: center"
                   >Highlight Progress</mat-card-title
