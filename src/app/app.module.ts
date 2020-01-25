@@ -10,6 +10,7 @@ import { AppComponent } from "./app.component";
 import { MaterialModule } from "./material.module";
 import { WelcomeComponent } from "./welcome/welcome.component";
 import { AppRoutingModule } from "./app-routing.module";
+import { NgxPageScrollModule } from "ngx-page-scroll";
 
 import { UIService } from "./shared/ui.service";
 import { UserEntryFormComponent } from "./user-entry-form/user-entry-form.component";
@@ -52,6 +53,7 @@ import { AdminDashboardComponent } from "./admin-dashboard/admin-dashboard.compo
     AngularFireAuthModule,
     ReactiveFormsModule,
     HomeModule,
+    NgxPageScrollModule,
     AuthenticationModule,
     AgmCoreModule.forRoot({
       apiKey: "AIzaSyBFy2mXmLl0DPUidcUIpnq3k5wLanFMi3M",

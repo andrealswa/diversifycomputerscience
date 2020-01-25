@@ -2,6 +2,16 @@ body {
   font-family: "Covered By Your Grace", cursive;
   line-height: 1.25;
 }
+.search-terms {
+  padding-top: 40px;
+}
+.letter {
+  padding-right: 10px;
+}
+.textID {
+  color: rgb(114, 112, 112);
+  font-size: 15px;
+}
 
 @media screen and (max-width: 960px) {
   .mat-table {
@@ -29,10 +39,7 @@ body {
     padding-right: 30px;
     padding-left: 30px;
   }
-  /*
-  .mat-table .mat-row:nth-child(even) {background: #CCC}
-  .mat-table .mat-row:nth-child(odd) {background: #FFF}
-  */
+
   .mat-table .mat-cell {
     border-bottom: 1px solid #ddd;
     display: block;
@@ -43,10 +50,6 @@ body {
     margin-bottom: 4%;
   }
   .mat-table .mat-cell:before {
-    /*
-    * aria-label has no advantage, it won't be read inside a table
-    content: attr(aria-label);
-    */
     content: attr(data-label);
     float: left;
     text-transform: uppercase;
@@ -78,7 +81,8 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 100vh;
+  height: 150vh;
+  margin-top: -100px;
 }
 
 .filter-card {
@@ -88,7 +92,7 @@ body {
 }
 
 .table-body {
-  padding-top: 100px;
+  padding-top: 50px;
   width: 98%;
   margin-left: auto;
   margin-right: auto;
@@ -96,17 +100,19 @@ body {
 
 .search-card {
   width: 95%;
-  max-width: 700px;
+  max-width: 800px;
 
-  background: url("../../assets/images/bg-about.png") no-repeat center center;
+  background: url("../../assets/images/bg-table.png") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-
   background-color: white;
 }
-
+.remove-orange-border {
+  outline: none;
+  border: 0;
+}
 .search-card-item {
   margin-top: 5px;
 }
@@ -115,6 +121,10 @@ ul {
   -webkit-columns: 2;
   -moz-columns: 2;
   columns: 2;
+}
+.center-button {
+  text-align: center;
+  padding-bottom: 30px;
 }
 @media only screen and (max-width: 740px) {
   ul {

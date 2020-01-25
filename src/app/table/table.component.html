@@ -1,4 +1,55 @@
-<div class="background" style="height: 130vh">
+<div class="background">
+  <div fxLayoutAlign="center center" class="search-terms">
+    <mat-card class="search-card">
+      <div class="center-button">
+        <button
+          class="remove-orange-border"
+          mat-raised-button
+          (click)="toggleButton()"
+        >
+          Useful Search Terms
+        </button>
+      </div>
+      <div *ngIf="showCenterButton">
+        <mat-card-content>
+          <mat-card class="search-card-item">
+            <mat-card-subtitle>Self ID</mat-card-subtitle>
+            <mat-list>
+              <ul>
+                <mat-list-item *ngFor="let selfIDPair of selfIDList2">
+                  <div class="letter">
+                    <strong> {{ selfIDPair[0] }}</strong>
+                  </div>
+                  <div class="textID">
+                    {{ selfIDPair[1] }}
+                  </div>
+                </mat-list-item>
+              </ul>
+            </mat-list>
+          </mat-card>
+
+          <mat-card class="search-card-item">
+            <mat-card-subtitle>Gender</mat-card-subtitle>
+            <mat-list>
+              <ul>
+                <mat-list-item
+                  style="padding: 10px;"
+                  *ngFor="let gender of genderList"
+                >
+                  <div class="letter">
+                    <strong>{{ gender[0] }}</strong>
+                  </div>
+                  <div class="textID">
+                    {{ gender[1] }}
+                  </div>
+                </mat-list-item>
+              </ul>
+            </mat-list>
+          </mat-card>
+        </mat-card-content>
+      </div>
+    </mat-card>
+  </div>
   <div class="table-body">
     <mat-card>
       <div fxLayoutAlign="center center">
@@ -120,73 +171,11 @@
         <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
       </mat-table>
 
-      <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20, 100]">
+      <mat-paginator [pageSize]="10" [pageSizeOptions]="[10, 20, 100]">
       </mat-paginator>
     </mat-card>
   </div>
   <!-- endoftable here -->
-
-  <div fxLayoutAlign="center center" style="margin-top: 50px;">
-    <mat-card class="search-card">
-      <mat-card-header>
-        <mat-card-title>Useful Search Terms</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <mat-card class="search-card-item">
-          <mat-card-subtitle>Self ID</mat-card-subtitle>
-          <mat-list>
-            <ul>
-              <mat-list-item *ngFor="let selfID of selfIDList">
-                {{ selfID }}
-              </mat-list-item>
-            </ul>
-          </mat-list>
-        </mat-card>
-
-        <mat-card class="search-card-item">
-          <mat-card-subtitle>Gender</mat-card-subtitle>
-          <mat-list>
-            <ul>
-              <mat-list-item
-                style="padding: 10px;"
-                *ngFor="let gender of genderList"
-              >
-                {{ gender }}
-              </mat-list-item>
-            </ul>
-          </mat-list>
-        </mat-card>
-
-        <!-- <mat-card class="search-card-item">
-          <mat-card-subtitle>Career Stage</mat-card-subtitle>
-          <mat-list>
-            <ul>
-              <mat-list-item
-                style="padding: 10px;"
-                *ngFor="let stage of stageList"
-              >
-                {{ stage }}
-              </mat-list-item>
-            </ul>
-          </mat-list>
-        </mat-card>
-
-        <mat-card class="search-card-item">
-          <mat-card-subtitle>Branch</mat-card-subtitle>
-          <mat-list>
-            <ul>
-              <mat-list-item
-                style="padding: 10px;"
-                *ngFor="let branch of branchList"
-              >
-                {{ branch }}
-              </mat-list-item>
-            </ul>
-          </mat-list>
-        </mat-card> -->
-      </mat-card-content>
-    </mat-card>
-  </div>
 </div>
 <div style="height: 100px; background-color: #212121;"></div>
 <!-- "Asian",

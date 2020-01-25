@@ -43,6 +43,15 @@ export class TableComponent implements OnInit, AfterViewInit {
   ];
   dataSource = new MatTableDataSource<Entry>();
 
+  showCenterButton: boolean = true;
+  toggleButton() {
+    if (this.showCenterButton === false) {
+      this.showCenterButton = true;
+    } else {
+      this.showCenterButton = false;
+    }
+  }
+
   @ViewChild(MatSort, { static: false }) sort: MatSort;
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
 
@@ -75,27 +84,41 @@ export class TableComponent implements OnInit, AfterViewInit {
   }
 
   selfIDList: string[] = [
-    "Asian",
-    "Indigenous / Native",
-    "Lesbian, Gay, Bisexual, Transgender, Queer, LGBTQ+",
-    "Multi-Racial",
-    "Other Race",
-    "Person with a Disability",
-    "Black",
-    "Latina / Latino or Hispanic",
-    "Middle Eastern / North African",
-    "Not a Citizen of an Anglophone Country",
-    "Pacific Islander",
-    "Other Non-White Self-Identification"
+    "[A]  Asian",
+    "[I]  Indigenous / Native",
+    "[LGBTQ+]   Lesbian, Gay, Bisexual, Transgender, Queer, LGBTQ+",
+    "[MR]   Multi-Racial",
+    "[OR]   Other Race",
+    "[D]    Person with a Disability",
+    "[B]  Black",
+    "[L/H]  Latina / Latino or Hispanic",
+    "[MENA]   Middle Eastern / North African",
+    "[NC]   Not a Citizen of an Anglophone Country",
+    "[P]    Pacific Islander",
+    "[O]    Other Non-White Self-Identification"
   ];
 
-  genderList: string[] = [
-    "Female",
-    "Male",
-    "Non-binary",
-    "Other",
-    "Prefer Not To Disclose",
-    "Self Describe"
+  selfIDList2: string[][] = [
+    ["A", "Asian"],
+    ["I", "Indigenous / Native"],
+    ["LGBTQ+", "Lesbian, Gay, Bisexual, Transgender, Queer, LGBTQ+"],
+    ["MR", "Multi-Racial"],
+    ["OR", "Other Race"],
+    ["D", "Person with a Disability"],
+    ["B", "Black"],
+    ["L/H", "Latina / Latino or Hispanic"],
+    ["MENA", "Middle Eastern / North African"],
+    ["NC", "Not a Citizen of an Anglophone Country"],
+    ["P", "Pacific Islander"],
+    ["O", "Other Non-White Self-Identification"]
+  ];
+
+  genderList: string[][] = [
+    ["F", "Female"],
+    ["M", "Male"],
+    ["NB", "Non-binary"],
+    ["ND", "Prefer Not To Disclose"],
+    ["SD", "Self Describe"]
   ];
   stageList: string[] = [
     "Masters Student",

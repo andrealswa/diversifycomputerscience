@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from "@angular/core";
     <section>
       <mat-card class="container container-outline">
         <div>
-          <mat-card class="inner-cards-about about-top-card-center">
+          <mat-card class="about-top-card-center">
             <mat-card-title class="about-title-font">
               About Diversify CompSci
             </mat-card-title>
@@ -18,34 +18,56 @@ import { Component, OnInit, Input } from "@angular/core";
             </mat-card-content>
           </mat-card>
         </div>
-
-        <div>
-          <mat-card class="inner-cards-about">
-            <mat-card-title>Increase Visibility</mat-card-title>
-            <mat-card-content>
-              Help to bridge the gap between the need for and the availability
-              of diverse perspectives in the field.
-            </mat-card-content>
-          </mat-card>
-        </div>
-        <div>
-          <mat-card class="inner-cards-about">
-            <mat-card-title>Build Communities</mat-card-title>
-            <mat-card-content>
-              Offer more opportunities for professionals to connect with each
-              other and develop strong networks.
-            </mat-card-content>
-          </mat-card>
-        </div>
-        <div>
-          <mat-card class="inner-cards-about">
-            <mat-card-title>Highlight Progress</mat-card-title>
-            <mat-card-content>
-              Showcase the increasing range of opportunities becoming available
-              in computer science.
-            </mat-card-content>
-          </mat-card>
-        </div>
+        <mat-grid-list gutterSize="20" cols="3" rowHeight="300px">
+          <mat-grid-tile [colspan]="1" [rowspan]="1"
+            ><div>
+              <mat-card class="inner-cards-about">
+                <div class="icons-container">
+                  <mat-icon class="icons">visibility</mat-icon>
+                </div>
+                <mat-card-title style="text-align: center"
+                  >Increase Visibility</mat-card-title
+                >
+                <mat-card-content style="text-align: center">
+                  Help to bridge the gap between the need for and the
+                  availability of diverse perspectives in the field.
+                </mat-card-content>
+              </mat-card>
+            </div></mat-grid-tile
+          >
+          <mat-grid-tile [colspan]="1" [rowspan]="1"
+            ><div>
+              <mat-card class="inner-cards-about">
+                <div class="icons-container">
+                  <mat-icon class="icons">group</mat-icon>
+                </div>
+                <mat-card-title style="text-align: center"
+                  >Build Communities</mat-card-title
+                >
+                <mat-card-content style="text-align: center">
+                  Offer more opportunities for professionals to connect with
+                  each other and develop strong networks.
+                </mat-card-content>
+              </mat-card>
+            </div></mat-grid-tile
+          >
+          <mat-grid-tile [colspan]="1" [rowspan]="1"
+            ><div>
+              <mat-card class="inner-cards-about">
+                <div class="icons-container">
+                  <mat-icon class="icons">brightness_5</mat-icon>
+                </div>
+                <mat-card-title style="text-align: center"
+                  >Highlight Progress</mat-card-title
+                >
+                <mat-card-content style="text-align: center">
+                  Showcase the increasing range of opportunities becoming
+                  available in computer science.
+                </mat-card-content>
+              </mat-card>
+            </div></mat-grid-tile
+          >
+        </mat-grid-list>
       </mat-card>
     </section>
   `

@@ -13,6 +13,7 @@ import { AngularFireAuth } from "@angular/fire/auth";
       <!-- For the blue-purple background -->
       <div style="height: 100px; background-color: #212121;"></div>
       <div class="bg-blue-purple">
+        <app-table id="table"> </app-table>
         <about-diversify-compsci></about-diversify-compsci>
         <team-bios></team-bios>
       </div>
