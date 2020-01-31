@@ -81,8 +81,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 150vh;
-  margin-top: -100px;
+  min-height: 150vh;
 }
 
 .filter-card {

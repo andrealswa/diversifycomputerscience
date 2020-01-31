@@ -18,7 +18,12 @@ import { Component, OnInit, Input } from "@angular/core";
             </mat-card-content>
           </mat-card>
         </div>
-        <mat-grid-list gutterSize="20" cols="3" rowHeight="300px">
+        <mat-grid-list
+          gutterSize="20"
+          [cols]="breakpoint"
+          rowHeight="300px"
+          (window:resize)="onResize($event)"
+        >
           <mat-grid-tile [colspan]="1" [rowspan]="1"
             ><div>
               <mat-card class="inner-cards-about">
@@ -80,6 +85,11 @@ export class PortfolioComponent implements OnInit {
   @Input("backgroundGray") public backgroundGray;
 
   constructor() {}
-
-  ngOnInit() {}
+  breakpoint: number;
+  ngOnInit() {
+    this.breakpoint = window.innerWidth <= 550 ? 1 : 3;
+  }
+  onResize(event) {
+    this.breakpoint = event.target.innerWidth <= 550 ? 1 : 3;
+  }
 }
