@@ -38,7 +38,7 @@ import { Component, OnInit, Input } from "@angular/core";
     </section>
   `
 })
-export class TestimonialsCarouselComponent implements OnInit {
+export class DisclaimerComponent implements OnInit {
   constructor() {}
   ngOnInit() {}
 }

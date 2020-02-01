@@ -19,10 +19,6 @@ import { AngularFireAuth } from "@angular/fire/auth";
       </div>
       <div style="height: 100px; background-color: #212121;"></div>
       <!-- For the yellow-red background -->
-      <div class="bg-yellow-red">
-        <disclaimer></disclaimer>
-        <questions></questions>
-      </div>
 
       <!-- Don't need thing, can change it up a lot -->
       <app-footer></app-footer>

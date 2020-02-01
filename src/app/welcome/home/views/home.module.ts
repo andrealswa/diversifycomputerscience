@@ -26,7 +26,7 @@ import { PortfolioComponent } from "./about-diversify-compsci/about-diversify-co
 import { ServicesComponent } from "./team-bios/team-bios.component";
 import { CtaComponent } from "./questions/questions.component";
 import { FooterComponent } from "./footer/footer.component";
-import { TestimonialsCarouselComponent } from "./disclaimer/disclaimer.component";
+import { DisclaimerComponent } from "./disclaimer/disclaimer.component";
 import { AllSectionsComponent } from "./all-sections.component";
 import { MaterialModule } from "src/app/material.module";
 
@@ -49,7 +49,7 @@ import { MaterialModule } from "src/app/material.module";
     ServicesComponent,
     CtaComponent,
     FooterComponent,
-    TestimonialsCarouselComponent,
+    DisclaimerComponent,
     AllSectionsComponent
   ],
   providers: [],
@@ -62,7 +62,7 @@ import { MaterialModule } from "src/app/material.module";
     ServicesComponent,
     CtaComponent,
     FooterComponent,
-    TestimonialsCarouselComponent,
+    DisclaimerComponent,
     AllSectionsComponent
   ]
 })
