@@ -55,6 +55,7 @@ import { AdminDashboardComponent } from "./admin-dashboard/admin-dashboard.compo
     HomeModule,
     NgxPageScrollModule,
     AuthenticationModule,
+    // Under My Project 19@
     AgmCoreModule.forRoot({
       apiKey: "AIzaSyBFy2mXmLl0DPUidcUIpnq3k5wLanFMi3M",
       libraries: ["places"]

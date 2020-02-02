@@ -120,6 +120,14 @@ export class UserEntryFormComponent implements OnInit {
   }
 
   submit() {
+    // This function is called in the html file.
+    /*
+      <form
+        style="font-size: large;"
+        [formGroup]="userEntryForm"
+        (ngSubmit)="submit()"
+      >
+    */
     let firstName: string = this.userEntryForm.get("firstName").value;
     let lastName: string = this.userEntryForm.get("lastName").value;
     let email: string = this.userEntryForm.get("email").value;
