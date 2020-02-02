@@ -10,6 +10,7 @@ import { LoginComponent } from "./authentication/login/login.component";
 import { AuthGuard } from "./authentication/auth.guard";
 import { AdminDashboardComponent } from "./admin-dashboard/admin-dashboard.component";
 import { DisclaimerComponent } from "./welcome/home/views/disclaimer/disclaimer.component";
+import { AuthAdminGuard } from "./authentication/authAdmin.guard";
 
 // The highest level routes for our program.
 const routes: Routes = [
@@ -34,7 +35,7 @@ const routes: Routes = [
   {
     path: "admindashboard",
     component: AdminDashboardComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthAdminGuard]
   },
   {
     path: "disclaimer",

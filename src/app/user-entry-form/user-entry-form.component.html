@@ -82,9 +82,9 @@
                   [value]="selfIDData"
                 >
                   <mat-option
-                    *ngFor="let selfID of selfIDList"
-                    [value]="selfID"
-                    >{{ selfID }}</mat-option
+                    *ngFor="let selfID of selfIDList2"
+                    [value]="selfID[0]"
+                    >{{ selfID[1] }}</mat-option
                   >
                 </mat-select>
               </mat-form-field>

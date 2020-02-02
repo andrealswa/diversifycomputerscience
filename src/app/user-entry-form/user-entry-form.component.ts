@@ -11,6 +11,7 @@ import {
   AngularFirestoreDocument
 } from "@angular/fire/firestore";
 import { Observable } from "rxjs";
+import { element } from "protractor";
 
 export interface Entry {
   uid: string;
@@ -208,28 +209,64 @@ export class UserEntryFormComponent implements OnInit {
       approved,
       isAdmin
     };
+
+    // let map = new Map<string, string>();
+    // map.set("Asian", "A");
+    // map.set("Indigenous / Native", "I");
+    // entry.selfID.replace("Asian", "A");
+    // let myStringList: any = entry.selfID;
+    // let myStringList2: string[] = myStringList;
+    // let finalList: string[] = [];
+    // myStringList2.forEach(element => {
+    //   finalList.push(element.replace("Asian", "A"));
+    //   element.replace("Indigenous / Native", "I");
+    //   element.replace(
+    //     "Lesbian, Gay, Bisexual, Transgender, Queer (LGBTQ+)",
+    //     "LGBTQ+"
+    //   );
+    // });
+    // let anyString: any = finalList;
+    // entry.selfID = anyString;
+    // entry.selfID = entry.selfID.replace("Asian", "A");
+
     // Need the id to be the user's id.
-    if (this.entriesCollection.doc(uid) != null) {
-      this.entriesCollection.doc(uid).update(entry);
-    } else {
-      this.entriesCollection.doc(uid).set(entry);
-    }
+    // if (this.entriesCollection.doc(uid).get() ) {
+    //   this.entriesCollection.doc(uid).update(entry);
+    // } else {
+    this.entriesCollection.doc(uid).set(entry);
+    //}
   }
 
-  selfIDList: string[] = [
-    "Asian",
-    "Indigenous / Native",
-    "Lesbian, Gay, Bisexual, Transgender, Queer (LGBTQ+)",
-    "Multi-Racial",
-    "Other Race",
-    "Person with a Disability",
-    "Black",
-    "Latina / Latino or Hispanic",
-    "Middle Eastern / North African",
-    "Not a Citizen of an Anglophone Country",
-    "Pacific Islander",
-    "Other Non-White Self-Identification"
+  // selfIDList: string[] = [
+  //   "Asian",
+  //   "Indigenous / Native",
+  //   "Lesbian, Gay, Bisexual, Transgender, Queer (LGBTQ+)",
+  //   "Multi-Racial",
+  //   "Other Race",
+  //   "Person with a Disability",
+  //   "Black",
+  //   "Latina / Latino or Hispanic",
+  //   "Middle Eastern / North African",
+  //   "Not a Citizen of an Anglophone Country",
+  //   "Pacific Islander",
+  //   "Other Non-White Self-Identification"
+  // ];
+
+  selfIDList2: string[][] = [
+    ["A", "Asian"],
+    ["I", "Indigenous / Native"],
+    ["LGBTQ+", "Lesbian, Gay, Bisexual, Transgender, Queer, LGBTQ+"],
+    ["MR", "Multi-Racial"],
+    ["OR", "Other Race"],
+    ["D", "Person with a Disability"],
+    ["B", "Black"],
+    ["L/H", "Latina / Latino or Hispanic"],
+    ["MENA", "Middle Eastern / North African"],
+    ["NC", "Not a Citizen of an Anglophone Country"],
+    ["P", "Pacific Islander"],
+    ["O", "Other Non-White Self-Identification"]
   ];
+
   genderList: string[] = [
     "Male",
     "Female",
