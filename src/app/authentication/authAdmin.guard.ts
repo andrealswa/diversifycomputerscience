@@ -62,6 +62,10 @@ export class AuthAdminGuard implements CanActivate {
       this.entry = this.entryDoc.valueChanges();
       //behaves asynchronously
       this.entry.subscribe(myEntry => {
+        // Made it into here
+        console.log("made it inside");
+        console.log("this.isAdmin: " + this.isAdmin);
+        console.log("myEntry.isAdmin: " + myEntry.isAdmin);
         this.isAdmin = myEntry.isAdmin;
         if (this.isAdmin === "true") {
           return true;

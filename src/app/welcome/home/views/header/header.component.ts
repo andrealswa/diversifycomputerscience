@@ -71,7 +71,20 @@ export class HeaderComponent {
       this.entry = this.entryDoc.valueChanges();
       //behaves asynchronously
       this.entry.subscribe(myEntry => {
-        this.isAdmin = myEntry.isAdmin;
+        // this is null apparently.
+        console.log("Made it into header.component.ts");
+        console.log("this.isAdmin: " + this.isAdmin);
+        console.log("myEntry: " + myEntry);
+        console.log("UID: " + uid);
+        if (myEntry == undefined) {
+          console.log("We are inside of myEntry");
+          let defaultEntry: Entry;
+          defaultEntry.isAdmin = "false";
+          this.firestore.doc(uid).set(defaultEntry);
+        } else {
+          console.log("myEntry.isAdmin: " + myEntry.isAdmin);
+          this.isAdmin = myEntry.isAdmin;
+        }
       });
     }
   }
