@@ -33,7 +33,8 @@ const routes: Routes = [
   },
   {
     path: "admindashboard",
-    component: AdminDashboardComponent
+    component: AdminDashboardComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "disclaimer",

@@ -126,15 +126,17 @@
       </div>
 
       <!-- Dashboard, Admin -->
-      <section *ngIf="afAuth.authState | async as user">
-        <div class="top-navigation-link hide-when-mobile">
-          <a class="link-color" routerLink="/admindashboard">
-            <button mat-button class="remove-orange-border text-shadow">
-              <mat-icon>dashboard</mat-icon>
-              <strong>Admin Dashboard</strong>
-            </button>
-          </a>
-        </div>
+      <section *ngIf="isAdmin === 'true'">
+        <section *ngIf="afAuth.authState | async as user">
+          <div class="top-navigation-link hide-when-mobile">
+            <a class="link-color" routerLink="/admindashboard">
+              <button mat-button class="remove-orange-border text-shadow">
+                <mat-icon>dashboard</mat-icon>
+                <strong>Admin Dashboard</strong>
+              </button>
+            </a>
+          </div>
+        </section>
       </section>
 
       <!-- Hamburger Menu -->

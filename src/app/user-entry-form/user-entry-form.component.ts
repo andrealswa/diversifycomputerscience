@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, Validators, FormControl } from "@angular/forms";
 import { AngularFireAuth } from "@angular/fire/auth";
 import Swal from "sweetalert2";
+import PlaceResult = google.maps.places.PlaceResult;
 
 // new stuff
 import {
@@ -25,6 +26,7 @@ export interface Entry {
   branch: string;
   subfieldKeywords: string;
   approved: string;
+  isAdmin: string;
 }
 
 @Component({
@@ -51,6 +53,7 @@ export class UserEntryFormComponent implements OnInit {
   currentCareerStageData: string = "";
   branchData: string = "";
   subfieldKeywordsData: string = "";
+  isAdminData: string = "false";
 
   constructor(
     private fb: FormBuilder,
@@ -101,6 +104,7 @@ export class UserEntryFormComponent implements OnInit {
         this.currentCareerStageData = data.currentCareerStage;
         this.branchData = data.branch;
         this.subfieldKeywordsData = data.subfieldKeywords;
+        this.isAdminData = data.isAdmin;
 
         // Need patchValue to correct strange bug with validation not recognizing preloaded values
         this.userEntryForm.patchValue({
@@ -144,6 +148,7 @@ export class UserEntryFormComponent implements OnInit {
     let branch: string = this.userEntryForm.get("branch").value;
     let subfieldKeywords: string = this.userEntryForm.get("subfieldKeywords")
       .value;
+    let isAdmin: string = this.isAdminData;
 
     //this.db.collection("entries").add(item);
     this.addEntry(
@@ -157,7 +162,8 @@ export class UserEntryFormComponent implements OnInit {
       gender,
       currentCareerStage,
       branch,
-      subfieldKeywords
+      subfieldKeywords,
+      isAdmin
     );
 
     Swal.fire(
@@ -178,7 +184,8 @@ export class UserEntryFormComponent implements OnInit {
     gender: string,
     currentCareerStage: string,
     branch: string,
-    subfieldKeywords: string
+    subfieldKeywords: string,
+    isAdmin: string
   ) {
     let approved: string = "false";
 
@@ -198,10 +205,15 @@ export class UserEntryFormComponent implements OnInit {
       currentCareerStage,
       branch,
       subfieldKeywords,
-      approved
+      approved,
+      isAdmin
     };
     // Need the id to be the user's id.
-    this.entriesCollection.doc(uid).set(entry);
+    if (this.entriesCollection.doc(uid) != null) {
+      this.entriesCollection.doc(uid).update(entry);
+    } else {
+      this.entriesCollection.doc(uid).set(entry);
+    }
   }
 
   selfIDList: string[] = [
