@@ -31,6 +31,7 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AdminDashboardComponent } from "./admin-dashboard/admin-dashboard.component";
+import { AdminGuard } from "./authentication/authAdmin.guard";
 
 @NgModule({
   declarations: [
@@ -62,7 +63,7 @@ import { AdminDashboardComponent } from "./admin-dashboard/admin-dashboard.compo
     }),
     MatGoogleMapsAutocompleteModule
   ],
-  providers: [UIService, AngularFirestore],
+  providers: [UIService, AngularFirestore, AdminGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
