@@ -9,7 +9,7 @@ import { Component, OnInit, Input } from "@angular/core";
         <div>
           <mat-card class="inner-cards-team-bios">
             <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
+              <div mat-card-avatar class="example-header-team"></div>
               <mat-card-title>Team Bios</mat-card-title>
               <mat-card-subtitle>Summary</mat-card-subtitle>
             </mat-card-header>
@@ -25,7 +25,7 @@ import { Component, OnInit, Input } from "@angular/core";
           <mat-grid-tile>
             <mat-card class="inner-cards-team-bios">
               <mat-card-header>
-                <div mat-card-avatar class="example-header-image"></div>
+                <div mat-card-avatar class="example-header-aislyn"></div>
                 <mat-card-title>Aislyn</mat-card-title>
                 <mat-card-subtitle></mat-card-subtitle>
               </mat-card-header>
@@ -41,7 +41,7 @@ import { Component, OnInit, Input } from "@angular/core";
           <mat-grid-tile>
             <mat-card class="inner-cards-team-bios">
               <mat-card-header>
-                <div mat-card-avatar class="example-header-image"></div>
+                <div mat-card-avatar class="example-header-andrea"></div>
                 <mat-card-title>Andrea</mat-card-title>
                 <mat-card-subtitle></mat-card-subtitle>
               </mat-card-header>
@@ -57,7 +57,7 @@ import { Component, OnInit, Input } from "@angular/core";
           <mat-grid-tile>
             <mat-card class="inner-cards-team-bios">
               <mat-card-header>
-                <div mat-card-avatar class="example-header-image"></div>
+                <div mat-card-avatar class="example-header-daniel"></div>
                 <mat-card-title>Daniel</mat-card-title>
                 <mat-card-subtitle></mat-card-subtitle>
               </mat-card-header>
@@ -72,7 +72,7 @@ import { Component, OnInit, Input } from "@angular/core";
           <mat-grid-tile>
             <mat-card class="inner-cards-team-bios">
               <mat-card-header>
-                <div mat-card-avatar class="example-header-image"></div>
+                <div mat-card-avatar class="example-header-alina"></div>
                 <mat-card-title>Alina</mat-card-title>
                 <mat-card-subtitle></mat-card-subtitle>
               </mat-card-header>
