@@ -1,69 +1,83 @@
 <div class="background">
-  <div fxLayoutAlign="center center" class="search-terms">
-    <mat-card class="search-card">
-      <div class="center-button">
-        <button
-          class="remove-orange-border"
-          mat-raised-button
-          (click)="toggleButton()"
-        >
-          Show/Hide Useful Search Terms
-        </button>
-      </div>
-      <div *ngIf="showCenterButton">
-        <mat-card-content>
-          <mat-card class="search-card-item">
-            <mat-card-subtitle>Self ID</mat-card-subtitle>
-            <mat-list>
-              <ul>
-                <mat-list-item *ngFor="let selfIDPair of selfIDList2">
-                  <div class="letter">
-                    <strong> {{ selfIDPair[0] }}</strong>
-                  </div>
-                  <div class="textID">
-                    {{ selfIDPair[1] }}
-                  </div>
-                </mat-list-item>
-              </ul>
-            </mat-list>
-          </mat-card>
-
-          <mat-card class="search-card-item">
-            <mat-card-subtitle>Gender</mat-card-subtitle>
-            <mat-list>
-              <ul>
-                <mat-list-item
-                  style="padding: 10px;"
-                  *ngFor="let gender of genderList"
-                >
-                  <div class="letter">
-                    <strong>{{ gender[0] }}</strong>
-                  </div>
-                  <div class="textID">
-                    {{ gender[1] }}
-                  </div>
-                </mat-list-item>
-              </ul>
-            </mat-list>
-          </mat-card>
-        </mat-card-content>
-      </div>
-    </mat-card>
-  </div>
   <div class="table-body">
     <mat-card>
       <div fxLayoutAlign="center center">
-        <mat-form-field fxFlex="50%" style="text-align: center">
+        <mat-form-field fxFlex="25%" style="text-align: left">
           <input
             matInput
             autocomplete="off"
-            style="text-align: center"
+            style="text-align: left"
             type="text"
             (keyup)="doFilter($event.target.value)"
             placeholder="Search"
           />
+          <mat-icon matSuffix class="move-search-icon">search</mat-icon>
         </mat-form-field>
+        <div class="center-button">
+          <button
+            class="remove-orange-border"
+            mat-raised-button
+            (click)="toggleButton()"
+          >
+            Show/Hide Useful Search Terms
+          </button>
+        </div>
       </div>
+
+      <!-- Start of the legends for the user search terms -->
+      <div fxLayoutAlign="center center" class="search-terms">
+        <mat-card class="search-card">
+          <!-- <div class="center-button">
+            <button
+              class="remove-orange-border"
+              mat-raised-button
+              (click)="toggleButton()"
+            >
+              Show/Hide Useful Search Terms
+            </button>
+          </div> -->
+          <div *ngIf="showCenterButton">
+            <mat-card-content>
+              <mat-card class="search-card-item">
+                <mat-card-subtitle>Self ID</mat-card-subtitle>
+                <mat-list>
+                  <ul>
+                    <mat-list-item *ngFor="let selfIDPair of selfIDList2">
+                      <div class="letter">
+                        <strong> {{ selfIDPair[0] }}</strong>
+                      </div>
+                      <div class="textID">
+                        {{ selfIDPair[1] }}
+                      </div>
+                    </mat-list-item>
+                  </ul>
+                </mat-list>
+              </mat-card>
+
+              <mat-card class="search-card-item">
+                <mat-card-subtitle>Gender</mat-card-subtitle>
+                <mat-list>
+                  <ul>
+                    <mat-list-item
+                      style="padding: 10px;"
+                      *ngFor="let gender of genderList"
+                    >
+                      <div class="letter">
+                        <strong>{{ gender[0] }}</strong>
+                      </div>
+                      <div class="textID">
+                        {{ gender[1] }}
+                      </div>
+                    </mat-list-item>
+                  </ul>
+                </mat-list>
+              </mat-card>
+            </mat-card-content>
+          </div>
+        </mat-card>
+      </div>
+      <!-- End of the legend for the user search terms -->
+
       <mat-table [dataSource]="dataSource" matSort>
         <ng-container matColumnDef="firstName">
           <mat-header-cell *matHeaderCellDef mat-sort-header
@@ -177,7 +191,7 @@
   </div>
   <!-- endoftable here -->
 </div>
-<div style="height: 100px; background-color: #212121;"></div>
+
 <!-- "Asian",
     "Indigenous / Native",
     "Lesbian, Gay, Bisexual, Transgender, Queer, LGBTQ+",

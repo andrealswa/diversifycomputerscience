@@ -7,22 +7,19 @@ import { AngularFireAuth } from "@angular/fire/auth";
 
   styleUrls: ["./welcome.component.scss"],
   template: `
-    <div>
+    <div class="background-image">
       <app-intro></app-intro>
 
       <!-- For the blue-purple background -->
-      <div style="height: 100px; background-color: #212121;"></div>
-      <div class="bg-blue-purple">
-        <app-table id="table"> </app-table>
-        <about-diversify-compsci></about-diversify-compsci>
-        <team-bios></team-bios>
-      </div>
-      <div style="height: 100px; background-color: #212121;"></div>
+      <app-table id="table"> </app-table>
+      <about-diversify-compsci></about-diversify-compsci>
+      <team-bios></team-bios>
+
       <!-- For the yellow-red background -->
 
       <!-- Don't need thing, can change it up a lot -->
-      <app-footer></app-footer>
     </div>
+    <app-footer></app-footer>
   `
 })
 export class WelcomeComponent implements OnInit {

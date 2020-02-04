@@ -1,4 +1,12 @@
 /* not using this .welcome currently */
+.background-image {
+  background-image: url("../../assets/images/newBackgroundDiversify.svg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 .welcome {
   text-align: center;
 }
