@@ -67,8 +67,8 @@ export class UserEntryFormComponent implements OnInit {
 
   userEntryForm = this.fb.group({
     firstName: [this.entryPresent ? "" : "", Validators.required],
-    lastName: [this.firstNameData, Validators.required],
-    email: [this.emailData, [Validators.email, Validators.required]],
+    lastName: [this.firstNameData, Validators.minLength(1)],
+    email: [this.emailData, [Validators.email]],
     affiliatedInstitution: [
       this.affiliatedInstitutionData,
       Validators.required
@@ -81,6 +81,7 @@ export class UserEntryFormComponent implements OnInit {
     branch: [this.branchData, Validators.required],
     subfieldKeywords: [this.subfieldKeywordsData, Validators.required]
   });
+  // selfID = new FormControl(null, Validators.required);
 
   ngOnInit() {
     // Attempt to populate with initial data if user already entered a submission.
