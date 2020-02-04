@@ -14,6 +14,7 @@
         <div fxLayout="column" fxLayoutAlign="space-around stretch">
           <section>
             <form
+              ngNativeValidate
               style="font-size: large;"
               [formGroup]="userEntryForm"
               (ngSubmit)="submit()"
@@ -76,10 +77,10 @@
                 <!-- <input matInput placeholder="Self ID" formControlName="selfID" /> -->
                 <mat-select
                   placeholder="Self ID"
-                  required
                   multiple
                   formControlName="selfID"
                   [value]="selfIDData"
+                  required="true"
                 >
                   <mat-option
                     *ngFor="let selfID of selfIDList2"
@@ -135,6 +136,7 @@
 
               <div style="text-align: center;">
                 <button
+                  [disabled]="userEntryForm.invalid"
                   type="submit"
                   class="submit-button"
                   mat-raised-button
