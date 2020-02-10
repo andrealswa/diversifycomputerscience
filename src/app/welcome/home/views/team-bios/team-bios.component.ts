@@ -76,9 +76,7 @@ import { Component, OnInit, Input } from "@angular/core";
                 <mat-card-title>Alina</mat-card-title>
                 <mat-card-subtitle></mat-card-subtitle>
               </mat-card-header>
-              <mat-card-content>
-                sdfjisdufuisdfhjuisdhfuidshfuisdhf
-              </mat-card-content>
+              <mat-card-content> </mat-card-content>
             </mat-card>
           </mat-grid-tile>
         </mat-grid-list>
