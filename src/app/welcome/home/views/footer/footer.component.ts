@@ -13,7 +13,7 @@ import { Component, OnInit } from "@angular/core";
           >
         </div>
         <div class="container">
-          <img src="assets/images/Google-DSC-Logo.png" />
+          <img src="assets/images/Google-DSC-Logo.svg" />
         </div>
       </section>
     </footer>

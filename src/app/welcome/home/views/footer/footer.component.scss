@@ -4,7 +4,6 @@
 }
 
 .footer-box {
-  padding: 30px;
   box-shadow: 3px 0px 4px rgba(0, 0, 0, 0.2);
 }
 .footer-links {
@@ -14,19 +13,20 @@
   justify-content: center;
   -webkit-box-align: center;
   align-items: center;
-  margin: 0 0 10px;
+
   box-sizing: border-box;
   -webkit-box-direction: reverse;
   line-height: 1.42;
   font-size: 30px;
+  padding-top: 20px;
 }
 .footer-link {
   color: white;
-  margin-right: 10px;
-  margin-left: 10px;
+  margin-right: 25px;
+  margin-left: 25px;
 }
 .contact-link-margin {
-  margin-right: 30px;
+  margin-right: 55px;
 }
 
 .footer-box-title {
@@ -45,8 +45,6 @@
 }
 .container {
   text-align: center;
-  padding-top: 30px;
-  padding-bottom: 30px;
 }
 
 @media (max-width: 959px) {

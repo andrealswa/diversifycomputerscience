@@ -96,7 +96,8 @@ body {
 .search-card {
   width: 95%;
   max-width: 800px;
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: none;
 }
 .remove-orange-border {
   outline: none;
