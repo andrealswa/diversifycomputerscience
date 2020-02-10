@@ -81,6 +81,18 @@ body {
   line-height: 1.25;
 }
 
+.mat-table .mat-row:nth-child(even) {
+  background: rgb(230, 230, 230);
+}
+.mat-table .mat-row:nth-child(odd) {
+  background: #fff;
+}
+
+.mat-table .mat-row:hover {
+  border-color: grey;
+  background: rgb(197, 195, 195);
+}
+
 @media screen and (max-width: 960px) {
   .mat-table {
     border: 0;
