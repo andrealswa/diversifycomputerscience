@@ -20,14 +20,14 @@ body {
 }
 
 .mat-table .mat-row:nth-child(even) {
-  background: rgb(230, 230, 230);
+  background: rgb(245, 245, 245);
 }
 .mat-table .mat-row:nth-child(odd) {
   background: #fff;
 }
 
 .mat-table .mat-row:hover {
-  border-color: grey;
+  border-color: rgb(235, 235, 235);
   border-width: 1px;
   background: rgb(197, 195, 195);
 }
