@@ -3,19 +3,23 @@
   background-size: cover;
 }
 
-.container {
-  margin-top: 10px;
-  max-width: 800px;
-  height: 406px;
-
-  background: url("../../../../../assets/images/bg-disclaimer.png") no-repeat
-    center center;
+.full-view {
+  background: url("../../../../../assets/images/home-bg.svg") no-repeat center
+    center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  padding: 250px 0;
+  color: rgb(20, 20, 20);
+  overflow: hidden;
+  height: 100vh;
+}
 
-  // background-color: #ed4b6c;
+.container {
+  margin-top: 10px;
+  max-width: 800px;
+  height: 406px;
 }
 
 .inner-cards-team-bios {
@@ -23,8 +27,7 @@
 }
 
 .container-outline {
-  border: 1px solid #eceff1;
-  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
-    0 1px 3px 1px rgba(60, 64, 67, 0.15);
-  background-color: white;
+  border: #eceff100;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0), 0 1px 3px 1px rgba(60, 64, 67, 0);
+  background-color: rgba(255, 255, 255, 0);
 }

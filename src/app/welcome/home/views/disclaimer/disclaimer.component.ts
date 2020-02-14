@@ -5,7 +5,7 @@ import { Component, OnInit, Input } from "@angular/core";
 
   styleUrls: ["./disclaimer.component.scss"],
   template: `
-    <section>
+    <section class="full-view">
       <div style="height: 100px"></div>
       <mat-card class="container container-outline">
         <div>

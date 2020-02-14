@@ -61,18 +61,7 @@ import { Component, OnInit } from "@angular/core";
                   fashion, your patience is very much appreciated.
                 </mat-card-content>
 
-                <div fxLayoutAlign="center center">
-                  <a routerLink="/contact">
-                    <button
-                      mat-raised-button
-                      mat-lg-button
-                      color=""
-                      class="contact-us-button"
-                    >
-                      <mat-icon>chat_bubble_outline</mat-icon> Contact Us
-                    </button>
-                  </a>
-                </div>
+                <div fxLayoutAlign="center center"></div>
               </mat-card>
             </div>
           </mat-card>
