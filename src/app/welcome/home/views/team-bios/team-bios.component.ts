@@ -68,7 +68,7 @@ import { Component, OnInit, Input } from "@angular/core";
               </mat-card-content>
             </mat-card>
           </mat-grid-tile>
-
+          <!--
           <mat-grid-tile>
             <mat-card class="inner-cards-team-bios">
               <mat-card-header>
@@ -78,7 +78,7 @@ import { Component, OnInit, Input } from "@angular/core";
               </mat-card-header>
               <mat-card-content> </mat-card-content>
             </mat-card>
-          </mat-grid-tile>
+          </mat-grid-tile>-->
         </mat-grid-list>
       </mat-card>
     </section>
