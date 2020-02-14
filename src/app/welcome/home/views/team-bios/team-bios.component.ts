@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from "@angular/core";
     <section>
       <mat-card class="container container-outline">
         <div>
-          <mat-card class="inner-cards-team-bios">
+          <mat-card class="inner-cards-team-title">
             <mat-card-header>
               <div mat-card-avatar class="example-header-team"></div>
               <mat-card-title>Team Bios</mat-card-title>
@@ -21,8 +21,14 @@ import { Component, OnInit, Input } from "@angular/core";
           </mat-card>
         </div>
 
-        <mat-grid-list cols="2" rowHeight="220px" gutterSize="5px">
-          <mat-grid-tile>
+        <mat-grid-list
+          cols="3"
+          rowHeight="300px"
+          gutterSize="5px"
+          [cols]="breakpoint"
+          (window:resize)="onResize($event)"
+        >
+          <mat-grid-tile [colspan]="1" [rowspan]="1">
             <mat-card class="inner-cards-team-bios">
               <mat-card-header>
                 <div mat-card-avatar class="example-header-aislyn"></div>
@@ -38,7 +44,7 @@ import { Component, OnInit, Input } from "@angular/core";
             </mat-card>
           </mat-grid-tile>
 
-          <mat-grid-tile>
+          <mat-grid-tile [colspan]="1" [rowspan]="1">
             <mat-card class="inner-cards-team-bios">
               <mat-card-header>
                 <div mat-card-avatar class="example-header-andrea"></div>
@@ -54,7 +60,7 @@ import { Component, OnInit, Input } from "@angular/core";
             </mat-card>
           </mat-grid-tile>
 
-          <mat-grid-tile>
+          <mat-grid-tile [colspan]="1" [rowspan]="1">
             <mat-card class="inner-cards-team-bios">
               <mat-card-header>
                 <div mat-card-avatar class="example-header-daniel"></div>
@@ -87,6 +93,11 @@ import { Component, OnInit, Input } from "@angular/core";
 export class ServicesComponent implements OnInit {
   @Input("backgroundGray") public backgroundGray;
   constructor() {}
-
-  ngOnInit() {}
+  breakpoint: number;
+  ngOnInit() {
+    this.breakpoint = window.innerWidth <= 1350 ? 1 : 3;
+  }
+  onResize(event) {
+    this.breakpoint = event.target.innerWidth <= 1350 ? 1 : 3;
+  }
 }

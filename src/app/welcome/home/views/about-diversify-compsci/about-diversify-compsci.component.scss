@@ -26,15 +26,17 @@
   margin: 5px;
   padding: 5px;
   min-height: 250px;
-  border: 1px solid #eceff1;
-  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
-    0 1px 3px 1px rgba(60, 64, 67, 0.15);
+  border: 1px solid #eceff100;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0), 0 1px 3px 1px rgba(60, 64, 67, 0);
 }
 
 .about-top-card-center {
   text-align: center;
   margin-top: 30px;
   padding-bottom: 50px;
+  border: 1px solid #eceff100;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0), 0 1px 3px 1px rgba(60, 64, 67, 0);
+  background-color: rgba(255, 255, 255, 0);
 }
 
 .about-title-font {
