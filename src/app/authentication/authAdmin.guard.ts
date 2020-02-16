@@ -42,8 +42,9 @@ export class AdminGuard implements CanActivate {
     return this.auth.user.pipe(
       take(1),
       map(user =>
-        (user && user.email === "swartz8@uwindsor.ca") ||
-        (user && user.email === "aislynlaurent@diversifycs.com")
+        user &&
+        (user.email === "swartz8@uwindsor.ca" ||
+          user.email === "aislynlaurent@diversifycs.com")
           ? true
           : false
       ),
