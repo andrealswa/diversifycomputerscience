@@ -3,7 +3,8 @@ import { Observable } from "rxjs";
 import {
   CanActivate,
   ActivatedRouteSnapshot,
-  RouterStateSnapshot
+  RouterStateSnapshot,
+  Router
 } from "@angular/router";
 import {
   AngularFirestore,
@@ -33,7 +34,7 @@ interface Entry {
 
 @Injectable()
 export class AdminGuard implements CanActivate {
-  constructor(private auth: AngularFireAuth) {}
+  constructor(private auth: AngularFireAuth, private router: Router) {}
 
   canActivate(
     next: ActivatedRouteSnapshot,
@@ -51,6 +52,7 @@ export class AdminGuard implements CanActivate {
       tap(isAdmin => {
         if (!isAdmin) {
           console.error("Access denied - Admins only");
+          this.router.navigate(["not-found"]);
         }
       })
     );
