@@ -1,23 +1,23 @@
 /* not using this .welcome currently */
-.background-image {
-  background-image: url("../../assets/images/newBackgroundDiversify.svg");
-  transition: fill 0.1s ease-out, opacity 0.1s ease-out;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  width: 100%;
-}
-
-@media all and (min-width: 959px) {
+@media screen and (min-width: 960px) {
   .background-image {
     background-image: url("../../assets/images/newBackgroundDiversify.svg");
-    transition: fill 0.1s ease-out, opacity 0.1s ease-out;
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    -o-background-size: contain;
-    background-size: contain;
-    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .background-image {
+    background-image: url("../../assets/images/newBackgroundDiversify.svg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
   }
 }
 
