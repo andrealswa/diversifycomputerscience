@@ -1,5 +1,5 @@
 /* not using this .welcome currently */
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 1001px) {
   .background-image {
     background-image: url("../../assets/images/newBackgroundDiversify.svg");
     background-repeat: no-repeat;
@@ -11,7 +11,32 @@
   }
 }
 
-@media screen and (max-width: 959px) {
+@media screen and (max-width: 1000px) {
+  .background-image {
+    background-image: url("../../assets/images/newBackground2Diversify.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .background-image {
+    background-image: url("../../assets/images/newBackgroundDiversify.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+}
+
+@media screen and (max-width: 559px) {
   .background-image {
     background-image: url("../../assets/images/newBackgroundDiversify.svg");
     -webkit-background-size: cover;
