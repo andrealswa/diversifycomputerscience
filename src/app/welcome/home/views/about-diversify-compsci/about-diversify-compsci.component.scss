@@ -59,3 +59,15 @@
   margin-top: 30px;
   color: #555555;
 }
+
+#comp-img {
+  background-image: url("../../../../../assets/images/comp.png");
+  position: absolute;
+  width: 470px;
+  height: 320px;
+  top: 2500px;
+  left: 15px;
+  will-change: opacity;
+  background-size: cover;
+  background-position: center center;
+}

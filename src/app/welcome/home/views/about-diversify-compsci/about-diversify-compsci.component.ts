@@ -5,6 +5,7 @@ import { Component, OnInit, Input } from "@angular/core";
   styleUrls: ["./about-diversify-compsci.component.scss"],
   template: `
     <section>
+      <div><div id="comp-img"></div></div>
       <mat-card class="container container-outline">
         <div>
           <mat-card class="about-top-card-center">

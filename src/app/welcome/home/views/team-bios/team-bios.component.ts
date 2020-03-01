@@ -5,6 +5,7 @@ import { Component, OnInit, Input } from "@angular/core";
   styleUrls: ["./team-bios.component.scss"],
   template: `
     <section>
+      <div><div id="girl-img"></div></div>
       <mat-card class="container container-outline">
         <div>
           <mat-card class="inner-cards-team-title">
