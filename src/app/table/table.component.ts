@@ -43,7 +43,7 @@ export class TableComponent implements OnInit, AfterViewInit {
   ];
   dataSource = new MatTableDataSource<Entry>();
 
-  showCenterButton: boolean = true;
+  showCenterButton: boolean = false;
   toggleButton() {
     if (this.showCenterButton === false) {
       this.showCenterButton = true;

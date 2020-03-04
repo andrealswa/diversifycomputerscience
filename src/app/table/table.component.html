@@ -1,41 +1,22 @@
 <div class="background">
   <div class="table-body">
-    <mat-card>
-      <div fxLayoutAlign="center center">
-        <mat-form-field fxFlex="25%" style="text-align: left">
-          <input
-            matInput
-            autocomplete="off"
-            style="text-align: left"
-            type="text"
-            (keyup)="doFilter($event.target.value)"
-            placeholder="Search"
-          />
-          <mat-icon matSuffix class="move-search-icon">search</mat-icon>
-        </mat-form-field>
-        <div class="center-button">
-          <button
-            class="remove-orange-border"
-            mat-raised-button
-            (click)="toggleButton()"
-          >
-            Show/Hide Useful Search Terms
-          </button>
-        </div>
-      </div>
-
-      <!-- Start of the legends for the user search terms -->
+    <div class="center-button">
+      <button
+        class="remove-orange-border"
+        mat-raised-button
+        (click)="toggleButton()"
+      >
+        Show/Hide Useful Search Terms
+      </button>
+    </div>
+    <!-- Start of the legends for the user search terms -->
+    <div
+      [className]="
+        !showCenterButton ? 'animated-legend' : 'animated-legend-open'
+      "
+    >
       <div fxLayoutAlign="center center" class="search-terms">
         <mat-card class="search-card">
-          <!-- <div class="center-button">
-            <button
-              class="remove-orange-border"
-              mat-raised-button
-              (click)="toggleButton()"
-            >
-              Show/Hide Useful Search Terms
-            </button>
-          </div> -->
           <div *ngIf="showCenterButton">
             <mat-card-content>
               <mat-card class="search-card-item">
@@ -76,7 +57,22 @@
           </div>
         </mat-card>
       </div>
-      <!-- End of the legend for the user search terms -->
+    </div>
+    <!-- End of the legend for the user search terms -->
+    <mat-card>
+      <div fxLayoutAlign="center center">
+        <mat-form-field fxFlex="25%" style="text-align: left">
+          <input
+            matInput
+            autocomplete="off"
+            style="text-align: left"
+            type="text"
+            (keyup)="doFilter($event.target.value)"
+            placeholder="Search"
+          />
+          <mat-icon matSuffix class="move-search-icon">search</mat-icon>
+        </mat-form-field>
+      </div>
 
       <mat-table [dataSource]="dataSource" matSort>
         <ng-container matColumnDef="firstName">
