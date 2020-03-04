@@ -52,16 +52,19 @@
   background-color: rgba(255, 255, 255, 0);
 }
 
-#girl-img {
-  background-image: url("../../../../../assets/images/girlImg.png");
-  position: absolute;
-  height: 380px;
-  width: 435px;
-  top: 3000px;
-  left: 1400px;
-  will-change: opacity;
-  background-size: cover;
-  background-position: center center;
+@media (min-width: 1650px) {
+  #girl-img {
+    background-image: url("../../../../../assets/images/girlImg.png");
+    clip-path: url(#whoClipPath);
+    background-repeat: no-repeat;
+    height: 100%;
+    max-height: 36.4575rem;
+    max-width: 52.48375rem;
+    position: absolute;
+    width: 100%;
+    right: -400px;
+    animation: fade-in 1s var(--transition-timing) forwards;
+  }
 }
 
 .container-outline {
