@@ -99,7 +99,14 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  min-height: 150vh;
+  min-height: 100vh;
+}
+.background-open {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 200vh;
 }
 
 .filter-card {
