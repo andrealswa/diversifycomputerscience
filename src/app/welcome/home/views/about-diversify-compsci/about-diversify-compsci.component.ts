@@ -5,19 +5,29 @@ import { Component, OnInit, Input } from "@angular/core";
   styleUrls: ["./about-diversify-compsci.component.scss"],
   template: `
     <section>
-      <div><div id="comp-img"></div></div>
       <mat-card class="container container-outline">
-        <div>
-          <mat-card class="about-top-card-center">
-            <mat-card-title class="about-title-font">
-              About Diversify CompSci
-            </mat-card-title>
-            <mat-card-content class="about-subtitle-font">
-              Our mission is to help highlight the community of computer
-              scientists from under-represented groups both in industry and
-              academia.
-            </mat-card-content>
-          </mat-card>
+        <div id="parent">
+          <div class="left-text">
+            <div id="about-info">
+              <mat-card class="about-top-card-center">
+                <mat-card-title class="about-title-font">
+                  About Diversify CompSci
+                </mat-card-title>
+
+                <mat-card-content class="about-subtitle-font">
+                  Our mission is to help highlight the community of computer
+                  scientists from under-represented groups both in industry and
+                  academia.
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </div>
+          <div class="girl-image-right">
+            <img
+              class="girl-img-right"
+              src="../../../../../assets/images/girlImg.png"
+            />
+          </div>
         </div>
         <mat-grid-list
           gutterSize="20"

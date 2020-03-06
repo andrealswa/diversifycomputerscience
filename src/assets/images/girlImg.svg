@@ -33,6 +33,19 @@
          rx="57.265049"
          ry="50.323833" />
     </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1517">
+      <g
+         id="g1521"
+         transform="translate(349.86473,575.05725)">
+        <path
+           inkscape:connector-curvature="0"
+           id="path1519"
+           d="M 9.6926565,226.00782 93.259075,191.69057 123.12293,246.70295 86.971946,283.37787 32.221535,276.30485 Z"
+           style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      </g>
+    </clipPath>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -41,9 +54,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="-118.57143"
-     inkscape:cy="560"
+     inkscape:zoom="1.01"
+     inkscape:cx="320.94617"
+     inkscape:cy="282.77228"
      inkscape:document-units="mm"
      inkscape:current-layer="layer2"
      showgrid="false"
@@ -61,7 +74,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -77,7 +90,7 @@
      transform="translate(0,-177.93748)">
     <g
        id="g4729"
-       clip-path="url(#clipPath4731)"
+       clip-path="url(#clipPath1517)"
        transform="translate(-349.86473,-575.05725)">
       <image
          width="159.9924"
