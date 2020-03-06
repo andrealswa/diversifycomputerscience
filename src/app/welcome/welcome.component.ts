@@ -9,16 +9,25 @@ import { AngularFireAuth } from "@angular/fire/auth";
   template: `
     <div class="background-image">
       <app-intro></app-intro>
-
-      <!-- For the blue-purple background -->
-      <app-table id="table"> </app-table>
-      <about-diversify-compsci></about-diversify-compsci>
-      <team-bios></team-bios>
-
-      <!-- For the yellow-red background -->
-
-      <!-- Don't need thing, can change it up a lot -->
     </div>
+
+    <!-- For the blue-purple background -->
+    <div class="background-image">
+      <app-table id="table"> </app-table>
+    </div>
+
+    <div class="background-image">
+      <about-diversify-compsci></about-diversify-compsci>
+    </div>
+
+    <div class="background-image">
+      <team-bios></team-bios>
+    </div>
+
+    <!-- For the yellow-red background -->
+
+    <!-- Don't need thing, can change it up a lot -->
+
     <app-footer></app-footer>
   `
 })
