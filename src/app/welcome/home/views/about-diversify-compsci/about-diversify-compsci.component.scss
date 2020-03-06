@@ -94,7 +94,7 @@
 .left-text {
   text-align: left;
   flex: 1;
-  margin: 0 0 0 0%;
+  margin: 0 0 0 5%;
 }
 
 @media (min-width: 1100px) {
@@ -102,5 +102,20 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+}
+
+@media (max-width: 1299px) {
+  .girl-image-right {
+    display: none;
+    height: 0px;
+    width: 0px;
+    flex: 0;
+    margin-bottom: -200px;
+  }
+  .left-text {
+    text-align: center;
+    justify-content: center;
+    margin: 0 50% 0 0;
   }
 }
