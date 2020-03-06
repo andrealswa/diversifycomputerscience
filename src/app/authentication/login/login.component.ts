@@ -5,7 +5,7 @@ import { AngularFireAuth } from "@angular/fire/auth";
   selector: "app-login",
   styleUrls: ["./login.component.scss"],
   template: `
-    <section id="intro-section" class="home-intro-section">
+    <section id="intro-section" class="background-image">
       <div
         class="container"
         fxLayout="row"
