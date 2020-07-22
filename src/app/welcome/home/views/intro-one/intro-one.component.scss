@@ -38,6 +38,7 @@
   font-weight: 400;
   line-height: 32px;
 }
+
 .intro-list {
   margin: 0 0 40px;
 }
@@ -69,6 +70,7 @@
 }
 
 @media (max-width: 767px) {
+
   // .home-intro-section {
   //   padding: 100px 0 60px;
   // }
@@ -79,16 +81,19 @@
     line-height: 38px;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.22);
   }
+
   .home-intro-desc {
     margin: 0 0 40px;
     font-size: 18px;
     font-weight: 400;
     line-height: 27px;
   }
+
   .intro-product {
     top: 0;
     left: 20px;
   }
+
   .intro-product-link {
     top: -80px;
     transform: scale(0.5);
@@ -102,6 +107,7 @@
     justify-content: center;
   }
 }
+
 @media (max-width: 1000px) {
   .right-img {
     visibility: hidden;

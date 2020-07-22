@@ -22,10 +22,10 @@ import { Component, OnInit, Input } from "@angular/core";
               </mat-card>
             </div>
           </div>
-          <div class="girl-image-right">
+          <div>
             <img
-              class="girl-img-right"
-              src="../../../../../assets/images/girlImg.png"
+              class="girl-image-right"
+              src="../../../../../assets/images/undraw_shared_workspace_hwky.svg"
             />
           </div>
         </div>
@@ -90,7 +90,7 @@ import { Component, OnInit, Input } from "@angular/core";
         </mat-grid-list>
       </mat-card>
     </section>
-  `
+  `,
 })
 export class PortfolioComponent implements OnInit {
   @Input("backgroundGray") public backgroundGray;

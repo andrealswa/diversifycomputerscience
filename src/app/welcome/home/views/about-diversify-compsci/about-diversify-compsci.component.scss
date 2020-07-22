@@ -36,6 +36,7 @@
   border: 1px solid #eceff100;
   box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0), 0 1px 3px 1px rgba(60, 64, 67, 0);
   background-color: rgba(255, 255, 255, 0);
+  width: 300px;
 }
 
 .about-title-font {
@@ -44,13 +45,16 @@
   line-height: 32px;
   font-family: "Open Sans", sans-serif;
 }
+
 .icons-container {
   text-align: center;
 }
+
 .icons {
   font-size: 50px;
   margin-left: -15px;
 }
+
 .about-subtitle-font {
   font-size: 16px;
   line-height: 28px;
@@ -59,6 +63,7 @@
   margin-top: 30px;
   color: #555555;
 }
+
 #about-info {
   margin-left: 0px;
   max-width: 400px;
@@ -76,19 +81,18 @@
     left: 15px;
   }
 }
-@media (min-width: 1100px) {
-  .girl-image-right {
-    animation: fade-in 1s var(--transition-timing) forwards;
-    display: flex;
-    flex: 1;
-    justify-content: right;
-    margin-right: -2rem;
-    max-width: 53.3125rem;
-    position: relative;
-    z-index: 0;
-    margin: 0 0 0 5%;
-    width: 30%;
-  }
+
+.girl-image-right {
+  animation: fade-in 1s var(--transition-timing) forwards;
+  display: flex;
+  flex: 1;
+  justify-content: right;
+  margin-right: -2rem;
+  height: 100%;
+  width: 400px;
+  position: relative;
+  z-index: 0;
+  margin: 0 0 0 5%;
 }
 
 .left-text {
@@ -113,6 +117,7 @@
     flex: 0;
     margin-bottom: -200px;
   }
+
   .left-text {
     text-align: center;
     justify-content: center;

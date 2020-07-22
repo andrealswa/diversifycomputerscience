@@ -35,49 +35,57 @@
 //   }
 // }
 .background-image {
-  background-image: linear-gradient(
-      //bottom left
-        -122deg,
-      rgba(223, 99, 74, 0) 82%,
-      rgba(223, 99, 74, 0.9) 82.03%,
-      rgba(245, 174, 160, 0.9) 100%
-    ),
-    linear-gradient(
-      //bottom right
-        140deg,
-      rgba(223, 99, 74, 0) 82%,
-      rgba(183, 53, 100, 1) 82.03%,
-      rgb(235, 134, 168) 100%
-    ),
-    // linear-gradient(3deg, rgba(240, 13, 13, 0) 8%, rgba(255, 7, 7, 0.08) 33%),
-      linear-gradient(
-        //top right shape
-          75deg,
-        rgba(218, 11, 11, 0) 90%,
-        rgba(243, 181, 80, 0.8) 90.03%
-      ),
-    linear-gradient(
-      //top right shape
-        150deg,
-      rgba(218, 11, 11, 0) 40%,
-      rgba(243, 181, 80, 0.8) 40.03%,
-      rgba(243, 181, 80, 0.8) 50%,
-      rgba(243, 181, 80, 0) 50.03%
-    ),
-    linear-gradient(
-      -75deg,
-      rgba(183, 53, 100, 0) 90%,
-      rgba(183, 53, 100, 0.8) 90.03%
-    ),
-    linear-gradient(
-      -150deg,
-      rgba(183, 53, 100, 0) 40%,
-      rgba(183, 53, 100, 0.8) 40.03%,
-      rgba(183, 53, 100, 0.8) 50%,
-      rgba(183, 53, 100, 0) 50.03%
-    ),
-    radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(181, 221, 213) 100%);
+  background-image: linear-gradient(-180deg,
+      rgb(207, 252, 254),
+      rgb(248, 215, 208),
+    );
 }
+
+// .background-image {
+//   background-image: linear-gradient(
+//       //bottom left
+//         -122deg,
+//       rgba(223, 99, 74, 0) 82%,
+//       rgba(223, 99, 74, 0.9) 82.03%,
+//       rgba(245, 174, 160, 0.9) 100%
+//     ),
+//     linear-gradient(
+//       //bottom right
+//         140deg,
+//       rgba(223, 99, 74, 0) 82%,
+//       rgba(183, 53, 100, 1) 82.03%,
+//       rgb(235, 134, 168) 100%
+//     ),
+//     // linear-gradient(3deg, rgba(240, 13, 13, 0) 8%, rgba(255, 7, 7, 0.08) 33%),
+//       linear-gradient(
+//         //top right shape
+//           40deg,
+//         rgba(218, 11, 11, 0) 90%,
+//         rgba(243, 181, 80, 0.8) 90.03%
+//       ),
+//     linear-gradient(
+//       //bottom right shape
+//         160deg,
+//       rgba(218, 11, 11, 0) 40%,
+//       rgba(243, 181, 80, 0.8) 40.03%,
+//       rgba(243, 181, 80, 0.8) 50%,
+//       rgba(243, 181, 80, 0) 50.03%
+//     ),
+//     linear-gradient(
+//       //top left?
+//         -38deg,
+//       rgba(183, 53, 100, 0) 90%,
+//       rgba(183, 53, 100, 0.8) 90.03%
+//     ),
+//     linear-gradient(
+//       -150deg,
+//       rgba(183, 53, 100, 0) 40%,
+//       rgba(183, 53, 100, 0.8) 40.03%,
+//       rgba(183, 53, 100, 0.8) 50%,
+//       rgba(183, 53, 100, 0) 50.03%
+//     ),
+//     radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(181, 221, 213) 100%);
+// }
 
 .welcome {
   text-align: center;
@@ -151,8 +159,7 @@
 }
 
 .bg-blue-purple {
-  background: url("../../assets/images/bg-blue-purple.svg") no-repeat center
-    center;
+  background: url("../../assets/images/bg-blue-purple.svg") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -160,8 +167,7 @@
 }
 
 .bg-yellow-red {
-  background: url("../../assets/images/bg-yellow-red.svg") no-repeat center
-    center;
+  background: url("../../assets/images/bg-yellow-red.svg") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

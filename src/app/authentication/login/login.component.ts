@@ -11,10 +11,9 @@ import { AngularFireAuth } from "@angular/fire/auth";
         fxLayout="row"
         fxLayout.lt-md="column"
         fxLayoutWrap="nowrap"
-        fxLayoutGap="30px"
         fxLayoutAlign="center center"
       >
-        <mat-card>
+        <mat-card class="mat-card">
           <div>
             <div style="text-align: center;">
               <!-- Not logged in -->
@@ -56,7 +55,7 @@ import { AngularFireAuth } from "@angular/fire/auth";
         </mat-card>
       </div>
     </section>
-  `
+  `,
 })
 export class LoginComponent {
   constructor(public afAuth: AngularFireAuth) {}
