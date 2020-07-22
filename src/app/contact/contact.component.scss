@@ -1,37 +1,7 @@
-// .background-image {
-//   background-image: linear-gradient(
-//       //bottom left
-//         -122deg,
-//       rgba(223, 99, 74, 0) 82%,
-//       rgba(223, 99, 74, 0.9) 82.03%,
-//       rgba(245, 174, 160, 0.9) 100%
-//     ),
-//     linear-gradient(
-//       //bottom right
-//         140deg,
-//       rgba(223, 99, 74, 0) 82%,
-//       rgba(183, 53, 100, 1) 82.03%,
-//       rgb(235, 134, 168) 100%
-//     ),
-//     // linear-gradient(3deg, rgba(240, 13, 13, 0) 8%, rgba(255, 7, 7, 0.08) 33%),
-//       linear-gradient(
-//         //top right shape
-//           75deg,
-//         rgba(218, 11, 11, 0) 90%,
-//         rgba(243, 181, 80, 0.8) 90.03%
-//       ),
-//     linear-gradient(
-//       -75deg,
-//       rgba(183, 53, 100, 0) 90%,
-//       rgba(183, 53, 100, 0.8) 90.03%
-//     ),
-//     radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(181, 221, 213) 100%);
-//   height: 100vh;
-// }
+// Background gradient for the entire page.
 .background-image {
   background-image: linear-gradient(-180deg,
       rgb(248, 215, 208),
-
     );
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -39,121 +9,13 @@
   background-size: cover;
 }
 
-.middle-container {
-  // removes the background color
-  background-color: rgba(255, 255, 255, 0);
-  // removes the shadow effect
-  transition: none !important;
-  box-shadow: none !important;
-  display: flex;
-  height: 10%;
-  flex-wrap: wrap;
-  padding-top: 200px;
+// Holds two cards
+.two-card-container {
+  min-height: 1000px;
 }
 
-.contact-image {
-  height: 100%;
-  width: 600px;
-  margin-top: -460px;
-
-}
-
-.image-container {
-  display: flex;
-  justify-content: center;
-}
-
-.create-account-button {
-  background-color: rgb(20, 20, 20);
-  color: white;
-}
-
-.home-intro-title {
-  margin: 0 0 24px;
-  font-size: 48px;
-  font-weight: 900;
-  line-height: 52px;
-}
-
-.shadow-effect {
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.623);
-}
-
-.home-intro-desc {
-  margin: 0 0 40px;
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 32px;
-}
-
-.intro-list {
-  margin: 0 0 40px;
-}
-
-@media (max-width: 767px) {
-  .home-intro-section {
-    padding: 100px 0 60px;
-  }
-
-  .home-intro-title {
-    margin: 0 0 30px;
-    font-size: 32px;
-    font-weight: 900;
-    line-height: 38px;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.22);
-  }
-
-  .home-intro-desc {
-    margin: 0 0 40px;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 27px;
-  }
-
-  .intro-product {
-    top: 0;
-    left: 20px;
-  }
-
-  .intro-product-link {
-    top: -80px;
-    transform: scale(0.5);
-  }
-}
-
-.remove-orange-border {
-  outline: none;
-  border: 0;
-}
-
-.example-header-image {
-  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
-  background-size: cover;
-}
-
-.container {
-
-  height: 100vh;
-
-
-  // background-color: #f5d600;
-  // margin-bottom: 0px;
-}
-
-
-
-.contact-us-button {
-  color: rgb(20, 20, 20);
-  background-color: rgb(255, 255, 255);
-
-  // background-color: rgb(20, 20, 20);
-  // color: white;
-
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.left-card {
+// Card 1
+.contact-us-card {
   background-color: rgba(255,
       255,
       255,
@@ -162,7 +24,8 @@
   box-shadow: none;
 }
 
-.right-card {
+// Card 2
+.questions-card {
   background-color: rgba(255,
       255,
       255,
@@ -172,25 +35,28 @@
   max-width: 300px;
 }
 
-.container-outline {
-  border: 1px solid #eceff100;
-  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0), 0 1px 3px 1px rgba(60, 64, 67, 0);
+// Holds the contact-us-card and the questions-card.
+.middle-container {
+  // Removes the background color.
   background-color: rgba(255, 255, 255, 0);
+  // Removes the shadow effect.
+  transition: none !important;
+  box-shadow: none !important;
+  display: flex;
+  height: 10%;
+  flex-wrap: wrap;
+  margin-top: 200px;
+
 }
 
-.parent-shell {}
+// Image container and the image itself.
+.image-container {
+  display: flex;
+  justify-content: center;
+}
 
-@media (max-width: 1000px) {
-  .background-image {
-    height: 100vh;
-  }
-
-  .contact-image {
-    display: none;
-  }
-
-  .middle-container {
-    margin-top: -600px;
-    justify-content: center;
-  }
+// Adjust image size.
+.contact-image {
+  height: 100%;
+  width: 600px;
 }
