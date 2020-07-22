@@ -13,7 +13,7 @@ import { AngularFireAuth } from "@angular/fire/auth";
         fxLayoutWrap="nowrap"
         fxLayoutAlign="center center"
       >
-        <mat-card class="mat-card">
+        <mat-card>
           <div>
             <div style="text-align: center;">
               <!-- Not logged in -->
@@ -30,7 +30,7 @@ import { AngularFireAuth } from "@angular/fire/auth";
               </div>
 
               <!-- Logged in -->
-              <div *ngIf="afAuth.authState | async as user" class="logout">
+              <div *ngIf="afAuth.authState | async as user">
                 <p>
                   Logged in as <strong>{{ user.email }}</strong>
                 </p>

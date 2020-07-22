@@ -8,16 +8,12 @@ import { Component, OnInit, Input } from "@angular/core";
       <mat-card class="container container-outline">
         <div>
           <mat-card class="inner-cards-team-title">
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-team"></div>
-              <mat-card-title>Team Bios</mat-card-title>
-              <mat-card-subtitle>Summary</mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content>
+            <h1 class="meet-the-team-title">Meet the Team</h1>
+            <p class="meet-the-team-paragraph">
               Our team consists entirely of undergraduate students from the
               University of Windsor, in partnership with the local chapter of
               the Developer Student Club powered by Google Developers.
-            </mat-card-content>
+            </p>
           </mat-card>
         </div>
 
@@ -88,7 +84,7 @@ import { Component, OnInit, Input } from "@angular/core";
         </mat-grid-list>
       </mat-card>
     </section>
-  `
+  `,
 })
 export class ServicesComponent implements OnInit {
   @Input("backgroundGray") public backgroundGray;

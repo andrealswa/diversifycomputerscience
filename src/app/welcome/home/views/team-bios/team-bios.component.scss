@@ -38,7 +38,16 @@
   -o-background-size: cover;
   background-size: cover;
 
+
   // background-color: #51c9ff;
+}
+
+.meet-the-team-title {
+  text-align: center;
+}
+
+.meet-the-team-paragraph {
+  text-align: center;
 }
 
 .inner-cards-team-title {
@@ -59,9 +68,9 @@
 }
 
 .container-outline {
-  border: 1px solid #eceff1;
-  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
-    0 1px 3px 1px rgba(60, 64, 67, 0.15);
-  background-color: white;
+  border: none;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0),
+    0 1px 3px 1px rgba(60, 64, 67, 0);
+  background-color: rgba(255, 255, 255, 0);
   padding-bottom: 200px;
 }
