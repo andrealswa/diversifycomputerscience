@@ -11,7 +11,11 @@
 
 // Holds two cards
 .two-card-container {
-  min-height: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 // Card 1
@@ -59,4 +63,11 @@
 .contact-image {
   height: 100%;
   width: 600px;
+}
+
+@media (max-width: 620px) {
+  .contact-image {
+    // height: 100%;
+    width: 300px;
+  }
 }

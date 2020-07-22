@@ -3,7 +3,7 @@ import { Component, OnInit } from "@angular/core";
 @Component({
   selector: "app-contact",
   template: `
-    <section class="background-image">
+    <div class="background-image">
       <div class="two-card-container">
         <!-- Contact Us Card -->
         <mat-card class="contact-us-card">
@@ -47,7 +47,7 @@ import { Component, OnInit } from "@angular/core";
           src="../../../../../assets/images/contactus.svg"
         />
       </div>
-    </section>
+    </div>
   `,
   styleUrls: ["./contact.component.scss"],
 })

@@ -3,114 +3,63 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  padding: 250px 0;
+  padding: 250px 0px;
   color: rgb(20, 20, 20);
   overflow: hidden;
 }
 
-.middle-container {
+.two-card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.main-text-card {
   // removes the background color
   background-color: rgba(255, 255, 255, 0);
   // removes the shadow effect
   transition: none !important;
   box-shadow: none !important;
+  min-width: 320px;
+  max-width: 700px;
+}
+
+// Container for the button.
+.center-button {
+  text-align: center;
 }
 
 .create-account-button {
   background-color: rgb(20, 20, 20);
   color: white;
+  margin-top: 30px;
 }
 
-.home-intro-title {
+.title {
   margin: 0 0 24px;
   font-size: 48px;
   font-weight: 900;
   line-height: 52px;
 }
 
-.shadow-effect {
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.623);
-}
-
-.home-intro-desc {
+.subtitle {
   margin: 0 0 40px;
   font-size: 22px;
   font-weight: 400;
   line-height: 32px;
 }
 
-.intro-list {
-  margin: 0 0 40px;
+.hero-image {
+  height: 100%;
+  width: 500px;
 }
 
-@media (min-width: 1300px) {
-  .right-img {
-    animation: fade-in 1s var(--transition-timing) forwards;
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    position: relative;
-    z-index: 0;
-    margin: 0 0 0 0;
-  }
-}
-
-.text-left {
-  text-align: left;
-  flex: 1;
-  margin: 0 0 0 5%;
-}
-
-@media (min-width: 1300px) {
-  .intro-join {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-}
-
-@media (max-width: 767px) {
-
-  // .home-intro-section {
-  //   padding: 100px 0 60px;
-  // }
-  .home-intro-title {
-    margin: 0 0 30px;
-    font-size: 32px;
-    font-weight: 900;
-    line-height: 38px;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.22);
+@media(max-width: 700px) {
+  .home-intro-section {
+    padding-top: 100px;
   }
 
-  .home-intro-desc {
-    margin: 0 0 40px;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 27px;
-  }
-
-  .intro-product {
-    top: 0;
-    left: 20px;
-  }
-
-  .intro-product-link {
-    top: -80px;
-    transform: scale(0.5);
-  }
-}
-
-@media (max-width: 1299px) {
-  .right-img {
-    display: flex;
-    flex: 1;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 1000px) {
-  .right-img {
-    visibility: hidden;
-    margin-bottom: -500px;
+  .hero-image {
+    width: 300px;
   }
 }

@@ -1,66 +1,44 @@
 <section id="intro-section" class="home-intro-section">
-  <div class="intro-join">
-    <div class="text-left">
-      <div
-        class="container"
-        fxLayout="row"
-        fxLayout.lt-md="column"
-        fxLayoutWrap="nowrap"
-        fxLayoutGap="30px"
-        fxLayoutAlign="center center"
-      >
-        <mat-card class="middle-container">
-          <div fxFlex="">
-            <h1 class="home-intro-title">
-              <div class="shadow-effect">
-                Diversify Computer Science
-              </div>
-            </h1>
-            <div class="home-intro-desc">
-              Highlighting the Diverse Community of Computer Scientists.<br />
-            </div>
-            <div class="intro-list" fxLayout="column" fxLayoutGap="30px">
-              <div fxFlex="100">
-                <mat-icon aria-hidden="true" color="">assignment</mat-icon
-                ><span fxFlex="20px"></span>Nominate yourself to be part of the
-                list
-              </div>
-              <div fxFlex="100">
-                <mat-icon aria-hidden="true" color="">search</mat-icon
-                ><span fxFlex="20px"></span>
-                Browse the list to identify participants with diverse
-                perspectives
-              </div>
-              <div fxFlex="100">
-                <mat-icon aria-hidden="true" color="">public</mat-icon
-                ><span fxFlex="20px"></span>Learn more about Diversify CompSci
-                and our mission
-              </div>
-            </div>
-            <div
-              fxLayout="row"
-              fxLayout.lt-sm="column"
-              fxLayoutAlign="center center"
-            >
-              <button
-                mat-raised-button
-                mat-lg-button
-                color=""
-                class="create-account-button"
-                routerLink="/login"
-              >
-                <mat-icon>person_add</mat-icon> Create My Account / Login
-              </button>
-            </div>
+  <div>
+    <div class="two-card-container">
+      <mat-card class="main-text-card" fxFlex="">
+        <h1 class="title">
+          Diversify Computer Science
+        </h1>
+        <div class="subtitle">
+          Highlighting the Diverse Community of Computer Scientists.<br />
+        </div>
+        <div class="intro-list" fxLayout="column" fxLayoutGap="30px">
+          <div>
+            <mat-icon>assignment</mat-icon><span fxFlex="20px"></span>Nominate
+            yourself to be part of the list
           </div>
-        </mat-card>
-      </div>
-    </div>
-    <div class="right-img">
+          <div>
+            <mat-icon>search</mat-icon><span fxFlex="20px"></span>
+            Browse the list to identify participants with diverse perspectives
+          </div>
+          <div>
+            <mat-icon>public</mat-icon><span fxFlex="20px"></span>Learn more
+            about Diversify CompSci and our mission
+          </div>
+        </div>
+
+        <div class="center-button">
+          <button
+            class="create-account-button"
+            mat-raised-button
+            mat-lg-button
+            routerLink="/login"
+          >
+            <mat-icon>person_add</mat-icon> Create My Account / Login
+          </button>
+        </div>
+      </mat-card>
+
       <img
-        class="big-img"
+        class="hero-image"
         src="../../../../../assets/images/undraw_online_collaboration_7pfp.svg"
-        alt="Picture of group on computer"
+        alt="online collaboration"
       />
     </div>
   </div>

@@ -12,7 +12,7 @@ import { Component, OnInit } from "@angular/core";
       </app-header>
       <div></div>
     </div>
-  `
+  `,
 })
 export class AppComponent implements OnInit {
   constructor() {}
