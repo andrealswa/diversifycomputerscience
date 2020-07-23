@@ -44,7 +44,7 @@ import { Component, OnInit } from "@angular/core";
       <div class="image-container">
         <img
           class="contact-image"
-          src="../../../../../assets/images/contactus.svg"
+          src="../../../../../assets/images/contactInfo.svg"
         />
       </div>
     </div>
