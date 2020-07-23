@@ -4,30 +4,47 @@
 }
 
 .full-view {
-  background: url("../../../../../assets/images/home-bg.svg") no-repeat center
-    center;
+  background-image: linear-gradient(-180deg,
+
+      rgb(248, 215, 208),
+    );
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  padding: 250px 0;
+  padding: 100px 0;
   color: rgb(20, 20, 20);
   overflow: hidden;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .container {
-  margin-top: 10px;
   max-width: 800px;
-  height: 406px;
-}
 
-.inner-cards-team-bios {
-  margin-top: 30px;
 }
 
 .container-outline {
   border: #eceff100;
   box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0), 0 1px 3px 1px rgba(60, 64, 67, 0);
   background-color: rgba(255, 255, 255, 0);
+}
+
+.disclaimer-title {
+  text-align: center;
+}
+
+.center-image {
+  text-align: center;
+}
+
+.disclaimer-image {
+  height: 100%;
+  width: 500px;
+}
+
+@media (max-width: 700px) {
+  .disclaimer-image {
+    height: 100%;
+    width: 300px;
+  }
 }
